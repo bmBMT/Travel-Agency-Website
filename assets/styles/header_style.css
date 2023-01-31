@@ -1,0 +1,46 @@
+@media (max-width: 576px) {
+  .sign_up {
+    padding: 1.2109375vw 1.875vw;
+  }
+
+  .login {
+    padding: 1.2109375vw 1.875vw;
+  }
+}
+
+@media (min-width: 577px) {
+  .sign_up {
+    padding: 15.5px 24px;
+  }
+
+  .login {
+    padding: 15.5px 24px;
+  }
+}
+
+.icon_links {
+  flex-direction: row;
+  gap: 32px;
+}
+
+.content {
+  padding: 24px 32px;
+  align-items: center;
+}
+
+.btn {
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login {
+    background: none;
+    color: #112211;
+    border: none;
+}
+
+.sign_up {
+  background-color: #112211;
+  color: white;
+}
