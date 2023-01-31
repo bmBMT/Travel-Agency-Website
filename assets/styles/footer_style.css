@@ -1,0 +1,169 @@
+@media (max-width: 576px) {
+  .footer_h2 {
+    font-size: 24px;
+  }
+  .footer_getEmail_btn {
+    font-size: 14px;
+  }
+  .footer_getEmail {
+    padding: 10px 1.25vw;
+    font-size: 14px;
+  }
+  .footer_getEmail::placeholder {
+    font-size: 14px;
+  }
+  .footer_input {
+    flex-direction: column;
+  }
+  .row.footer_links {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 577px) {
+  .footer_h2 {
+    font-size: 34px;
+  }
+  .footer_getEmail_btn {
+    font-size: 14px;
+  }
+  .footer_getEmail {
+    padding: 1.40625vw 1.25vw;
+    font-size: 16px;
+  }
+  .footer_getEmail::placeholder {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer_h2 {
+    font-size: 44px;
+  }
+  .footer_getEmail_btn {
+    font-size: 14px;
+  }
+}
+
+.footer_h2 {
+  font-weight: 700;
+}
+
+.footer_h3 {
+  font-size: 20px;
+}
+
+.footer_p {
+  font-size: 16px;
+}
+
+.columnLinks_h {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footer {
+  background: linear-gradient(white, white 25%, #8dd3bbed 25%);
+}
+
+.footer_content {
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+}
+
+.footer_card {
+  display: flex;
+  justify-content: space-between;
+  background: #cdeae1;
+  box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+  border-radius: 20px;
+  width: 100%;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+.footer_card_img {
+  padding-right: 1.875vw;
+  width: 31.25vw;
+}
+.card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer_input {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25vw;
+}
+
+.footer_getEmail {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+}
+
+.footer_getEmail::placeholder {
+  color: #1c1b1f;
+  font-weight: 400;
+  transition: color 0.3s ease-in;
+}
+
+.footer_getEmail:focus::placeholder {
+  color: background;
+}
+
+.footer_getEmail_btn {
+  padding: 1.40625vw 1.25vw;
+  background: #112211;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.footer_getEmail_btn:hover {
+  background-color: #bad6cc;
+}
+
+.icon_links {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer_links {
+  margin: 64px 0;
+}
+
+.text_links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer_link {
+  transition: color 0.2s ease-in;
+}
+
+.footer_link:hover {
+  color: #72AD96;
+}
