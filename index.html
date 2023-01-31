@@ -4,13 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="stylesheet" href="assets/styles/footer_style.css">
+    <link rel="stylesheet" href="assets/styles/header_style.css" />
+    <link rel="stylesheet" href="assets/styles/style.css" />
     <link rel="icon" href="assets/icons/title_icon.svg" />
     <title>Travel Agency Website</title>
   </head>
 
   <body>
+    <header class="header container">
+        <div class="content" id="head_content">
+          <div class="icon_links">
+            <a href="#" class="link">
+              <img src="assets/icons/black_airplane_icon.svg" />Find Flight
+            </a>
+            <a href="#" class="link">
+              <img src="assets/icons/black_bed_icon.svg" />Find Stays
+            </a>
+          </div>
+  
+          <a href="assets/index.html" class="logo">
+            <img src="assets/icons/greenLogo_icon.svg" />
+          </a>
+          <div class="buttons unlogined_btns" style="display: none">
+            <button class="btn login">Login</button>
+            <button class="btn sign_up">Sign up</button>
+          </div>
+          <div class="logined_elements">
+            <div class="favourites_link">
+              <a href="#">&#128420; Favourites</a>
+              <span class="vertical_line">&#124;</span>
+            </div>
+            <button class="profile_btn">
+              <div class="avatar">
+                <div class="arrowDown">
+                  <img src="assets/icons/black_arrowDown.svg" />
+                </div>
+              </div>
+              <div class="name">Alexandr S.</div>
+            </button>
+          </div>
+        </div>
+      </header>
+    
     <footer class="footer">
         <div class="container">
             <div class="footer_content">
@@ -24,7 +60,7 @@
                             </div>
                             <div class="footer_input">
                                 <input type="email" class="footer_getEmail" placeholder="Your email address">
-                                <button class="footer_getEmail_btn">Subscribe</button>
+                                <button class="btn footer_getEmail_btn">Subscribe</button>
                             </div>
                         </div>
                     </div>

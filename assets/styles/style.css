@@ -32,6 +32,11 @@ a {
   color: #112211;
   text-decoration: none;
   cursor: pointer;
+  transition: color 0.2s ease-in;
+}
+
+a:hover {
+  color: #72AD96;
 }
 
 h2 {
@@ -68,8 +73,14 @@ p {
   display: flex;
 }
 
-button {
+.btn {
   cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+  background-color: #bad6cc;
 }
 
 .link {
@@ -83,5 +94,10 @@ button {
 
 .content {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+}
+
+.vertical_line {
+  font-weight: 600;
 }

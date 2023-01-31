@@ -1,10 +1,22 @@
-@media (max-width: 576px) {
+@media (max-width: 670px) {
+  .icon_links {
+    order: 1;
+    width: 100%;
+    margin-top: 24px;
+    justify-content: space-between;
+  }
+
+  header > .content {
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+  }
+
   .sign_up {
-    padding: 1.2109375vw 1.875vw;
+    padding: 13.5px 19px;
   }
 
   .login {
-    padding: 1.2109375vw 1.875vw;
+    padding: 13.5px 19px;
   }
 }
 
@@ -18,29 +30,93 @@
   }
 }
 
+.header {
+  background: white;
+}
+
 .icon_links {
   flex-direction: row;
   gap: 32px;
 }
 
-.content {
+header > .content {
   padding: 24px 32px;
   align-items: center;
 }
 
 .btn {
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .login {
-    background: none;
-    color: #112211;
-    border: none;
+  background: none;
+  color: #112211;
+  border: none;
 }
 
 .sign_up {
   background-color: #112211;
   color: white;
+}
+
+.logined_elements {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.favourites_link {
+  display: flex;
+  gap: 16px;
+}
+
+.favourites_link a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile_btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+  isolation: isolate;
+  border: none;
+  border-radius: none;
+  background: none;
+  cursor: pointer;
+}
+
+.avatar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: url(../imgs/user_img/Alexandr_S.svg);
+  background-position: center;
+  background-size: cover;
+  order: 0;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.arrowDown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #FF8682;
+  z-index: 1;
 }

@@ -4,29 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/header_style.css" />
+    <link rel="stylesheet" href="/assets/styles/header_style.css" />
+    <link rel="stylesheet" href="/assets/styles/style.css" />
   </head>
 
   <body>
     <header class="header container">
-      <div class="row content">
+      <div class="content">
         <div class="icon_links">
           <a href="#" class="link">
-            <img src="../icons/black_airplane_icon.svg" />Find Flight
+            <img src="/assets/icons/black_airplane_icon.svg" />Find Flight
           </a>
           <a href="#" class="link">
-            <img src="../icons/black_bed_icon.svg" />Find Stays
+            <img src="/assets/icons/black_bed_icon.svg" />Find Stays
           </a>
         </div>
-        <a href="index.html" class="logo">
-          <img src="../icons/greenLogo_icon.svg" />
+
+        <a href="/assets/index.html" class="logo">
+          <img src="/assets/icons/greenLogo_icon.svg" />
         </a>
-        <div class="buttons">
-            <button class="btn login">Login</button>
-            <button class="btn sign_up">Sign up</button>
+        <div class="buttons unlogined_btns" style="display: none">
+          <button class="btn login">Login</button>
+          <button class="btn sign_up">Sign up</button>
+        </div>
+        <div class="logined_elements">
+          <div class="favourites_link">
+            <a href="#">&#128420; Favourites</a>
+            <span class="vertical_line">&#124;</span>
+          </div>
+          <button class="profile_btn">
+            <div class="avatar">
+              <div class="arrowDown">
+                <img src="/assets/icons/black_arrowDown.svg" />
+              </div>
+            </div>
+            <div class="name">Alexandr S.</div>
+          </button>
         </div>
       </div>
     </header>
+
   </body>
 </html>
