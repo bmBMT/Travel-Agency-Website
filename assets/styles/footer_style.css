@@ -131,7 +131,7 @@
   cursor: pointer;
 }
 
-.icon_links {
+.footer_links .icon_links {
   flex-direction: column;
   gap: 24px;
 }

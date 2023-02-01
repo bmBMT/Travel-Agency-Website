@@ -37,6 +37,7 @@ a {
 
 a:hover {
   color: #72AD96;
+  text-decoration: none;
 }
 
 h2 {
@@ -57,6 +58,10 @@ p {
   cursor: default;
 }
 
+hr {
+  margin: 0;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -71,6 +76,11 @@ p {
 
 .icon_links {
   display: flex;
+}
+
+button {
+  cursor: pointer;
+  border: none;
 }
 
 .btn {

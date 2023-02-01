@@ -9,8 +9,9 @@
   </head>
 
   <body>
+
     <header class="header container">
-      <div class="content">
+      <div class="content" id="head_content">
         <div class="icon_links">
           <a href="#" class="link">
             <img src="/assets/icons/black_airplane_icon.svg" />Find Flight
@@ -23,23 +24,76 @@
         <a href="/assets/index.html" class="logo">
           <img src="/assets/icons/greenLogo_icon.svg" />
         </a>
-        <div class="buttons unlogined_btns" style="display: none">
+        <div class="buttons unlogined_btns">
           <button class="btn login">Login</button>
           <button class="btn sign_up">Sign up</button>
         </div>
-        <div class="logined_elements">
+        <div class="logined_elements" style="display: none">
           <div class="favourites_link">
             <a href="#">&#128420; Favourites</a>
             <span class="vertical_line">&#124;</span>
           </div>
-          <button class="profile_btn">
-            <div class="avatar">
-              <div class="arrowDown">
-                <img src="/assets/icons/black_arrowDown.svg" />
+          <div class="dropdown">
+            <div class="profile">
+              <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+                <div class="arrowDown">
+                  <img src="/assets/icons/black_arrowDown.svg" />
+                </div>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                <div class="column">
+                  <div class="profile">
+                    <div class="avatar"></div>
+                    <div class="status_text">
+                      <div class="name">Alexandr S.</div>
+                      <div class="profile_status">Online</div>
+                    </div>
+                  </div>
+                  <hr>
+                  <section class="dropDown_links">
+                    <a href="#" class="dropDown_link">
+                      <div class="dropDown_link_content">
+                        <img src="/assets/icons/user_icon.svg">
+                        <div class="dropDown_text">My account</div>
+                      </div>
+                      <img src="/assets/icons/black_arrowRight.svg">
+                    </a>
+                    <a href="#" class="dropDown_link">
+                      <div class="dropDown_link_content">
+                        <img src="/assets/icons/card_icon.svg">
+                        <div class="dropDown_text">Payments</div>
+                      </div>
+                      <img src="/assets/icons/black_arrowRight.svg">
+                    </a>
+                    <a href="#" class="dropDown_link">
+                      <div class="dropDown_link_content">
+                        <img src="/assets/icons/settings_icon.svg">
+                        <div class="dropDown_text">Settings</div>
+                      </div>
+                      <img src="/assets/icons/black_arrowRight.svg">
+                    </a>
+                  </section>
+                  <hr>
+                  <section class="dropDown_links">
+                    <a href="#" class="dropDown_link">
+                      <div class="dropDown_link_content">
+                        <img src="/assets/icons/support_icon.svg">
+                        <div class="dropDown_text">Support</div>
+                      </div>
+                      <img src="/assets/icons/black_arrowRight.svg">
+                    </a>
+                    <a href="#" class="dropDown_link">
+                      <div class="dropDown_link_content">
+                        <img src="/assets/icons/logout_icon.svg">
+                        <div class="dropDown_text">Logout</div>
+                      </div>
+                    </a>
+                  </section>
+                </div>
               </div>
+              <div class="name">Alexandr S.</div>
             </div>
-            <div class="name">Alexandr S.</div>
-          </button>
+          </div>
         </div>
       </div>
     </header>

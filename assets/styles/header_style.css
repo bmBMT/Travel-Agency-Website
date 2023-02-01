@@ -1,5 +1,5 @@
 @media (max-width: 670px) {
-  .icon_links {
+  header .icon_links {
     order: 1;
     width: 100%;
     margin-top: 24px;
@@ -7,7 +7,7 @@
   }
 
   header > .content {
-    /* flex-direction: row; */
+    flex-direction: row;
     flex-wrap: wrap;
   }
 
@@ -17,6 +17,11 @@
 
   .login {
     padding: 13.5px 19px;
+  }
+
+  .logined_elements {
+    width: 100%;
+    justify-content: space-between;
   }
 }
 
@@ -34,7 +39,7 @@
   background: white;
 }
 
-.icon_links {
+header .icon_links {
   flex-direction: row;
   gap: 32px;
 }
@@ -77,7 +82,7 @@ header > .content {
   font-weight: 600;
 }
 
-.profile_btn {
+.profile {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -87,7 +92,10 @@ header > .content {
   border: none;
   border-radius: none;
   background: none;
-  cursor: pointer;
+}
+
+.dropdown-menu .profile {
+  gap: 16px;
 }
 
 .avatar {
@@ -101,6 +109,11 @@ header > .content {
   background-position: center;
   background-size: cover;
   order: 0;
+}
+
+.dropdown-menu .avatar {
+  width: 64px;
+  height: 64px;
 }
 
 .name {
@@ -117,6 +130,50 @@ header > .content {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #FF8682;
+  background: #ff8682;
   z-index: 1;
+}
+
+.dropdown-menu {
+  margin-right: -40px;
+  border: none;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+}
+
+button:focus {
+  outline: none;
+}
+
+.dropdown-menu .column {
+  gap: 24px;
+  padding: 32px;
+  width: 329px;
+}
+
+.profile_status {
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+.dropDown_links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dropDown_link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropDown_link_content {
+  display: flex;
+  gap: 8px;
+}
+
+.dropDown_text {
+  font-weight: 500;
+  font-size: 14px;
 }
