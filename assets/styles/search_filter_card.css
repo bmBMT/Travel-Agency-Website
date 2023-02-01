@@ -1,0 +1,88 @@
+.search_filter_card {
+  background: #ffffff;
+  box-shadow: 0px 4px 16px rgba(141, 211, 187, 0.15);
+  border-radius: 16px;
+}
+
+.search_filter_content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 16px 32px 32px 32px;
+}
+
+.search_filter_content .link {
+  gap: 8px;
+}
+
+#search_filter_line {
+  width: 0px;
+  height: 48px;
+  border: 1px solid #d7e2ee;
+}
+
+.input_filter {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.flight_input_filter_stroke {
+  display: flex;
+  gap: 24px;
+}
+
+.hotel_input_fliter_stroke {
+  display: flex;
+  gap: 16px;
+}
+
+.filter_buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.filter_buttons > button {
+    font-weight: 500;
+}
+
+.addPromoCode_btn {
+  padding: 15.5px 16px;
+}
+
+.showFlight_btn {
+  background: #8dd3bb;
+}
+
+.input_group {
+    display: flex;
+}
+
+.form_content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16px;
+    margin-right: 12px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.field_input {
+  width: 80px;
+  border: none;
+  outline: none;
+}
+
+fieldset .dropdown-menu {
+    margin-top: 8px;
+    margin-right: -14px;
+    width: 314px;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-top: none !important;
+    border-left: 1px solid #79747e;
+    border-right: 1px solid #79747e;
+    border-bottom: 1px solid #79747e;
+}

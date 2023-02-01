@@ -39,7 +39,8 @@
   background: white;
 }
 
-header .icon_links {
+.sections {
+  display: flex;
   flex-direction: row;
   gap: 32px;
 }
@@ -134,15 +135,11 @@ header > .content {
   z-index: 1;
 }
 
-.dropdown-menu {
+.profile .dropdown-menu {
   margin-right: -40px;
   border: none;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
-}
-
-button:focus {
-  outline: none;
 }
 
 .dropdown-menu .column {
@@ -176,4 +173,22 @@ button:focus {
 .dropDown_text {
   font-weight: 500;
   font-size: 14px;
+}
+
+.white_color {
+  color: white;
+}
+
+.black_color {
+  color: #112211;
+}
+
+.btn_white {
+  color: #112211;
+  background: white;
+}
+
+.btn_black {
+  color: white;
+  background: #112211;
 }

@@ -1,0 +1,42 @@
+body {
+  padding-top: 30px;
+}
+
+.header {
+  background: none;
+}
+
+.hero.content {
+  flex-direction: column;
+  align-items: center;
+  padding: 3vw 0 3.59375vw 0;
+}
+
+#indexHero {
+  padding: 0 24px;
+}
+
+.indexHead_hero {
+  background-image: url(../imgs/mainHead_img.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+  color: white;
+}
+
+.circle_ellipse {
+  width: 7.8125vw;
+  height: 7.8125vw;
+  border: none;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
+
+.head_hero_text {
+  font-size: 3.515625vw;
+  font-weight: 700;
+}
+
+.indexHero_about {
+  font-weight: 600;
+}

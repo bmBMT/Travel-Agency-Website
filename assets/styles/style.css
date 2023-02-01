@@ -18,6 +18,12 @@ body {
   color: #112211;
 }
 
+header {
+  position: sticky;
+  z-index: 10;
+  top: 0px;
+}
+
 .container {
   max-width: 1380px;
   margin: auto;
@@ -36,8 +42,15 @@ a {
 }
 
 a:hover {
-  color: #72AD96;
+  color: #72ad96;
   text-decoration: none;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 6.25vw;
+  cursor: default;
+  margin: 0;
 }
 
 h2 {
@@ -79,14 +92,40 @@ hr {
 }
 
 button {
+  display: flex;
+  gap: 4px;
   cursor: pointer;
   border: none;
+  outline: none !important;
+  box-shadow: none !important;
+  background: none;
+}
+
+button:focus,
+button:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .btn {
   cursor: pointer;
+  outline: none;
   border: none;
   transition: all 0.2s ease-in;
+  font-size: 14px;
+}
+
+.bootstrap-select .dropdown-toggle:focus,
+.bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
+  outline: none !important;
+}
+
+.form-control:focus {
+  color: #112211;
+  background-color: #fff;
+  border-color: #79747e;
+  outline: 0;
+  box-shadow: none;
 }
 
 .btn:hover {
@@ -110,4 +149,34 @@ button {
 
 .vertical_line {
   font-weight: 600;
+}
+
+fieldset {
+  color: #112211;
+  border: 1px solid #79747e;
+  border-radius: 4px;
+}
+
+legend {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0 4px;
+  margin: 0;
+  width: max-content;
+  text-align: start;
+  margin: 0 0 0 16px;
+}
+
+input::placeholder {
+  color: #1c1b1f;
+  font-weight: 400;
+}
+
+.group-separator {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.btn-light {
+  background: none !important;
 }

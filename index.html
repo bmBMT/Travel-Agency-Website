@@ -8,103 +8,158 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="stylesheet" href="assets/styles/search_filter_card.css">
     <link rel="stylesheet" href="assets/styles/footer_style.css" />
     <link rel="stylesheet" href="assets/styles/header_style.css" />
-    <link rel="stylesheet" href="assets/styles/style.css" />
+    <link rel="stylesheet" href="assets/styles/indexHead_hero.css">
     <link rel="icon" href="assets/icons/title_icon.svg" />
     <title>Travel Agency Website</title>
   </head>
 
   <body>
-    <header class="header container">
-      <div class="content" id="head_content">
-        <div class="icon_links">
-          <a href="#" class="link">
-            <img src="assets/icons/black_airplane_icon.svg" />Find Flight
-          </a>
-          <a href="#" class="link">
-            <img src="assets/icons/black_bed_icon.svg" />Find Stays
-          </a>
-        </div>
-
-        <a href="assets/index.html" class="logo">
-          <img src="assets/icons/greenLogo_icon.svg" />
-        </a>
-        <div class="buttons unlogined_btns">
-          <button class="btn login">Login</button>
-          <button class="btn sign_up">Sign up</button>
-        </div>
-        <div class="logined_elements" style="display: none">
-          <div class="favourites_link">
-            <a href="#">&#128420; Favourites</a>
-            <span class="vertical_line">&#124;</span>
-          </div>
-          <div class="dropdown">
-            <div class="profile">
-              <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
-                <div class="arrowDown">
-                  <img src="assets/icons/black_arrowDown.svg" />
-                </div>
-              </button>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                <div class="column">
-                  <div class="profile">
-                    <div class="avatar"></div>
-                    <div class="status_text">
-                      <div class="name">Alexandr S.</div>
-                      <div class="profile_status">Online</div>
+    <div class="container" id="indexHero">
+      <div class="indexHead_hero">
+        <header class="header container white_color">
+          <div class="content" id="head_content">
+            <div class="sections">
+              <a href="#" class="link white_color">
+                <img src="assets/icons/white_airplane_icon.svg" />Find Flight
+              </a>
+              <a href="#" class="link white_color">
+                <img src="assets/icons/white_bed_icon.svg" />Find Stays
+              </a>
+            </div>
+    
+            <a href="/index.html" class="logo">
+              <img src="assets/icons/whiteGreen_logo_icon.svg" />
+            </a>
+            <div class="buttons unlogined_btns">
+              <button class="btn login white_color">Login</button>
+              <button class="btn sign_up btn_white">Sign up</button>
+            </div>
+            <div class="logined_elements" style="display: none">
+              <div class="favourites_link">
+                <a href="#" class="link white_color">
+                  <img src="assets/icons/white_heart_icon.svg" />Favourites
+                </a>
+                <span class="vertical_line">&#124;</span>
+              </div>
+              <div class="dropdown">
+                <div class="profile">
+                  <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
+                    <div class="arrowDown">
+                      <img src="assets/icons/black_arrowDown.svg" />
+                    </div>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                    <div class="column">
+                      <div class="profile">
+                        <div class="avatar"></div>
+                        <div class="status_text">
+                          <div class="name">Alexandr S.</div>
+                          <div class="profile_status">Online</div>
+                        </div>
+                      </div>
+                      <hr>
+                      <section class="dropDown_links">
+                        <a href="#" class="dropDown_link">
+                          <div class="dropDown_link_content">
+                            <img src="assets/icons/user_icon.svg">
+                            <div class="dropDown_text">My account</div>
+                          </div>
+                          <img src="assets/icons/black_arrowRight.svg">
+                        </a>
+                        <a href="#" class="dropDown_link">
+                          <div class="dropDown_link_content">
+                            <img src="assets/icons/card_icon.svg">
+                            <div class="dropDown_text">Payments</div>
+                          </div>
+                          <img src="assets/icons/black_arrowRight.svg">
+                        </a>
+                        <a href="#" class="dropDown_link">
+                          <div class="dropDown_link_content">
+                            <img src="assets/icons/settings_icon.svg">
+                            <div class="dropDown_text">Settings</div>
+                          </div>
+                          <img src="assets/icons/black_arrowRight.svg">
+                        </a>
+                      </section>
+                      <hr>
+                      <section class="dropDown_links">
+                        <a href="#" class="dropDown_link">
+                          <div class="dropDown_link_content">
+                            <img src="assets/icons/support_icon.svg">
+                            <div class="dropDown_text">Support</div>
+                          </div>
+                          <img src="assets/icons/black_arrowRight.svg">
+                        </a>
+                        <a href="#" class="dropDown_link">
+                          <div class="dropDown_link_content">
+                            <img src="assets/icons/logout_icon.svg">
+                            <div class="dropDown_text">Logout</div>
+                          </div>
+                        </a>
+                      </section>
                     </div>
                   </div>
-                  <hr>
-                  <section class="dropDown_links">
-                    <a href="#" class="dropDown_link">
-                      <div class="dropDown_link_content">
-                        <img src="/assets/icons/user_icon.svg">
-                        <div class="dropDown_text">My account</div>
-                      </div>
-                      <img src="/assets/icons/black_arrowRight.svg">
-                    </a>
-                    <a href="#" class="dropDown_link">
-                      <div class="dropDown_link_content">
-                        <img src="/assets/icons/card_icon.svg">
-                        <div class="dropDown_text">Payments</div>
-                      </div>
-                      <img src="/assets/icons/black_arrowRight.svg">
-                    </a>
-                    <a href="#" class="dropDown_link">
-                      <div class="dropDown_link_content">
-                        <img src="/assets/icons/settings_icon.svg">
-                        <div class="dropDown_text">Settings</div>
-                      </div>
-                      <img src="/assets/icons/black_arrowRight.svg">
-                    </a>
-                  </section>
-                  <hr>
-                  <section class="dropDown_links">
-                    <a href="#" class="dropDown_link">
-                      <div class="dropDown_link_content">
-                        <img src="/assets/icons/support_icon.svg">
-                        <div class="dropDown_text">Support</div>
-                      </div>
-                      <img src="/assets/icons/black_arrowRight.svg">
-                    </a>
-                    <a href="#" class="dropDown_link">
-                      <div class="dropDown_link_content">
-                        <img src="/assets/icons/logout_icon.svg">
-                        <div class="dropDown_text">Logout</div>
-                      </div>
-                    </a>
-                  </section>
+                  <div class="name">Alexandr S.</div>
                 </div>
               </div>
-              <div class="name">Alexandr S.</div>
+            </div>
+          </div>
+        </header>
+        <div class="hero content">
+          <div class="circle_ellipse"></div>
+          <div class="head_hero_text">Helping Others</div>
+          <h1 class="headHero_h">Live & Travel</h1>
+          <p class="indexHero_about">Special offers to suit your plan</p>
+          <div class="search_filter_card">
+            <div class="search_filter_content">
+              <div class="sections" id="search_sections">
+                <a href="#" class="link black_color">
+                  <img src="assets/icons/black_airplane_icon.svg" />Find Flight
+                </a>
+                <div class="vertical_line black_color" id="search_filter_line"></div>
+                <a href="#" class="link black_color_color">
+                  <img src="assets/icons/black_bed_icon.svg" />Find Stays
+                </a>
+              </div>
+              <div class="flight_input input_filter">
+                <form class="flight_input_filter_stroke">
+                  <fieldset class="from-to">
+                    <legend>From - To</legend>
+                    <div class="form_content">
+                      <div class="input_group">
+                        <select class="selectpicker" data-live-search="true">
+                          <option>Lahore</option>
+                          <option>Karachi</option>
+                        </select>
+                        <span class="group-separator">-</span>
+                        <input type="text" class="field_input to" placeholder="Karachi">
+                      </div>
+                    </div>
+                 </fieldset>
+                </form>
+                <div class="filter_buttons">
+                  <button class="btn addPromoCode_btn">
+                    <img src="assets/icons/black_plus_icon.svg">
+                    Add Promo Code
+                  </button>
+                  <button class="btn showFlight_btn">
+                    <img src="assets/icons/black_paperPlane_icon.svg">
+                    Show Filghts
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </header>
-
-
+    </div>
 
     <footer class="footer">
       <div class="container">
@@ -139,7 +194,7 @@
             <div class="icon_links">
               <a href="index.html">
                 <img
-                  src="assets/icons/whiteLogo_icon.svg"
+                  src="assets/icons/blackWhite_logo_icon.svg"
                   class="footer_logo"
                 />
               </a>

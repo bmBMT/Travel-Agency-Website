@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+	<title>Paper Plane (2)</title>
+	<defs>
+		<image  width="14" height="14" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAAXNSR0IB2cksfwAAAGxQTFRFAAAAAAAABQkFAAAAAAAAAAAAAAAAAAAAAQIBAQMBAAAAAwYDAAAAAwYDAAAAECAQBQsFAgQCAgQCAAAAAAAACBAIBAgEAAAAAAAAAgUCAQIBCBAIAAAAAQMBECAQBAgEAgQCAgQCAwUDBQsFuKRgsAAAACR0Uk5TABBvv99AkO/vv3/v/1BfEGD/kJ/PQEAgoM/fIGCvIIDvgF8wZppYEwAAAHNJREFUeJxNjtkWgjAMRCNNaZHBCohllcX//0dSDqcwL8nNNiGKeiSKI+jU2EydjWcOcGFfkru3gog1l450ZXASaiJ7AD4NA18i35ZCne9l4LgzjDz9OqnN0WYKCz7iIpRdH62C2+1BA0s3VcH0UrP8Q9gBRhAFj05FeTQAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="1" y="1" />
+</svg>
