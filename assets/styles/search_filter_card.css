@@ -1,3 +1,15 @@
+@media (min-width: 992px) {
+  h1 {
+    font-size: 80px !important;
+  }
+  .head_hero_text {
+    font-size: 45px !important;
+  }
+  p {
+    font-size: 20px !important;
+  }
+}
+
 .search_filter_card {
   background: #ffffff;
   box-shadow: 0px 4px 16px rgba(141, 211, 187, 0.15);
@@ -29,6 +41,7 @@
 
 .flight_input_filter_stroke {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
 }
 
@@ -44,7 +57,7 @@
 }
 
 .filter_buttons > button {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .addPromoCode_btn {
@@ -56,17 +69,18 @@
 }
 
 .input_group {
-    display: flex;
+  display: flex;
+  align-items: center;
 }
 
 .form_content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 16px;
-    margin-right: 12px;
-    padding-top: 5px;
-    padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 16px;
+  margin-right: 12px;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .field_input {
@@ -76,13 +90,13 @@
 }
 
 fieldset .dropdown-menu {
-    margin-top: 8px;
-    margin-right: -14px;
-    width: 314px;
-    border-top-left-radius: 0px !important;
-    border-top-right-radius: 0px !important;
-    border-top: none !important;
-    border-left: 1px solid #79747e;
-    border-right: 1px solid #79747e;
-    border-bottom: 1px solid #79747e;
+  margin-top: 8px;
+  margin-right: -14px;
+  width: 314px;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-top: none !important;
+  border-left: 1px solid #79747e;
+  border-right: 1px solid #79747e;
+  border-bottom: 1px solid #79747e;
 }

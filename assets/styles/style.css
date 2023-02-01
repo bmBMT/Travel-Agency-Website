@@ -54,19 +54,19 @@ h1 {
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 2.8125vw;
   font-weight: 600;
   cursor: default;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 1.875vw;
   font-weight: 700;
   cursor: default;
 }
 
 p {
-  font-size: 20px;
+  font-size: 1.5625vw;
   font-weight: 500;
   cursor: default;
 }
@@ -115,11 +115,38 @@ button:active {
   font-size: 14px;
 }
 
+.btn:hover {
+  background-color: #bad6cc;
+}
+
 .bootstrap-select .dropdown-toggle:focus,
 .bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
   outline: none !important;
 }
 
+div.dropdown-menu.show {
+  top: 2px !important;
+  width: inherit;
+}
+
+div.inner.show {
+  overflow-y: unset !important;
+}
+
+.bootstrap-select {
+  width: 130px !important;
+}
+
+.btn-light {
+  color: #1c1b1f !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+}
+
+.no-results {
+  display: none;
+}
+ 
 .form-control:focus {
   color: #112211;
   background-color: #fff;
@@ -128,8 +155,10 @@ button:active {
   box-shadow: none;
 }
 
-.btn:hover {
-  background-color: #bad6cc;
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #8dd3bb;
 }
 
 .link {
@@ -175,6 +204,8 @@ input::placeholder {
 .group-separator {
   margin-left: 8px;
   margin-right: 8px;
+  color: #1c1b1f;
+  font-weight: 500;
 }
 
 .btn-light {

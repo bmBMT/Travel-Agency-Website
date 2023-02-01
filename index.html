@@ -130,19 +130,36 @@
               </div>
               <div class="flight_input input_filter">
                 <form class="flight_input_filter_stroke">
+
                   <fieldset class="from-to">
                     <legend>From - To</legend>
                     <div class="form_content">
                       <div class="input_group">
                         <select class="selectpicker" data-live-search="true">
-                          <option>Lahore</option>
-                          <option>Karachi</option>
+                          <option value="Lahore" selected>Lahore</option>
+                          <option value="Karachi">Karachi</option>
                         </select>
-                        <span class="group-separator">-</span>
-                        <input type="text" class="field_input to" placeholder="Karachi">
+                        <span class="group-separator">&mdash;</span>
+                        <select class="selectpicker" data-live-search="true">
+                          <option value="Lahore">Lahore</option>
+                          <option value="Karachi" selected>Karachi</option>
+                        </select>
                       </div>
                     </div>
                  </fieldset>
+                 
+                 <fieldset class="trip">
+                  <legend>Trip</legend>
+                  <div class="form_content">
+                    <div class="input_group">
+                      <select class="selectpicker">
+                        <option value="Return" selected>Return</option>
+                        <option value="Single">Single</option>
+                      </select>
+                    </div>
+                  </div>
+                 </fieldset>
+
                 </form>
                 <div class="filter_buttons">
                   <button class="btn addPromoCode_btn">
@@ -160,7 +177,6 @@
         </div>
       </div>
     </div>
-
     <footer class="footer">
       <div class="container">
         <div class="footer_content">

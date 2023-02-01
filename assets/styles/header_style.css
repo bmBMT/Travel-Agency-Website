@@ -1,9 +1,13 @@
 @media (max-width: 670px) {
-  header .icon_links {
+  .sections {
     order: 1;
     width: 100%;
     margin-top: 24px;
     justify-content: space-between;
+  }
+
+  .logo > img {
+    width: 90.35px;
   }
 
   header > .content {
