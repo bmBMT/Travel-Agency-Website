@@ -1,9 +1,21 @@
 @media (max-width: 670px) {
-  .sections {
+  .header .sections {
     order: 1;
     width: 100%;
     margin-top: 24px;
     justify-content: space-between;
+  }
+
+  .hero_content {
+    margin-top: 25px;
+  }
+
+  h1 {
+    font-size: 8.25vw;
+  }
+
+  p {
+    font-size: 2.5625vw;
   }
 
   .logo > img {
@@ -47,6 +59,7 @@
   display: flex;
   flex-direction: row;
   gap: 32px;
+  margin-top: -35px;
 }
 
 header > .content {
@@ -195,4 +208,11 @@ header > .content {
 .btn_black {
   color: white;
   background: #112211;
+}
+
+.hero_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

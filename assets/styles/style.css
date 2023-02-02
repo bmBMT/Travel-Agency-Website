@@ -71,8 +71,16 @@ p {
   cursor: default;
 }
 
+span {
+  cursor: default;
+}
+
 hr {
   margin: 0;
+}
+
+div {
+  cursor: default;
 }
 
 .row {
@@ -89,6 +97,12 @@ hr {
 
 .icon_links {
   display: flex;
+}
+
+input:focus,
+input:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 button {
@@ -119,6 +133,7 @@ button:active {
   background-color: #bad6cc;
 }
 
+
 .bootstrap-select .dropdown-toggle:focus,
 .bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
   outline: none !important;
@@ -134,7 +149,7 @@ div.inner.show {
 }
 
 .bootstrap-select {
-  width: 130px !important;
+  width: 120px !important;
 }
 
 .btn-light {
@@ -146,12 +161,30 @@ div.inner.show {
 .no-results {
   display: none;
 }
- 
+
+.form-control {
+  padding: 0;
+  text-align: center;
+  width: 110px;
+  background-color: #fff !important;
+  border: none !important;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  color: #112211;
+}
+
+.form-control::placeholder {
+  font-size: 15px;
+  transition: color 0.3s ease-in;
+}
+
+.form-control:focus::placeholder {
+  color: background;
+}
+
 .form-control:focus {
   color: #112211;
-  background-color: #fff;
-  border-color: #79747e;
-  outline: 0;
   box-shadow: none;
 }
 
@@ -177,7 +210,10 @@ div.inner.show {
 }
 
 .vertical_line {
-  font-weight: 600;
+  font-weight: 500;
+  width: 0px;
+  height: 48px;
+  border: 1px solid #d7e2ee;
 }
 
 fieldset {
@@ -194,6 +230,7 @@ legend {
   width: max-content;
   text-align: start;
   margin: 0 0 0 16px;
+  cursor: default;
 }
 
 input::placeholder {
@@ -202,8 +239,6 @@ input::placeholder {
 }
 
 .group-separator {
-  margin-left: 8px;
-  margin-right: 8px;
   color: #1c1b1f;
   font-weight: 500;
 }

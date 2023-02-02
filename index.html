@@ -4,18 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/addpromocode.js"></script>
+    <script src="assets/js/search_filter_stageLine.js"></script>
     <link rel="stylesheet" href="assets/styles/style.css" />
-    <link rel="stylesheet" href="assets/styles/search_filter_card.css">
+    <link rel="stylesheet" href="assets/styles/search_filter_card.css" />
     <link rel="stylesheet" href="assets/styles/footer_style.css" />
     <link rel="stylesheet" href="assets/styles/header_style.css" />
-    <link rel="stylesheet" href="assets/styles/indexHead_hero.css">
+    <link rel="stylesheet" href="assets/styles/indexHead_hero.css" />
     <link rel="icon" href="assets/icons/title_icon.svg" />
     <title>Travel Agency Website</title>
   </head>
@@ -33,7 +38,7 @@
                 <img src="assets/icons/white_bed_icon.svg" />Find Stays
               </a>
             </div>
-    
+
             <a href="/index.html" class="logo">
               <img src="assets/icons/whiteGreen_logo_icon.svg" />
             </a>
@@ -55,7 +60,7 @@
                       <img src="assets/icons/black_arrowDown.svg" />
                     </div>
                   </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" >
                     <div class="column">
                       <div class="profile">
                         <div class="avatar"></div>
@@ -64,42 +69,42 @@
                           <div class="profile_status">Online</div>
                         </div>
                       </div>
-                      <hr>
+                      <hr />
                       <section class="dropDown_links">
                         <a href="#" class="dropDown_link">
                           <div class="dropDown_link_content">
-                            <img src="assets/icons/user_icon.svg">
+                            <img src="assets/icons/user_icon.svg" />
                             <div class="dropDown_text">My account</div>
                           </div>
-                          <img src="assets/icons/black_arrowRight.svg">
+                          <img src="assets/icons/black_arrowRight.svg" />
                         </a>
                         <a href="#" class="dropDown_link">
                           <div class="dropDown_link_content">
-                            <img src="assets/icons/card_icon.svg">
+                            <img src="assets/icons/card_icon.svg" />
                             <div class="dropDown_text">Payments</div>
                           </div>
-                          <img src="assets/icons/black_arrowRight.svg">
+                          <img src="assets/icons/black_arrowRight.svg" />
                         </a>
                         <a href="#" class="dropDown_link">
                           <div class="dropDown_link_content">
-                            <img src="assets/icons/settings_icon.svg">
+                            <img src="assets/icons/settings_icon.svg" />
                             <div class="dropDown_text">Settings</div>
                           </div>
-                          <img src="assets/icons/black_arrowRight.svg">
+                          <img src="assets/icons/black_arrowRight.svg" />
                         </a>
                       </section>
-                      <hr>
+                      <hr />
                       <section class="dropDown_links">
                         <a href="#" class="dropDown_link">
                           <div class="dropDown_link_content">
-                            <img src="assets/icons/support_icon.svg">
+                            <img src="assets/icons/support_icon.svg" />
                             <div class="dropDown_text">Support</div>
                           </div>
-                          <img src="assets/icons/black_arrowRight.svg">
+                          <img src="assets/icons/black_arrowRight.svg" />
                         </a>
                         <a href="#" class="dropDown_link">
                           <div class="dropDown_link_content">
-                            <img src="assets/icons/logout_icon.svg">
+                            <img src="assets/icons/logout_icon.svg" />
                             <div class="dropDown_text">Logout</div>
                           </div>
                         </a>
@@ -113,63 +118,113 @@
           </div>
         </header>
         <div class="hero content">
-          <div class="circle_ellipse"></div>
-          <div class="head_hero_text">Helping Others</div>
-          <h1 class="headHero_h">Live & Travel</h1>
-          <p class="indexHero_about">Special offers to suit your plan</p>
+          <div class="hero_content">
+            <div class="circle_ellipse"></div>
+            <div class="head_hero_text">Helping Others</div>
+            <h1 class="headHero_h">Live & Travel</h1>
+            <p class="indexHero_about">Special offers to suit your plan</p>
+          </div>
           <div class="search_filter_card">
             <div class="search_filter_content">
+              <div class="horizontal_line" id="sections_line"></div>
               <div class="sections" id="search_sections">
-                <a href="#" class="link black_color">
+                <button class="btn black_color" id="airplane_stage">
                   <img src="assets/icons/black_airplane_icon.svg" />Find Flight
-                </a>
+                </button>
                 <div class="vertical_line black_color" id="search_filter_line"></div>
-                <a href="#" class="link black_color_color">
+                <button class="btn black_color" id="bed_stage">
                   <img src="assets/icons/black_bed_icon.svg" />Find Stays
-                </a>
+                </button>
               </div>
-              <div class="flight_input input_filter">
-                <form class="flight_input_filter_stroke">
-
-                  <fieldset class="from-to">
-                    <legend>From - To</legend>
-                    <div class="form_content">
-                      <div class="input_group">
-                        <select class="selectpicker" data-live-search="true">
-                          <option value="Lahore" selected>Lahore</option>
-                          <option value="Karachi">Karachi</option>
-                        </select>
-                        <span class="group-separator">&mdash;</span>
-                        <select class="selectpicker" data-live-search="true">
-                          <option value="Lahore">Lahore</option>
-                          <option value="Karachi" selected>Karachi</option>
-                        </select>
-                      </div>
+              <div class="search_filter_forms">
+                <div class="flight_input input_filter">
+                  <form class="flight_input_filter_stroke">
+                    <div class="fieldsets">
+                      <fieldset class="from-to">
+                        <legend>From - To</legend>
+                        <div class="form_content">
+                          <div class="input_group">
+                            <select name="from" class="selectpicker" data-live-search="true">
+                              <option value="Lahore" selected>Lahore</option>
+                              <option value="Karachi">Karachi</option>
+                            </select>
+                            <span class="group-separator">&mdash;</span>
+                            <select name="to" class="selectpicker" data-live-search="true">
+                              <option value="Lahore">Lahore</option>
+                              <option value="Karachi" selected>Karachi</option>
+                            </select>
+                          </div>
+                        </div>
+                      </fieldset>
+    
+                      <fieldset class="trip">
+                        <legend>Trip</legend>
+                        <div class="form_content">
+                          <div class="input_group">
+                            <select name="trip" class="selectpicker">
+                              <option value="Return" selected>Return</option>
+                              <option value="Single">Single</option>
+                            </select>
+                          </div>
+                        </div>
+                      </fieldset>
+    
+                      <fieldset class="departReturn">
+                        <legend>Depart - Return</legend>
+                        <div class="form_content">
+                          <input name="depart" type="text" class="form-control datepicker" placeholder="07 Nov 22" onkeypress="return false;" style="caret-color: transparent !important;" required>
+                          <span class="group-separator">&mdash;</span>
+                          <input name="return" type="text" class="form-control datepicker" placeholder="07 Nov 22" onkeypress="return false;" style="caret-color: transparent !important;"  required>
+                        </div>
+                      </fieldset>
+    
+                      <fieldset class="passengerClass w-auto">
+                        <legend>Passenger - Class</legend>
+                        <div class="form_content">
+                          <input name="passengers" type="number" class="passenger_input" placeholder="1" min="1" max="10" pattern="" required>
+                          <span>Pasanger, </span>
+                          <select name="ticketClass" class="selectpicker">
+                            <option value="Economy" selected>Economy</option>
+                            <option value="Premium economy">Premium economy</option>
+                            <option value="Business">Business</option>
+                            <option value="First class">First class</option>
+                          </select>
+                        </div>
+                      
+                      </fieldset>
                     </div>
-                 </fieldset>
-                 
-                 <fieldset class="trip">
-                  <legend>Trip</legend>
-                  <div class="form_content">
-                    <div class="input_group">
-                      <select class="selectpicker">
-                        <option value="Return" selected>Return</option>
-                        <option value="Single">Single</option>
-                      </select>
+  
+                    <div class="filter_buttons">
+                      <button type="button" class="btn addPromoCode_btn">
+                        <img src="assets/icons/black_plus_icon.svg" />
+                        Add Promo Code
+                      </button>
+                      <button type="submit" class="btn showFlight_btn">
+                        <img src="assets/icons/black_paperPlane_icon.svg">
+                        Show Flights
+                      </button>
                     </div>
-                  </div>
-                 </fieldset>
+                  </form>
+                </div>
+                <div class="bed_input input_filter">
+                  <form class="flight_input_filter_stroke">
+                    <div class="fieldsets">
 
-                </form>
-                <div class="filter_buttons">
-                  <button class="btn addPromoCode_btn">
-                    <img src="assets/icons/black_plus_icon.svg">
-                    Add Promo Code
-                  </button>
-                  <button class="btn showFlight_btn">
-                    <img src="assets/icons/black_paperPlane_icon.svg">
-                    Show Filghts
-                  </button>
+                      
+
+                    </div>
+  
+                    <div class="filter_buttons">
+                      <button type="button" class="btn addPromoCode_btn" id="addPromoCode_btn">
+                        <img src="assets/icons/black_plus_icon.svg" />
+                        Add Promo Code
+                      </button>
+                      <button type="submit" class="btn showBed_btn">
+                        <img src="assets/icons/black_building_icon.svg">
+                        Show Places
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -177,6 +232,9 @@
         </div>
       </div>
     </div>
+
+
+
     <footer class="footer">
       <div class="container">
         <div class="footer_content">

@@ -11,15 +11,17 @@
 }
 
 .search_filter_card {
+  color: #1c1b1f;
   background: #ffffff;
   box-shadow: 0px 4px 16px rgba(141, 211, 187, 0.15);
   border-radius: 16px;
+  margin: 0 23px;
 }
 
 .search_filter_content {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 35px;
   padding: 16px 32px 32px 32px;
 }
 
@@ -27,22 +29,16 @@
   gap: 8px;
 }
 
-#search_filter_line {
-  width: 0px;
-  height: 48px;
-  border: 1px solid #d7e2ee;
-}
-
 .input_filter {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 32px;
 }
 
 .flight_input_filter_stroke {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .hotel_input_fliter_stroke {
@@ -54,6 +50,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 24px;
+  height: 52px;
 }
 
 .filter_buttons > button {
@@ -64,7 +61,8 @@
   padding: 15.5px 16px;
 }
 
-.showFlight_btn {
+.showFlight_btn,
+.showBed_btn {
   background: #8dd3bb;
 }
 
@@ -77,8 +75,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 16px;
-  margin-right: 12px;
+  margin-left: 6px;
+  margin-right: 6px;
   padding-top: 5px;
   padding-bottom: 10px;
 }
@@ -99,4 +97,100 @@ fieldset .dropdown-menu {
   border-left: 1px solid #79747e;
   border-right: 1px solid #79747e;
   border-bottom: 1px solid #79747e;
+}
+
+.fieldsets {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.passenger_input,
+.passenger_input:active {
+  width: 40px;
+  border: none;
+  outline: none;
+  text-align: center;
+  color: #1c1b1f;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.w-auto .bootstrap-select {
+  width: 200px !important;
+}
+
+.departReturn {
+  display: flex;
+  align-items: center;
+}
+
+.ui-corner-all {
+  border-radius: 4px;
+}
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+  text-align: center;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+  background: #8dd3bb;
+  border: 1px solid #8dd3bb;
+}
+
+.ui-widget-header {
+  font-weight: 500;
+}
+
+.ui-datepicker th {
+  font-weight: 500;
+}
+
+.addPromoCode_input {
+  border: 1px solid #79747e;
+  border-radius: 4px;
+  color: #1c1b1f;
+  padding: 0 8px;
+  order: -1;
+}
+
+#airplane_stage,
+#bed_stage {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+#airplane_stage:hover,
+#bed_stage:hover {
+  background: none;
+  color: #72ad96;
+}
+
+.horizontal_line {
+  position: relative;
+  width: 120px;
+  left: -6px;
+  top: 55px;
+
+  border: 2px solid #8DD3BB;
+}
+
+.sections > .btn {
+  padding: 0;
+}
+
+.search_filter_forms {
+  display: flex;
+}
+
+.bed_input {
+  display: none;
 }
