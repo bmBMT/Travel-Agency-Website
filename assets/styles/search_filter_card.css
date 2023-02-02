@@ -181,6 +181,8 @@ a.ui-button:active,
   top: 55px;
 
   border: 2px solid #8DD3BB;
+
+  transition: 0.5s;
 }
 
 .sections > .btn {
