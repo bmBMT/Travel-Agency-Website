@@ -13,14 +13,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="assets/js/datepicker.js"></script>
-    <script src="assets/js/addpromocode.js"></script>
-    <script src="assets/js/search_filter_stageLine.js"></script>
-    <link rel="stylesheet" href="assets/styles/style.css" />
-    <link rel="stylesheet" href="assets/styles/search_filter_card.css" />
-    <link rel="stylesheet" href="assets/styles/footer_style.css" />
-    <link rel="stylesheet" href="assets/styles/header_style.css" />
-    <link rel="stylesheet" href="assets/styles/indexHead_hero.css" />
+    <script src="js/search_filter_card.js"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/search_filter_card.css" />
+    <link rel="stylesheet" href="styles/footer_style.css" />
+    <link rel="stylesheet" href="styles/header_style.css" />
+    <link rel="stylesheet" href="styles/indexHead_hero.css" />
     <link rel="icon" href="assets/icons/title_icon.svg" />
     <title>Travel Agency Website</title>
   </head>
@@ -138,18 +136,19 @@
               </div>
               <div class="search_filter_forms">
                 <div class="flight_input input_filter">
-                  <form class="flight_input_filter_stroke">
+                  <form class="input_filter_stroke">
                     <div class="fieldsets">
                       <fieldset class="from-to">
                         <legend>From - To</legend>
                         <div class="form_content">
                           <div class="input_group">
-                            <select name="from" class="selectpicker" data-live-search="true">
+                            <img src="assets/icons/swap-horizontal_icon.svg" class="form_icon_left">
+                            <select name="from_selector" class="selectpicker" data-dropup-auto="false" data-live-search="true">
                               <option value="Lahore" selected>Lahore</option>
                               <option value="Karachi">Karachi</option>
                             </select>
                             <span class="group-separator">&mdash;</span>
-                            <select name="to" class="selectpicker" data-live-search="true">
+                            <select name="to_selector" class="selectpicker" data-dropup-auto="false" data-live-search="true">
                               <option value="Lahore">Lahore</option>
                               <option value="Karachi" selected>Karachi</option>
                             </select>
@@ -161,7 +160,7 @@
                         <legend>Trip</legend>
                         <div class="form_content">
                           <div class="input_group">
-                            <select name="trip" class="selectpicker">
+                            <select name="trip_selector" data-dropup-auto="false" class="selectpicker trip_select">
                               <option value="Return" selected>Return</option>
                               <option value="Single">Single</option>
                             </select>
@@ -170,20 +169,20 @@
                       </fieldset>
     
                       <fieldset class="departReturn">
-                        <legend>Depart - Return</legend>
+                        <legend id="departReturn_legend">Depart - Return</legend>
                         <div class="form_content">
-                          <input name="depart" type="text" class="form-control datepicker" placeholder="07 Nov 22" onkeypress="return false;" style="caret-color: transparent !important;" required>
-                          <span class="group-separator">&mdash;</span>
-                          <input name="return" type="text" class="form-control datepicker" placeholder="07 Nov 22" onkeypress="return false;" style="caret-color: transparent !important;"  required>
+                          <input name="depart_input" autocomplete="off" type="text" class="form-control flight_datepicker" id="depart_datepicker" placeholder="07 Nov 22" onkeypress="return false;" style="caret-color: transparent !important;" required>
+                          <span class="group-separator" id="departReturn_separator">&mdash;</span>
+                          <input name="return_input" autocomplete="off" type="text" class="form-control flight_datepicker" id="return_datepicker" placeholder="07 Nov 22" onkeypress="return false;" style="caret-color: transparent !important;"  required>
                         </div>
                       </fieldset>
     
                       <fieldset class="passengerClass w-auto">
                         <legend>Passenger - Class</legend>
                         <div class="form_content">
-                          <input name="passengers" type="number" class="passenger_input" placeholder="1" min="1" max="10" pattern="" required>
+                          <input name="passengers_input" type="number" class="passenger_input" placeholder="1" min="1" max="10" pattern="" required>
                           <span>Pasanger, </span>
-                          <select name="ticketClass" class="selectpicker">
+                          <select name="ticketClass_selector" class="selectpicker" data-dropup-auto="false">
                             <option value="Economy" selected>Economy</option>
                             <option value="Premium economy">Premium economy</option>
                             <option value="Business">Business</option>
@@ -207,11 +206,63 @@
                   </form>
                 </div>
                 <div class="bed_input input_filter">
-                  <form class="flight_input_filter_stroke">
+                  <form class="input_filter_stroke">
                     <div class="fieldsets">
+                      <fieldset class="enterDestination">
+                        <legend>Enter Destination</legend>
+                        <div class="form_content">
+                          <div class="input_group">
+                            <img src="assets/icons/leading_icon.svg" class="form_icon_left">
+                            <select name="enterDestination_selector" class="selectpicker" id="mySelect" data-live-search="true" data-size="7" data-display="static" data-dropup-auto="false" required>
+                              <option value="" selected disabled>Select option</option>
+                              <optgroup label="Turkey">
+                                <option value="Istanbul, Turkey">Istanbul</option>
+                                <option value="Manavgat, Turkey">Manavgat </option>
+                                <option value="Kemer, Turkey">Kemer</option>
+                              </optgroup>
+                              <optgroup label="Russia">
+                                <option value="Moscow, Russia">Moscow</option>
+                                <option value="St. Petersburg, Russia">St. Petersburg</option>
+                                <option value="Anapa, Russia">Anapa</option>
+                              </optgroup>
+                              <optgroup label="Canada">
+                                <option value="Toronto, Canada">Toronto</option>
+                                <option value="Kelowna, Canada">Kelowna</option>
+                                <option value="Mont Tremblant, Canada">Mont Tremblant</option>
+                              </optgroup>
+                            </select>
+                          </div>
+                        </div>
+                      </fieldset>
 
-                      
+                      <fieldset class="checkIn">
+                        <legend id="checkIn_legend">Check In</legend>
+                        <div class="form_content">
+                          <div class="input_group">
+                            <input name="checkIn_input" autocomplete="off" type="text" class="form-control bed_datepicker" id="checkIn_datepicker" placeholder="Fri 12/2" onkeypress="return false;" style="caret-color: transparent !important;" required>
+                            <img src="assets/icons/calendar_icon.svg" class="form_icon_right">
+                          </div>
+                        </div>
+                      </fieldset>
 
+                      <fieldset class="checkOut">
+                        <legend>Check Out</legend>
+                        <div class="form_content">
+                          <div class="input_group">
+                            <input name="checkOut_input" autocomplete="off" type="text" class="form-control bed_datepicker" id="checkOut_datepicker" placeholder="Fri 12/2" onkeypress="return false;" style="caret-color: transparent !important;" required>
+                            <img src="assets/icons/calendar_icon.svg" class="form_icon_right">
+                          </div>
+                        </div>
+                      </fieldset>
+
+                      <fieldset class="enterDestination">
+                        <legend>Rooms & Guests</legend>
+                        <div class="form_content">
+                          <div class="input_group">
+                            
+                          </div>
+                        </div>
+                      </fieldset>
                     </div>
   
                     <div class="filter_buttons">

@@ -17,7 +17,7 @@ body {
 }
 
 .indexHead_hero {
-  background-image: url(../imgs/mainHead_img.svg);
+  background-image: url(../assets/imgs/mainHead_img.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   text-align: center;
