@@ -1,6 +1,15 @@
 .review_card > img {
-  border-radius: 8px;
-  width: 100%;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.reviews_cards {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .review_card {
@@ -10,10 +19,10 @@
   padding: 24px;
   gap: 40px;
   background: #ffffff;
-  box-shadow: 2px 4px 16px rgba(17, 34, 17, 0.1);
+  box-shadow: 2px 4px 16px rgba(17, 34, 17, 0.1),
+    16px 20px rgba(141, 211, 187, 0.4);
   border-radius: 20px;
   max-width: 425px;
-  z-index: 1;
 }
 
 .reviewCard_content {
@@ -84,29 +93,29 @@
 }
 
 .reviewCard_user_about {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    font-size: 14px;
-    text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  text-align: start;
 }
 
 .reviewCard_user_aboutMore {
-    font-size: 12px;
-    font-weight: 500;
-    opacity: 0.5;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.5;
 }
 
 .reviewCard_user_google a {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    gap: 8px;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 8px;
+  align-items: center;
 }
 
 .reviewCard_user_googleText {
-    font-size: 12px;
-    font-weight: 700;
-    opacity: 0.5;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.5;
 }
