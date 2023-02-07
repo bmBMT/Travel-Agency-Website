@@ -1,5 +1,6 @@
 .review_card > img {
   border-radius: 8px;
+  width: 100%;
 }
 
 .review_card {
