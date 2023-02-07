@@ -15,7 +15,7 @@
   background: #ffffff;
   box-shadow: 0px 4px 16px rgba(141, 211, 187, 0.15);
   border-radius: 16px;
-  margin: 0 23px;
+  margin: 0 21px;
 }
 
 .search_filter_content {
@@ -219,6 +219,6 @@ a.ui-button:active,
 
 .bed_datepicker {
   text-align: start;
-  width: 105px;
+  width: 106.5px;
   margin-left: 12px;
 }

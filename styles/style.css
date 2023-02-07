@@ -1,5 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
+@media (max-width: 670px) {
+  .container_in {
+    margin: 5.856515373352855vw 0 0 0 !important;
+  }
+
+  .cards_about_description {
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  ::-webkit-scrollbar:vertical {
+    width:9px;
+  }
+  
+  ::-webkit-scrollbar:horizontal {
+    height: 9px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: white;
+  }
+}
+
+
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -16,12 +52,14 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   color: #112211;
+  overflow-x: hidden;
 }
 
 header {
   position: sticky;
   z-index: 10;
   top: 0px;
+  bottom: 0px;
 }
 
 .container {
@@ -30,7 +68,11 @@ header {
   padding: 0 5.78125vw;
 }
 
-.header.container {
+.container_in {
+  margin: 5.856515373352855vw 4.392386530014641vw 0 4.392386530014641vw;
+}
+
+header.container {
   padding: 0;
 }
 
@@ -139,17 +181,11 @@ button:active {
   outline: none !important;
 }
 
-div.dropdown-menu.show {
+fieldset div.dropdown-menu.show {
   top: 2px !important;
   width: inherit;
   overflow-y: scroll !important;
-  transform: translate3d(0px, 36px, 0px) !important;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-div.dropdown-menu.show::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+  transform: translate3d(0px, 37px, 0px) !important;
 }
 
 div.inner.show {
@@ -256,3 +292,4 @@ input::placeholder {
 .btn-light {
   background: none !important;
 }
+
