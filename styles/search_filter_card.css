@@ -62,7 +62,8 @@
 }
 
 .showFlight_btn,
-.showBed_btn {
+.showBed_btn,
+.show_btn {
   background: #8dd3bb;
 }
 

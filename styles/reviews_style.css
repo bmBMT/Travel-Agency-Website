@@ -1,0 +1,111 @@
+.review_card > img {
+  border-radius: 8px;
+}
+
+.review_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  gap: 40px;
+  background: #ffffff;
+  box-shadow: 2px 4px 16px rgba(17, 34, 17, 0.1);
+  border-radius: 20px;
+  width: 425px;
+  z-index: 1;
+}
+
+.reviewCard_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+}
+
+.reviewCard_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  align-self: stretch;
+  order: 0;
+  text-align: start;
+}
+
+.reviewCard_estimate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  align-self: stretch;
+  order: 1;
+}
+
+.reviewCard_title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.reviewCard_about {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.reviewCard_aboutText {
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.reviewCard_aboutMore {
+  font-weight: 700;
+}
+
+.reviewCard_stars {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: start;
+  order: 0;
+}
+
+.reviewCard_user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+  order: 1;
+}
+
+.reviewCard_user_about {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    text-align: start;
+}
+
+.reviewCard_user_aboutMore {
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.5;
+}
+
+.reviewCard_user_google a {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 8px;
+    align-items: center;
+}
+
+.reviewCard_user_googleText {
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.5;
+}

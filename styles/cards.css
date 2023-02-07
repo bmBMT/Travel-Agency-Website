@@ -1,3 +1,9 @@
+@media (max-width: 420px) {
+  .cards_btn {
+    font-size: 10px !important;
+  }
+}
+
 .cards_content {
   display: flex;
   flex-direction: column;
@@ -31,6 +37,7 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  opacity: 0.7;
 }
 
 .sm-card p {
@@ -63,6 +70,7 @@
   font-size: 16px;
   font-weight: 400;
   color: inherit;
+  opacity: 0.75;
 }
 
 .cards_btn {
@@ -73,4 +81,62 @@
 
 .card_link:hover {
   color: inherit;
+}
+
+.stage_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 559px;
+  border-radius: 20px;
+  filter: drop-shadow(0px 4px 16px rgba(17, 34, 17, 0.05));
+}
+
+.flights_stage {
+  background-image: url("../assets/imgs/flightStage_bg.svg");
+  background-size: cover;
+  background-clip: content-box;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hotels_stage {
+  background-image: url("../assets/imgs/hotelsStage_bg.svg");
+  background-size: cover;
+  background-clip: content-box;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.stageCard_text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.show_btn {
+    width: max-content;
+    padding: 15.5px 36px;
+    border-radius: 4px;
+}
+
+.stageCard_content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stageCard_title {
+    font-size: 40px;
+    font-weight: 700px;
+}
+
+.stageCard_subscribtion {
+    font-size: 16px;
+    font-weight: 400;
 }
