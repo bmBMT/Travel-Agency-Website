@@ -16,6 +16,7 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="js/search_filter_card.js"></script>
     <script src="js/indexHeaderChange.js"></script>
+    <script src="js/readMore.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/cards.css">
     <link rel="stylesheet" href="styles/search_filter_card.css" />
@@ -30,32 +31,32 @@
   <body id="body">
     <div class="container" id="indexHero">
       <div class="indexHead_hero" id="indexHero_content">
-        <header class="container header" id="header">
+        <header class="container header" id="header" style="color: white;">
           <div class="content" id="head_content">
             <div class="sections">
-              <a href="#" class="link white_color">
-                <img src="assets/icons/white_airplane_icon.svg" />Find Flight
+              <a href="#" class="link">
+                <img src="assets/icons/white_airplane_icon.svg" id="head_airPlane_icon"/>Find Flight
               </a>
-              <a href="#" class="link white_color">
-                <img src="assets/icons/white_bed_icon.svg" />Find Stays
+              <a href="#" class="link">
+                <img src="assets/icons/white_bed_icon.svg" id="head_bed_icon"/>Find Stays
               </a>
             </div>
 
             <a href="/index.html" class="logo">
-              <img src="assets/icons/whiteGreen_logo_icon.svg" />
+              <img src="assets/icons/whiteGreen_logo_icon.svg" id="logo_icon"/>
             </a>
             <div class="buttons unlogined_btns">
               <a href="#">
-                <button class="btn login white_color">Login</button>
+                <button class="btn login" id="login_btn" style="color: white;">Login</button>
               </a>
               <a href="#">
-                <button class="btn sign_up btn_white">Sign up</button>
+                <button class="btn sign_up btn_white" id="sign_up_btn">Sign up</button>
               </a>
             </div>
             <div class="logined_elements" style="display: none">
               <div class="favourites_link">
-                <a href="#" class="link white_color">
-                  <box-icon name='heart' type='solid' color='#ffffff' ></box-icon>Favourites
+                <a href="#" class="link">
+                  <img src="assets/icons/white_heart_icon.svg" id="heart_icon"> Favourites
                 </a>
                 <span class="vertical_line"></span>
               </div>
@@ -435,11 +436,6 @@
                 <div class="cards_about_title">Reviews</div>
                 <div class="cards_about_description">What people says about Golobe facilities</div>
               </div>
-              <a href="#">
-                <button type="button" class="btn cards_btn black_color">
-                  See All
-                </button>
-              </a>
             </div>
             <div class="reviews_cards black_color">
               <div class="review_card">
@@ -447,9 +443,9 @@
                   <div class="reviewCard_text">
                     <div class="reviewCard_title">“A real sense of community, nurtured”</div>
                     <div class="reviewCard_about">
-                      <div class="reviewCard_aboutText">Really appreciate the help and support from the staff during these tough times. Shoutout to Katie for...
+                      <div class="reviewCard_aboutText">Really appreciate the help and support from spanthe staff during these tough times. Shoutout to Katie for<span class="dots">...</span><span class="more">helping me always, even when I was out of the country. And always available when needed</span>
                       </div>
-                      <div class="reviewCard_aboutMore" style="text-align: end; float: right;">View more</div>
+                      <button class="reviewCard_aboutMore readBtn" onclick="readMore(0)">View more</button>
                     </div>
                   </div>
                   <div class="reviewCard_estimate">
@@ -481,9 +477,9 @@
                   <div class="reviewCard_text">
                     <div class="reviewCard_title">“The facilities are superb. Clean, slick, bright.”</div>
                     <div class="reviewCard_about">
-                      <div class="reviewCard_aboutText">“A real sense of community, nurtured”Really appreciate the help and support from the staff...
+                      <div class="reviewCard_aboutText">“A real sense of community, nurtured”Really appreciate the help and support from the staff<span class="dots">...</span><span class="more">during these tough times. Shoutout to Katie for helping me always, even when I was out of the country. And always available when needed.View moreOlgaWeave Studios – Kai TakGoogle</span>
                       </div>
-                      <div class="reviewCard_aboutMore" style="text-align: end; float: right;">View more</div>
+                      <div class="reviewCard_aboutMore readBtn" onclick="readMore(1)">View more</div>
                     </div>
                   </div>
                   <div class="reviewCard_estimate">

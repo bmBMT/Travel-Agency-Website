@@ -1,8 +1,4 @@
 @media (max-width: 670px) {
-  header {
-    top: 0px;
-  }
-
   .header .sections {
     order: 1;
     width: 100%;
@@ -27,8 +23,17 @@
   }
 
   header > .content {
+    position: fixed;
+    background: white;
+    box-shadow: -100px 0px white, 100px 0 white;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 20px 15px 15px 15px !important;
+  }
+
+  #head_content {
+    top: 0;
+    width: 90%;
   }
 
   .sign_up {
@@ -78,7 +83,7 @@ header > .content {
 
 .login {
   background: none;
-  color: #112211;
+  color: inherit;
   border: none;
 }
 

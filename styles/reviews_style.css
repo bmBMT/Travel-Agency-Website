@@ -6,7 +6,7 @@
 .reviews_cards {
     display: flex;
     gap: 50px;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     align-content: center;
@@ -118,4 +118,18 @@
   font-size: 12px;
   font-weight: 700;
   opacity: 0.5;
+}
+
+.more {
+  display: none;
+}
+
+.readBtn {
+  display: flex;
+  justify-content: end;
+  transition: color 0.2 ease-in;
+}
+
+.readBtn:hover {
+  color: #72ad96;
 }
