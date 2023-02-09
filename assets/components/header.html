@@ -13,49 +13,43 @@
   </head>
 
   <body>
-    <header class="header container black_color">
+    <header class="container header" id="header" style="color: #112211;">
       <div class="content" id="head_content">
         <div class="sections">
-          <a href="#" class="link black_color">
-            <img src="../icons/black_airplane_icon.svg" />Find Flight
+          <a href="#" class="link">
+            <img src="assets/icons/black_airplane_icon.svg" id="head_airPlane_icon"/>Find Flight
           </a>
-          <a href="#" class="link black_color">
-            <img src="../icons/black_bed_icon.svg" />Find Stays
+          <a href="#" class="link">
+            <img src="assets/icons/black_bed_icon.svg" id="head_bed_icon"/>Find Stays
           </a>
         </div>
 
         <a href="/index.html" class="logo">
-          <img src="../icons/blackGreen_logo_icon.svg" />
+          <img src="assets/icons/blackGreen_logo_icon.svg" id="logo_icon"/>
         </a>
         <div class="buttons unlogined_btns">
-          <button class="btn login black_color">Login</button>
-          <button class="btn sign_up btn_black">Sign up</button>
+          <a href="#">
+            <button class="btn login" id="login_btn" style="color: #112211;">Login</button>
+          </a>
+          <a href="#">
+            <button class="btn sign_up btn_black" id="sign_up_btn">Sign up</button>
+          </a>
         </div>
         <div class="logined_elements" style="display: none">
           <div class="favourites_link">
-            <a href="#" class="link black_color">
-              <img src="../icons/black_heart_icon.svg" />Favourites
+            <a href="#" class="link">
+              <img src="assets/icons/black_heart_icon.svg" id="heart_icon"> Favourites
             </a>
-            <span class="vertical_line">&#124;</span>
+            <span class="vertical_line"></span>
           </div>
           <div class="dropdown">
             <div class="profile">
-              <button
-                class="avatar"
-                type="button"
-                id="dropdownMenu2"
-                data-toggle="dropdown"
-                aria-haspopup="false"
-                aria-expanded="true"
-              >
+              <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
                 <div class="arrowDown">
-                  <img src="../icons/black_arrowDown.svg" />
+                  <box-icon name='chevron-down'></box-icon>
                 </div>
               </button>
-              <div
-                class="dropdown-menu dropdown-menu-right"
-                aria-labelledby="dropdownMenu2"
-              >
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" >
                 <div class="column">
                   <div class="profile">
                     <div class="avatar"></div>
@@ -68,38 +62,38 @@
                   <section class="dropDown_links">
                     <a href="#" class="dropDown_link">
                       <div class="dropDown_link_content">
-                        <img src="../icons/user_icon.svg" />
+                        <box-icon type='solid' name='user'></box-icon>
                         <div class="dropDown_text">My account</div>
                       </div>
-                      <img src="../icons/black_arrowRight.svg" />
+                      <img src="assets/icons/black_arrowRight.svg" />
                     </a>
                     <a href="#" class="dropDown_link">
                       <div class="dropDown_link_content">
-                        <img src="../icons/card_icon.svg" />
+                        <img src="assets/icons/card_icon.svg" />
                         <div class="dropDown_text">Payments</div>
                       </div>
-                      <img src="../icons/black_arrowRight.svg" />
+                      <img src="assets/icons/black_arrowRight.svg" />
                     </a>
                     <a href="#" class="dropDown_link">
                       <div class="dropDown_link_content">
-                        <img src="../icons/settings_icon.svg" />
+                        <img src="assets/icons/settings_icon.svg" />
                         <div class="dropDown_text">Settings</div>
                       </div>
-                      <img src="../icons/black_arrowRight.svg" />
+                      <img src="assets/icons/black_arrowRight.svg" />
                     </a>
                   </section>
                   <hr />
                   <section class="dropDown_links">
                     <a href="#" class="dropDown_link">
                       <div class="dropDown_link_content">
-                        <img src="../icons/support_icon.svg" />
+                        <img src="assets/icons/support_icon.svg" />
                         <div class="dropDown_text">Support</div>
                       </div>
-                      <img src="../icons/black_arrowRight.svg" />
+                      <img src="assets/icons/black_arrowRight.svg" />
                     </a>
                     <a href="#" class="dropDown_link">
                       <div class="dropDown_link_content">
-                        <img src="../icons/logout_icon.svg" />
+                        <img src="assets/icons/logout_icon.svg" />
                         <div class="dropDown_text">Logout</div>
                       </div>
                     </a>

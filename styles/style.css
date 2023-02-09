@@ -54,12 +54,24 @@ body {
   color: #112211;
 }
 
+body::before {
+  content: '';
+  background: #ffffff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
 header {
   position: sticky;
   z-index: 100;
   top: -1px;
   bottom: 0px;
   color: #112211;
+  background: #ffffff;
 }
 
 .container {
@@ -186,6 +198,7 @@ fieldset div.dropdown-menu.show {
   width: inherit;
   overflow-y: scroll !important;
   transform: translate3d(0px, 37px, 0px) !important;
+  z-index: 10;
 }
 
 div.inner.show {
