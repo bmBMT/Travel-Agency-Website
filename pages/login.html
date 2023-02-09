@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../js/sign.js"></script>
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/sign_style.css" />
+    <link rel="icon" href="../assets/icons/title_icon.svg" />
+    <title>Travel Agency Website — Login</title>
+  </head>
+
+  <body>
+    <div class="container">
+        <div class="sign_contain">
+          <div class="sign_elements ">
+            <div class="logo">
+              <a href="../index.html">
+                <img src="../assets/icons/blackGreen_logo_icon.svg">
+              </a>
+            </div>
+            <div class="sign_content">
+              <div class="sign_text">
+                <div class="signText_title">Login</div>
+                <div class="signText_secondary">Login to access your Golobe account</div>
+              </div>
+              <div class="sign_mainElements">
+                <div class="sign_inputs">
+                  <fieldset class="emailFieldset">
+                    <legend>Email</legend>
+                    <input type="email" id="loginEmail">
+                  </fieldset>
+                  
+                  <fieldset class="passwordFieldset">
+                    <legend>Password</legend>
+                    <input type="password" id="loginPassword1">
+                    <span id="eye" onclick="hidePassword(1)">
+                      <i class="fa fa-eye-slash" id="hide1"></i>
+                      <i class="fa fa-eye" id="view1" style="display: none;"></i>
+                    </span>
+                  </fieldset>
+                  <div class="sign_secondaryInputs">
+                    <div class="remeber_me">
+                      <input type="checkbox">
+                      <div>Remember me</div>
+                    </div>
+                    <a href="#" class="link">Forgot Password</a>
+                  </div>
+                </div>
+                <div class="sign_submit">
+                  <button class="sign_submit_btn">Login</button>
+                  <div class="sign_submitSecondary">
+                    <div>Don’t have an account?</div><div>&nbsp;</div><a href="#" class="link">Sign Up</a>
+                  </div>
+                </div>
+                <div class="anotherSign_text">
+                  <div class="horizontal_line"></div>
+                  <div class="signText_secondary">Or login with</div>
+                  <div class="horizontal_line"></div>
+                </div>
+                <div class="anotherSign_btns">
+                  <button class="btn sign_facebook_btn">
+                    <img src="../assets/icons/facebook_icon.svg">
+                  </button>
+                  <button class="btn sign_google_btn">
+                    <img src="../assets/icons/social media/google_icon.svg">
+                  </button>
+                  <button class="btn sign_apple_btn">
+                    <img src="../assets/icons/social media/blackApple_icon.svg">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="img_carousel">
+
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
