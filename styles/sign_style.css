@@ -221,3 +221,9 @@ fieldset input {
     width: 32px;
     background-color: #8DD3BB !important;
 }
+
+.sign_form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
