@@ -1,0 +1,223 @@
+@media (max-width: 1100px) {
+  #carouselExampleIndicators {
+    display: none;
+  }
+
+  .sign_elements {
+    width: 100% !important;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+button {
+  border: 1px solid #bad6cc !important;
+  border-radius: 4px !important;
+  width: 100%;
+  display: flex;
+  padding: 16px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign_submit_btn {
+  color: 112211;
+  font-size: 14px;
+  font-weight: 600;
+  background: #8dd3bb;
+  color: #112211;
+  transition: all 0.2s ease-in;
+  border: none !important;
+}
+
+.sign_submit_btn:hover {
+  background: #bad6cc;
+}
+
+.sign_contain {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 104px;
+  flex-wrap: nowrap;
+  padding: 34px 0;
+}
+
+.sign_elements {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 50%;
+  gap: 64px;
+}
+
+.sign_content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+}
+
+.sign_text {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 16px;
+}
+
+.sign_mainElements {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  width: 100%;
+}
+
+.sign_inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.sign_secondaryInputs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.remeber_me {
+  display: flex;
+  gap: 8px;
+  color: #112211;
+  align-items: center;
+}
+
+.sign_submit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.sign_submitSecondary {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.anotherSign_text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 16px;
+  width: 100%;
+}
+
+.anotherSign_btns {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 16px;
+}
+
+.signText_title {
+  color: #000000;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.signText_secondary {
+  color: #112211;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.sign_text > .signText_secondary {
+  opacity: 0.75;
+}
+
+.anotherSign_text > .signText_secondary {
+  opacity: 0.5;
+}
+
+.link {
+  color: #ff8682;
+}
+
+fieldset {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.horizontal_line {
+  font-weight: 500;
+  height: 0;
+  width: 100%;
+  border: 1px solid #112211;
+  opacity: 0.1;
+}
+
+input[type="checkbox"] {
+  width: 5mm;
+  height: 5mm;
+}
+
+fieldset input {
+  width: 99%;
+  height: 28px;
+  font-weight: 400;
+  font-size: 16px;
+  padding-left: 8px;
+  border: none;
+  cursor: auto;
+  color: #112211;
+}
+
+#eye {
+    position: relative;
+    right: 16px;
+    cursor: pointer;
+}
+
+.carousel-item,
+.d-block {
+    border-radius: 30px;
+}
+
+.login .d-block {
+    max-width: 560px;
+    width: 97% !important;
+}
+
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #FFFFFF !important;
+    transition: width 0.7s;
+}
+
+.carousel-indicators .active {
+    width: 32px;
+    background-color: #8DD3BB !important;
+}
