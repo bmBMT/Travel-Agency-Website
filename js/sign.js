@@ -12,5 +12,4 @@ function hidePassword(i) {
         hide.style.display = null;
         view.style.display = "none";
     }
-
 }
