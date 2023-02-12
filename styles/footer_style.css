@@ -115,16 +115,6 @@
   outline: none;
 }
 
-.footer_getEmail::placeholder {
-  color: #1c1b1f;
-  font-weight: 400;
-  transition: color 0.3s ease-in;
-}
-
-.footer_getEmail:focus::placeholder {
-  color: background;
-}
-
 .footer_getEmail_btn {
   padding: 1.40625vw 1.25vw;
   background: #112211;

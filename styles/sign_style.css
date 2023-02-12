@@ -30,9 +30,6 @@ button {
 }
 
 .sign_submit_btn {
-  color: 112211;
-  font-size: 14px;
-  font-weight: 600;
   background: #8dd3bb;
   color: #112211;
   transition: all 0.2s ease-in;
@@ -45,18 +42,28 @@ button {
 
 .sign_contain {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 104px;
   flex-wrap: nowrap;
   padding: 34px 0;
 }
 
+.login .sign_elements,
+.sign_up .carouselExampleIndicators {
+    order: 0;
+}
+
+.sign_up .sign_elements,
+.login .carouselExampleIndicators {
+    order: 1;
+}
+
 .sign_elements {
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 50%;
+  width: 100%;
   gap: 64px;
 }
 
@@ -84,9 +91,14 @@ button {
 
 .sign_inputs {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
   gap: 24px;
+  width: 100%;
+}
+
+form > .sign_inputs {
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .sign_secondaryInputs {
@@ -95,6 +107,12 @@ button {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  text-align: center;
+}
+
+.sign_up .sign_secondaryInputs {
+    justify-content: flex-start;
+    
 }
 
 .remeber_me {
@@ -149,6 +167,7 @@ button {
   font-size: 16px;
   font-weight: 400;
   white-space: nowrap;
+  user-select: none;
 }
 
 .sign_text > .signText_secondary {
@@ -191,6 +210,7 @@ fieldset input {
   border: none;
   cursor: auto;
   color: #112211;
+  margin-left: 6px;
 }
 
 #eye {
@@ -199,14 +219,32 @@ fieldset input {
     cursor: pointer;
 }
 
+.d-block {
+    width: 97% !important;
+}
+
 .carousel-item,
 .d-block {
     border-radius: 30px;
 }
 
-.login .d-block {
-    max-width: 560px;
-    width: 97% !important;
+#carouselExampleIndicators {
+  user-select: none;
+}
+
+.login #carouselExampleIndicators {
+    min-width: 560px;
+}
+
+.sign_up #carouselExampleIndicators {
+    min-width: 430px;
+}
+
+.carousel img {
+    object-fit: cover;
+    vertical-align: middle;
+    border-style: none;
+    height: 816px;
 }
 
 .carousel-indicators li {
@@ -226,4 +264,24 @@ fieldset input {
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+.massage {
+  width: 100%;
+}
+
+.msg {
+  position: relative;
+  top: 8px;
+  left: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.warning_msg {
+  color: red;
+}
+
+.success_msg {
+  color: green;
 }

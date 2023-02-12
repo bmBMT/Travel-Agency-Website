@@ -63,7 +63,6 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-size: 14px;
 }
 
 .reviewCard_aboutText {
@@ -96,12 +95,10 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-size: 14px;
   text-align: start;
 }
 
 .reviewCard_user_aboutMore {
-  font-size: 12px;
   font-weight: 500;
   opacity: 0.5;
 }
@@ -128,6 +125,7 @@
   display: flex;
   justify-content: end;
   transition: color 0.2 ease-in;
+  cursor: pointer;
 }
 
 .readBtn:hover {
