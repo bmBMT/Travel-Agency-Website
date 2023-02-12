@@ -84,7 +84,7 @@
                 </form>
                 <div class="anotherSign_text">
                   <div class="horizontal_line"></div>
-                  <div class="signText_secondary">Or login with</div>
+                  <div class="signText_secondary nowrap">Or login with</div>
                   <div class="horizontal_line"></div>
                 </div>
                 <div class="anotherSign_btns">

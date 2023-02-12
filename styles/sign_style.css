@@ -108,6 +108,7 @@ form > .sign_inputs {
   justify-content: space-between;
   width: 100%;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 .sign_up .sign_secondaryInputs {
@@ -166,7 +167,7 @@ form > .sign_inputs {
   color: #112211;
   font-size: 16px;
   font-weight: 400;
-  white-space: nowrap;
+  white-space: wrap;
   user-select: none;
 }
 
@@ -284,4 +285,8 @@ fieldset input {
 
 .success_msg {
   color: green;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
