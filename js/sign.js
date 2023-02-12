@@ -1,5 +1,5 @@
 function hidePassword(i) {
-    let input = document.querySelector(`#loginPassword${i}`);
+    let input = document.querySelector(`#password${i}`);
     let hide = document.querySelector(`#hide${i}`);
     let view = document.querySelector(`#view${i}`);
 

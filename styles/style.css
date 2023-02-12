@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.cdnfonts.com/css/trade-gothic-lt-std');
+
 
 @media (max-width: 670px) {
   .container_in {
@@ -154,6 +156,16 @@ div {
   display: flex;
 }
 
+input::placeholder {
+  color: #1c1b1f;
+  font-weight: 400;
+  transition: color 0.3s ease-in;
+}
+
+input:focus::placeholder {
+  color: background;
+}
+
 input:focus,
 input:active {
   outline: none !important;
@@ -168,6 +180,7 @@ button {
   outline: none !important;
   box-shadow: none !important;
   background: none;
+  font-weight: 600;
 }
 
 button:focus,
@@ -181,10 +194,12 @@ button:active {
   outline: none;
   border: none;
   transition: all 0.2s ease-in;
-  font-size: 14px;
+  font-size: 1rem;
+  border-radius: 8px;
 }
 
-.btn:hover {
+button:hover,
+button:active {
   background: #bad6cc;
 }
 
@@ -216,6 +231,7 @@ div.inner.show {
   font-weight: 400 !important;
 }
 
+.none,
 .no-results {
   display: none;
 }
@@ -257,7 +273,8 @@ div.inner.show {
   align-items: center;
   gap: 4px;
   text-align: center;
-  font-size: 14px;
+  /* font-size: 14px; */
+  font-size: 1rem;
   font-weight: 600;
 }
 
@@ -278,23 +295,18 @@ fieldset {
   color: #112211;
   border: 1px solid #79747e;
   border-radius: 4px;
-  height: 56px;
+  height: 64px;
 }
 
 legend {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 1rem;
   padding: 0 4px;
   margin: 0;
   width: max-content;
   text-align: start;
   margin: 0 0 0 16px;
   cursor: default;
-}
-
-input::placeholder {
-  color: #1c1b1f;
-  font-weight: 400;
 }
 
 .group-separator {
@@ -305,4 +317,3 @@ input::placeholder {
 .btn-light {
   background: none !important;
 }
-

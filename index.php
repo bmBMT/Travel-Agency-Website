@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,6 +21,7 @@
     <script src="js/search_filter_card.js"></script>
     <script src="js/indexHeaderChange.js"></script>
     <script src="js/readMore.js"></script>
+    <script src="js/header.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/cards.css">
     <link rel="stylesheet" href="styles/search_filter_card.css" />
@@ -31,6 +36,10 @@
   <body id="body">
     <div class="container" id="indexHero">
       <div class="indexHead_hero" id="indexHero_content">
+        <div class="headImg">
+          <img src="assets/imgs/mainHead_img.svg">
+          <div class="blackout"></div>
+        </div>
         <header class="container header" id="header" style="color: white;">
           <div class="content" id="head_content">
             <div class="sections">
@@ -42,18 +51,18 @@
               </a>
             </div>
 
-            <a href="/index.html" class="logo">
+            <a href="/index.php" class="logo">
               <img src="assets/icons/whiteGreen_logo_icon.svg" id="logo_icon"/>
             </a>
-            <div class="buttons unlogined_btns">
-              <a href="pages/login.html">
+            <div class="buttons" id="unlogined_btns">
+              <a href="pages/login.php">
                 <button class="btn login" id="login_btn" style="color: white;">Login</button>
               </a>
-              <a href="#">
+              <a href="pages/sign_up.php">
                 <button class="btn sign_up btn_white" id="sign_up_btn">Sign up</button>
               </a>
             </div>
-            <div class="logined_elements" style="display: none">
+            <div class="logined_elements" id="logined_elements">
               <div class="favourites_link">
                 <a href="#" class="link">
                   <img src="assets/icons/white_heart_icon.svg" id="heart_icon"> Favourites
@@ -62,17 +71,17 @@
               </div>
               <div class="dropdown">
                 <div class="profile">
-                  <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true">
-                    <div class="arrowDown">
+                  <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="background: url(<?= $_SESSION['user']['avatar'] ?>);">
+                    <div id="arrowDown">
                       <box-icon name='chevron-down'></box-icon>
                     </div>
                   </button>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" >
                     <div class="column">
                       <div class="profile">
-                        <div class="avatar"></div>
+                        <div class="avatar"  style="background: url(<?= $_SESSION['user']['avatar'] ?>);"></div>
                         <div class="status_text">
-                          <div class="name">Alexandr S.</div>
+                          <div class="name"><?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?></div>
                           <div class="profile_status">Online</div>
                         </div>
                       </div>
@@ -109,7 +118,7 @@
                           </div>
                           <img src="assets/icons/black_arrowRight.svg" />
                         </a>
-                        <a href="#" class="dropDown_link">
+                        <a href="vendor/logout.php" class="dropDown_link">
                           <div class="dropDown_link_content">
                             <img src="assets/icons/logout_icon.svg" />
                             <div class="dropDown_text">Logout</div>
@@ -118,7 +127,7 @@
                       </section>
                     </div>
                   </div>
-                  <div class="name">Alexandr S.</div>
+                  <div class="name"><?= $_SESSION['user']['first_name'] . " " . mb_substr($_SESSION['user']['last_name'], 0, 1) . "." ?></div>
                 </div>
               </div>
             </div>
@@ -126,7 +135,6 @@
         </header>
         <div class="hero content" id="hero">
           <div class="hero_content">
-            <div class="circle_ellipse"></div>
             <div class="head_hero_text">Helping Others</div>
             <h1 class="headHero_h">Live & Travel</h1>
             <p class="indexHero_about">Special offers to suit your plan</p>
@@ -445,7 +453,7 @@
                     <div class="reviewCard_about">
                       <div class="reviewCard_aboutText">Really appreciate the help and support from spanthe staff during these tough times. Shoutout to Katie for<span class="dots">...</span> <span class="more">helping me always, even when I was out of the country. And always available when needed</span>
                       </div>
-                      <button class="reviewCard_aboutMore readBtn" onclick="readMore(0)">View more</button>
+                      <div class="reviewCard_aboutMore readBtn" onclick="readMore(0)">View more</div>
                     </div>
                   </div>
                   <div class="reviewCard_estimate">
@@ -546,7 +554,7 @@
           </div>
           <div class="row footer_links">
             <div class="icon_links">
-              <a href="index.html">
+              <a href="index.php">
                 <img
                   src="assets/icons/blackWhite_logo_icon.svg"
                   class="footer_logo"
@@ -627,4 +635,5 @@
       </div>
     </footer>
   </body>
+  <script>logined(<?= json_encode($_SESSION['user']) ?>)</script>
 </html>
