@@ -40,7 +40,7 @@
           <img src="assets/imgs/mainHead_img.svg">
           <div class="blackout"></div>
         </div>
-        <header class="container header" id="header" style="color: white;">
+        <header class="header" id="header" style="color: white;">
           <div class="content" id="head_content">
             <div class="sections">
               <a href="#" class="link">
@@ -65,14 +65,17 @@
             <div class="logined_elements" id="logined_elements">
               <div class="favourites_link">
                 <a href="#" class="link">
-                  <img src="assets/icons/white_heart_icon.svg" id="heart_icon"> Favourites
+                  <img src="assets/icons/white_heart_icon.svg" id="heart_icon">
+                  <div class="favourites_text">
+                    Favourites
+                  </div>
                 </a>
                 <span class="vertical_line"></span>
               </div>
               <div class="dropdown">
                 <div class="profile">
                   <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="background: url(<?= $_SESSION['user']['avatar'] ?>);">
-                    <div id="arrowDown">
+                    <div class="arrowDown">
                       <box-icon name='chevron-down'></box-icon>
                     </div>
                   </button>
@@ -87,10 +90,10 @@
                       </div>
                       <hr />
                       <section class="dropDown_links">
-                        <a href="#" class="dropDown_link">
+                        <a href="pages/account.php" class="dropDown_link">
                           <div class="dropDown_link_content">
-                            <box-icon type='solid' name='user'></box-icon>
-                            <div class="dropDown_text">My account</div>
+                          <img src="assets/icons/user_icon.svg">
+                          <div class="dropDown_text">My account</div>
                           </div>
                           <img src="assets/icons/black_arrowRight.svg" />
                         </a>
@@ -127,7 +130,7 @@
                       </section>
                     </div>
                   </div>
-                  <div class="name"><?= $_SESSION['user']['first_name'] . " " . mb_substr($_SESSION['user']['last_name'], 0, 1) . "." ?></div>
+                  <div class="name"><?= $_SESSION['user']['first_name'] . " " . mb_substr($_SESSION['user']['last_name'], 0, 2) . "." ?></div>
                 </div>
               </div>
             </div>

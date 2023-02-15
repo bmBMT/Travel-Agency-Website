@@ -19,6 +19,9 @@
     flex-direction: column;
     gap: 24px;
   }
+  .footer_card_img {
+    display: none;
+  }
 }
 
 @media (min-width: 577px) {
@@ -93,6 +96,7 @@
 .footer_card_img {
   padding-right: 1.875vw;
   width: 31.25vw;
+  max-width: 420px;
 }
 .card_content {
   display: flex;

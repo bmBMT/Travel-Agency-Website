@@ -1,7 +1,7 @@
 <?php
   session_start();
   if ($_SESSION['user']) {
-    header('Location: ../index.php');
+    header('Location: /');
   }
 ?>
 
@@ -16,11 +16,11 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="../js/sign.js"></script>
-    <script src="../js/phoneinput.js"></script>
-    <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/sign_style.css" />
-    <link rel="icon" href="../assets/icons/title_icon.svg" />
+    <script src="/js/sign.js"></script>
+    <script src="/js/phoneinput.js"></script>
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="/styles/sign_style.css" />
+    <link rel="icon" href="/assets/icons/title_icon.svg" />
     <title>Travel Agency Website — Sign Up</title>
   </head>
 
@@ -29,8 +29,8 @@
         <div class="sign_contain">
           <div class="sign_elements ">
             <div class="logo">
-              <a href="../index.php">
-                <img src="../assets/icons/blackGreen_logo_icon.svg">
+              <a href="/">
+                <img src="/assets/icons/blackGreen_logo_icon.svg">
               </a>
             </div>
             <div class="sign_content">
@@ -39,7 +39,7 @@
                 <div class="signText_secondary">Let’s get you all st up so you can access your personal account.</div>
               </div>
               <div class="sign_mainElements">
-                <form action="../vendor/signup.php" method="post" class="sign_form" enctype="multipart/form-data">
+                <form action="/vendor/signup.php" method="post" class="sign_form" enctype="multipart/form-data">
                   <div class="sign_inputs">
                     <div class="sign_inputs">
                       <fieldset class="firstNameFieldset">
@@ -145,13 +145,13 @@
                 </div>
                 <div class="anotherSign_btns">
                   <button class="btn sign_facebook_btn">
-                    <img src="../assets/icons/facebook_icon.svg">
+                    <img src="/assets/icons/facebook_icon.svg">
                   </button>
                   <button class="btn sign_google_btn">
-                    <img src="../assets/icons/social media/google_icon.svg">
+                    <img src="/assets/icons/social media/google_icon.svg">
                   </button>
                   <button class="btn sign_apple_btn">
-                    <img src="../assets/icons/social media/blackApple_icon.svg">
+                    <img src="/assets/icons/social media/blackApple_icon.svg">
                   </button>
                 </div>
               </div>
@@ -165,13 +165,13 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block" src="../assets/imgs/sign_carouselImg1.svg" alt="First slide">
+                <img class="d-block" src="/assets/imgs/sign_carouselImg1.svg" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block" src="../assets/imgs/sign_carouselImg2.svg" alt="Second slide">
+                <img class="d-block" src="/assets/imgs/sign_carouselImg2.svg" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block" src="../assets/imgs/sign_carouselImg3.svg" alt="Third slide">
+                <img class="d-block" src="/assets/imgs/sign_carouselImg3.svg" alt="Third slide">
               </div>
             </div>
           </div>

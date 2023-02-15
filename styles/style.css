@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
-@import url('https://fonts.cdnfonts.com/css/trade-gothic-lt-std');
 
 
 @media (max-width: 670px) {
@@ -7,8 +6,12 @@
     margin: 5.856515373352855vw 0 0 0 !important;
   }
 
-  .cards_about_description {
-    font-size: 12px !important;
+  .cards_about_title {
+    font-size: large !important;
+  }
+
+  fieldset input {
+    font-size: 14px !important;
   }
 }
 
@@ -67,15 +70,6 @@ body::before {
   z-index: -1;
 }
 
-header {
-  position: sticky;
-  z-index: 100;
-  top: -1px;
-  bottom: 0px;
-  color: #112211;
-  background: #ffffff;
-}
-
 .container {
   width: 100%;
   max-width: 1380px;
@@ -85,10 +79,6 @@ header {
 
 .container_in {
   margin: 5.856515373352855vw 4.392386530014641vw 0 4.392386530014641vw;
-}
-
-header.container {
-  padding: 0;
 }
 
 a {
@@ -156,8 +146,14 @@ div {
   display: flex;
 }
 
+input {
+  color: inherit;
+  opacity: 0.75;
+  cursor: auto;
+}
+
 input::placeholder {
-  color: #1c1b1f;
+  color: inherit;
   font-weight: 400;
   transition: color 0.3s ease-in;
 }
@@ -273,9 +269,13 @@ div.inner.show {
   align-items: center;
   gap: 4px;
   text-align: center;
-  /* font-size: 14px; */
   font-size: 1rem;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: #72ad96;
 }
 
 .content {
@@ -298,6 +298,16 @@ fieldset {
   height: 64px;
 }
 
+fieldset input {
+  width: 99%;
+  height: 28px;
+  font-weight: 400;
+  font-size: 16px;
+  padding-left: 8px;
+  border: none;
+  margin-left: 6px;
+}
+
 legend {
   font-weight: 400;
   font-size: 1rem;
@@ -316,4 +326,8 @@ legend {
 
 .btn-light {
   background: none !important;
+}
+
+.show_btn {
+  background: #8dd3bb;
 }

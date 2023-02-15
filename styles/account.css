@@ -1,0 +1,96 @@
+@media (max-width: 670px) {
+  .btn {
+    padding: 1.1346998535871156vw 1.171303074670571vw !important;
+  }
+  .account_elements .profile {
+    transform: translateY(-45px) !important;
+  }
+  .account_elements .avatar {
+    width: 110px !important;
+    height: 110px !important;
+  }
+  .account_elements .arrowDown {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .bg_btn {
+    bottom: unset !important;
+    top: 1.9033674963396778vw;
+  }
+
+  .account_elements .profile {
+    gap: 1rem !important;
+  }
+
+  .account_elements .name {
+    font-size: 1.2rem !important;
+  }
+}
+
+.btn {
+  padding: 15.5px 16px;
+  border-radius: 4px;
+}
+
+.profile_head {
+  position: relative;
+  margin-top: 48px;
+}
+
+.profile_head > img {
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  border-radius: 12px;
+}
+
+.bg_btn {
+  position: absolute;
+  right: 1.9033674963396778vw;
+  bottom: 1.9033674963396778vw;
+}
+
+.account_elements > .container {
+  display: flex;
+  justify-content: center;
+}
+
+.account_elements .profile {
+  transform: translateY(-85px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.account_elements .avatar {
+  width: 160px;
+  height: 160px;
+}
+
+.account_elements .arrowDown {
+  width: 44px;
+  height: 44px;
+}
+
+.account_elements .arrowDown img {
+  width: 55%;
+}
+
+.account_elements .name {
+  font-size: 1.5rem;
+}
+
+.profileText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profileDescription {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 20px;
+  text-align: center;
+  color: #112211;
+  opacity: 0.75;
+}

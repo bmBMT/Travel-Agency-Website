@@ -21,65 +21,45 @@
     <link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/sign_style.css" />
     <link rel="icon" href="/assets/icons/title_icon.svg" />
-    <title>Travel Agency Website — Login</title>
+    <title>Travel Agency Website — Forgot</title>
   </head>
 
   <body>
-    <div class="login container">
-        <div class="sign_contain">
-          <div class="sign_elements ">
-            <div class="logo">
-              <a href="/">
-                <img src="/assets/icons/blackGreen_logo_icon.svg">
-              </a>
-            </div>
+    <div class="forgot container">
+      <div class="sign_contain">
+        <div class="sign_elements ">
+          <div class="logo">
+            <a href="/">
+              <img src="/assets/icons/blackGreen_logo_icon.svg">
+            </a>
+          </div>
             <div class="sign_content">
               <div class="sign_text">
-                <div class="signText_title">Login</div>
-                <div class="signText_secondary">Login to access your Golobe account</div>
+                <a href="login.php" class="return_link">
+                  <i class="fa fa-chevron-left"></i>
+                  <div class="return_text">Back to login</div>
+                </a>
+                <div class="signText_title">Forgot your password?</div>
+                <div class="signText_secondary">Don’t worry, happens to all of us. Enter your email below to recover your password</div>
               </div>
               <div class="sign_mainElements">
-                <form action="/vendor/signin.php" method="post" class="sign_form">
+                <form action="/vendor/recoverpass.php" method="post" class="sign_form">
                   <div class="sign_inputs">
-                    <fieldset class="emailFieldset">
-                      <legend>Email</legend>
-                      <input type="email" name="email" placeholder="Enter your email" required>
-                    </fieldset>
-                    
-                    <fieldset class="passwordFieldset">
-                      <legend>Password</legend>
-                      <input type="password" name="password" id="password1" placeholder="Enter your password" minlength="6" required>
-                      <span id="eye" onclick="hidePassword(1)">
-                        <i class="fa fa-eye-slash" id="hide1"></i>
-                        <i class="fa fa-eye" id="view1" style="display: none;"></i>
-                      </span>
-                    </fieldset>
-                    <div class="sign_secondaryInputs">
-                      <div class="remeber_me">
-                        <input type="checkbox">
-                        <div>Remember me</div>
-                      </div>
-                      <a href="recoverpass_email.php" class="link">Forgot Password</a>
+                    <div class="massage">
+                      <fieldset class="emailFieldset">
+                        <legend>Email</legend>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                      </fieldset>
+                      <?php
+                          if ($_SESSION['account_msg']) {
+                            echo '<p class="msg warning_msg"> ' . $_SESSION['account_msg'] . ' </p>';
+                          }
+                          unset($_SESSION['account_msg']);
+                      ?>
                     </div>
-                    <?php
-                      if ($_SESSION['success_msg']) {
-                        echo '<p class="msg success_msg"> ' . $_SESSION['success_msg'] . ' </p>';
-                      }
-                      unset($_SESSION['success_msg']);
-                    ?>
-                    <?php
-                      if ($_SESSION['account_msg']) {
-                        echo '<p class="msg warning_msg"> ' . $_SESSION['account_msg'] . ' </p>';
-                      }
-                      unset($_SESSION['account_msg']);
-                    ?>
-                    
                   </div>
                   <div class="sign_submit">
-                    <button type="submit" id="login_btn" class="sign_submit_btn">Login</button>
-                    <div class="sign_submitSecondary">
-                      <div>Don’t have an account?</div><div>&nbsp;</div><a href="sign_up.php" class="link">Sign Up</a>
-                    </div>
+                    <button type="submit" id="forgot_btn" class="sign_submit_btn">Submit</button>
                   </div>
                 </form>
                 <div class="anotherSign_text">

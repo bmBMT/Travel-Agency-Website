@@ -1,15 +1,27 @@
+@media (max-width: 670px) {
+  .reviewCard_title {
+    font-size: 18px !important;
+  }
+  
+  .reviewCard_aboutText,
+  .reviewCard_aboutMore,
+  .reviewCard_user_aboutMore {
+    font-size: 14px !important;
+  }
+}
+
 .review_card > img {
-    border-radius: 8px;
-    width: 100%;
+  border-radius: 8px;
+  width: 100%;
 }
 
 .reviews_cards {
-    display: flex;
-    gap: 50px;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .review_card {
@@ -124,7 +136,7 @@
 .readBtn {
   display: flex;
   justify-content: end;
-  transition: color 0.2 ease-in;
+  transition: color 0.2s ease-in;
   cursor: pointer;
 }
 

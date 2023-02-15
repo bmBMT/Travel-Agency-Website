@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         flightContent.style.display = "none";
         bedContent.style.display = "flex";
 
-        underLine.style.transform = "translateX(172px)";
+        underLine.style.transform = "translateX(178px)";
     });
 
     // addPromoCode on findStays stage

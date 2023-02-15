@@ -1,7 +1,7 @@
 jQuery(document).ready(function() {
     let header = document.getElementById("header");
     let indexHero = document.getElementById("indexHero");
-    let indexHero_content = document.getElementById("indexHero_content");
+    let body = document.getElementById("body");
     let hero = document.getElementById("hero");
     let airPlane_icon = document.getElementById("head_airPlane_icon");
     let bed_icon = document.getElementById("head_bed_icon");
@@ -17,9 +17,9 @@ jQuery(document).ready(function() {
     WidthChange(sm_mq);
     function WidthChange(sm_mq) {
         if(sm_mq.matches){
-            indexHero.insertBefore(header, indexHero_content);
+            body.insertBefore(header, indexHero);
             indexHero_content.style.margin = "0px";
-            indexHero_content.style.marginTop = "120px"
+            indexHero_content.style.marginTop = "95px"
             changeHead();
         } else {
             indexHero_content.insertBefore(header, hero);

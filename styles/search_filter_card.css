@@ -34,6 +34,8 @@
   border-radius: 16px;
   margin: 0 21px;
   z-index: 1;
+  max-width: 1049.71px;
+  width: 100%;
 }
 
 .search_filter_content {
@@ -51,17 +53,14 @@
   display: flex;
   flex-direction: row;
   gap: 32px;
+  width: 100%;
 }
 
 .input_filter_stroke {
   display: flex;
   flex-direction: column;
   gap: 32px;
-}
-
-.hotel_input_fliter_stroke {
-  display: flex;
-  gap: 16px;
+  width: 100%;
 }
 
 .filter_buttons {
@@ -80,8 +79,7 @@
 }
 
 .showFlight_btn,
-.showBed_btn,
-.show_btn {
+.showBed_btn {
   background: #8dd3bb;
 }
 
@@ -96,6 +94,7 @@
   justify-content: center;
   margin-left: 6px;
   margin-right: 6px;
+  transform: translateY(-2px);
 }
 
 .checkIn .form_content,
@@ -126,6 +125,7 @@ fieldset .dropdown-menu {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 24px;
+  justify-content: space-between;
 }
 
 .passenger_input,
@@ -203,7 +203,7 @@ a.ui-button:active,
 .horizontal_line {
   position: relative;
   width: 120px;
-  left: -6px;
+  left: 4px;
   top: 55px;
 
   border: 2px solid #8DD3BB;
