@@ -156,29 +156,37 @@
     </div>
 
     <div class="container account_content">
-      <ul class="nav nav-tabs">
-        <div class="table">
-          <a class="nav-link active" data-toggle="tab" href="#account">Account</a>
-          <a class="nav-link" data-toggle="tab" href="#history">History</a>
-          <a class="nav-link" data-toggle="tab" href="#payment">Payment methods</a>
-        </div>
-      </ul>
+      <div class="table">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#account">Account</a>
+          </li>
+          <span class="vertical_line"></span>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#history">History</a>
+          </li>
+          <span class="vertical_line"></span>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#payment">Payment methods</a>
+          </li>
+        </ul>
+        <div class="horizontal_line-md"></div>
+      </div>
   
       <div class="container-fluid">
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active" id="account">
-            sdada
+
           </div>
           <div role="tabpanel" class="tab-pane fade" id="history">
-            sdada=as
+
           </div>
           <div role="tabpanel" class="tab-pane fade" id="payment">
-            sdad++56asdas
+
           </div>
         </div>
       </div>
     </div>
-
 
     <footer class="footer">
         <div class="container">

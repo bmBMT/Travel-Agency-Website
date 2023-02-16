@@ -17,13 +17,20 @@
     bottom: unset !important;
     top: 1.9033674963396778vw;
   }
-
   .account_elements .profile {
     gap: 1rem !important;
   }
-
   .account_elements .name {
     font-size: 1.2rem !important;
+  }
+  .table {
+    padding: 12px 16px !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .horizontal_line-md {
+    width: 25% !important;
   }
 }
 
@@ -102,12 +109,26 @@
 }
 
 .table {
+  position: relative;
   display: flex;
   flex-direction: row;
   width: 100%;
   padding: 16px 24px;
+  align-items: center;
   justify-content: space-between;
   background: #FFFFFF;
   box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
   border-radius: 12px;
+}
+
+.horizontal_line-md {
+  position: absolute;
+  width: 215px;
+  height: 0px;
+  left: 24px;
+  bottom: 0;
+
+  border: 3px solid #8DD3BB;
+
+  transition: 0.5s;
 }

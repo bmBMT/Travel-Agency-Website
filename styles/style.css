@@ -331,7 +331,18 @@ legend {
 }
 
 .nav-tabs {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
   border: none;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.nav-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .nav-tabs .nav-item.open .nav-link,
@@ -348,6 +359,24 @@ legend {
   border: none;
 }
 
-.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
   border: none;
+}
+
+.nav-item > .nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  color: #112211;
+  line-height: 20px;
+}
+
+.nav-item > .nav-link:hover,
+.nav-item > .nav-link:active {
+  color: #72ad96;
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link.active:hover {
+  color: #112211;
 }
