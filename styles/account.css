@@ -6,6 +6,7 @@
     transform: translateY(-45px) !important;
   }
   .account_elements .avatar {
+    /*  */
     width: 110px !important;
     height: 110px !important;
   }
