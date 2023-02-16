@@ -17,6 +17,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.4/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet" />
     <script src="/js/header.js"></script>
     <link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/footer_style.css" />
@@ -24,7 +28,7 @@
     <link rel="stylesheet" href="/styles/account.css">
     <link rel="icon" href="/assets/icons/title_icon.svg" />
     <title>Travel Agency Website — Account</title>
-</head>
+  </head>
 
 <body>
     <header class="header" id="header" style="color: black;">
@@ -150,6 +154,31 @@
             </div>
         </div>
     </div>
+
+    <div class="container account_content">
+      <ul class="nav nav-tabs">
+        <div class="table">
+          <a class="nav-link active" data-toggle="tab" href="#account">Account</a>
+          <a class="nav-link" data-toggle="tab" href="#history">History</a>
+          <a class="nav-link" data-toggle="tab" href="#payment">Payment methods</a>
+        </div>
+      </ul>
+  
+      <div class="container-fluid">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade in active" id="account">
+            sdada
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="history">
+            sdada=as
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="payment">
+            sdad++56asdas
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <footer class="footer">
         <div class="container">
