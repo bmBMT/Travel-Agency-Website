@@ -224,6 +224,7 @@ input[type="checkbox"] {
     position: relative;
     right: 16px;
     cursor: pointer;
+    color: #112211;
 }
 
 .d-block {
@@ -274,27 +275,6 @@ input[type="checkbox"] {
     gap: 40px;
 }
 
-.massage {
-  width: 100%;
-}
-
-.msg {
-  position: relative;
-  top: 8px;
-  left: 12px;
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 0;
-}
-
-.warning_msg {
-  color: red;
-}
-
-.success_msg {
-  color: green;
-}
-
 .nowrap {
   white-space: nowrap;
 }
@@ -311,4 +291,8 @@ input[type="checkbox"] {
   margin-left: 8px;
   color: inherit;
   cursor: inherit;
+}
+
+.msg {
+  margin-top: -15px;
 }

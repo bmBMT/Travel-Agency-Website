@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 16 2023 г., 02:52
+-- Время создания: Фев 20 2023 г., 01:17
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -48,16 +48,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(500) DEFAULT NULL,
   `phone` text,
   `avatar` varchar(500) DEFAULT NULL,
+  `bg` varchar(500) DEFAULT NULL,
   `role` varchar(30) DEFAULT NULL,
+  `address` varchar(355) DEFAULT 'Not specified',
+  `birth` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `avatar`, `role`) VALUES
-(10, 'Александр', 'Самарин', 'admin@test.com', '0192023a7bbd73250516f069df18b500', '+2115', 'uploads/1676309229KOWW-NkB7Tg.jpg', 'user');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `avatar`, `bg`, `role`, `address`, `birth`) VALUES
+(3, 'Александр', 'Самарин', 'admin@test.com', '0192023a7bbd73250516f069df18b500', '+7 (900) 855-35-35', 'uploads/1676831927XPB_1139921_HiRes.jpg', 'uploads/backgrounds/1676831953ferrari-sf-23-1.jpg', 'user', 'Not specified', '2023-02-19 17:53:03');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

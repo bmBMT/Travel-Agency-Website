@@ -27,6 +27,12 @@
   }
 }
 
+@media (max-width: 1020px) {
+  .fieldsets {
+    gap: 24px;
+  }
+}
+
 .search_filter_card {
   color: #1c1b1f;
   background: #ffffff;
@@ -124,7 +130,6 @@ fieldset .dropdown-menu {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 24px;
   justify-content: space-between;
 }
 

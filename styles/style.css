@@ -43,6 +43,7 @@ html {
   scroll-behavior: smooth;
   box-sizing: border-box;
   height: 100%;
+  background: #fafbfc;
 }
 
 *,
@@ -55,6 +56,7 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   color: #112211;
+  background: #fafbfc;
 }
 
 body::before {
@@ -192,6 +194,11 @@ button:active {
   border-radius: 8px;
 }
 
+.btn:hover,
+.btn:active {
+  background: #bad6cc;
+}
+
 button:hover,
 button:active {
   background: #bad6cc;
@@ -200,6 +207,10 @@ button:active {
 .bootstrap-select .dropdown-toggle:focus,
 .bootstrap-select > select.mobile-device:focus + .dropdown-toggle {
   outline: none !important;
+}
+
+.dropdown-menu {
+  width: max-content;
 }
 
 fieldset div.dropdown-menu.show {
@@ -304,6 +315,7 @@ fieldset input {
   padding-left: 8px;
   border: none;
   margin-left: 6px;
+  background: none;
 }
 
 legend {
@@ -379,4 +391,30 @@ li.nav-item {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-link.active:hover {
   color: #112211;
+}
+
+.massage {
+  width: 100%;
+}
+
+.msg {
+  position: relative;
+  top: 8px;
+  left: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.error_field {
+  border: 1px solid red;
+  color: red;
+}
+
+.warning_msg {
+  color: red;
+}
+
+.success_msg {
+  color: green;
 }

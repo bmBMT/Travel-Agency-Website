@@ -46,7 +46,7 @@ jQuery(document).ready(function() {
     });
 
     function changeHead() {
-        header.style.background = "#ffffff"
+        header.style.background = "#fafbfc"
         header.style.color = "#112211"
         airPlane_icon.src = "assets/icons/black_airplane_icon.svg";
         bed_icon.src = "assets/icons/black_bed_icon.svg";

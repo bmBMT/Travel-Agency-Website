@@ -14,33 +14,87 @@
     $phone = $_POST['phone'];
     $password_confirm = $_POST['password_confirm'];
 
+    $error_fields = array();
+
+    if ($firstName === '') {
+        $error_fields[] = 'firstName';
+    }
+
+    if ($lastName === '') {
+        $error_fields[] = 'lastName';
+    }
+
+    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error_fields[] = 'email';
+    }
+
+    if ($password === '' || strlen($password) < 6) {
+        $error_fields[] = 'password';
+    }
+    if ($phone === '' || ($phone[0] === "8" && strlen($phone) < 17) || ($phone[1] === "7" && strlen($phone) < 18)) {
+        $error_fields[] = 'phone';
+    }
+
+    if ($password_confirm === '') {
+        $error_fields[] = 'password_confirm';
+    }
+
+    if (!$_FILES['avatar']) {
+        $error_fields[] = 'avatar';
+    }
+    
+    if (!empty($error_fields)) {
+        $response = array(
+            "status" => false,
+            "type" => 1,
+            "massage" => 'One or more fields are empty',
+            "fields" => $error_fields
+        );
+
+        if ($password != '' && strlen($password) < 6) {
+            $response['massage'] = 'The password must consist of at least 6 characters';
+        }
+        echo json_encode($response);
+        
+        die();
+    }
+
     $check_email = mysqli_query($connect, "SELECT * FROM `users` WHERE `email` = '$email'");
 
     if (mysqli_num_rows($check_email) > 0) {
         $_SESSION['email_msg'] = 'This Email is already in use';
-        header("Location: ../pages/sign_up.php");
-    } else if ($phone[1] === "7" || $phone[0] === "8") {
-        if ($phone.length < 11) {
-            $_SESSION['phone_msg'] = "Enter a valid phone number";
-            header("Location: ../pages/sign_up.php");
-        }
     } else if ($password === $password_confirm) {
 
         $path = 'uploads/' . time() . $_FILES['avatar']['name'];
         if (!move_uploaded_file($_FILES['avatar']['tmp_name'], '../' . $path)) {
-            $_SESSION['file_msg'] = 'File upload error';
-            header("Location: ../pages/sign_up.php");
+            $response = array(
+                "status" => false,
+                "type" => 2,
+                "massage" => 'File upload error'
+            );
+            echo json_encode($response);
+            die();
         }
         
+        $role = 'user';
+        $bg = 'uploads/defaults/defaultProlife_bg.svg';
+
         $password = md5($password);
         
-        mysqli_query($connect, "INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `avatar`, `role`) VALUES (NULL, '$firstName', '$lastName', '$email', '$password', '$phone', '$path', 'user')");
+        mysqli_query($connect, "INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `avatar`, `bg`, `role`) VALUES (NULL, '$firstName', '$lastName', '$email', '$password', '$phone', '$path', '$bg', '$role')");
 
         $_SESSION['success_msg'] = 'Register successfully';
-        header('Location: ../pages/login.php');
+        $response = array(
+            "status" => true
+        );
+        echo json_encode($response);
     } else {
-        $_SESSION['passwordConfirm_msg'] = 'Please make sure your password match';
-        header("Location: ../pages/sign_up.php");
+        $response = array(
+            "status" => false,
+            "type" => 2,
+            "massage" => 'Please make sure your password match'
+        );
+        echo json_encode($response);
+        die();
     }
-    
 ?>

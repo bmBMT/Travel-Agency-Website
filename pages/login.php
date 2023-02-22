@@ -17,7 +17,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/sign.js"></script>
     <link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/sign_style.css" />
     <link rel="icon" href="/assets/icons/title_icon.svg" />
@@ -39,14 +38,14 @@
                 <div class="signText_secondary">Login to access your Golobe account</div>
               </div>
               <div class="sign_mainElements">
-                <form action="/vendor/signin.php" method="post" class="sign_form">
+                <form class="sign_form">
                   <div class="sign_inputs">
-                    <fieldset class="emailFieldset">
+                    <fieldset class="emailFieldset" name="email">
                       <legend>Email</legend>
                       <input type="email" name="email" placeholder="Enter your email" required>
                     </fieldset>
                     
-                    <fieldset class="passwordFieldset">
+                    <fieldset class="passwordFieldset" name="password">
                       <legend>Password</legend>
                       <input type="password" name="password" id="password1" placeholder="Enter your password" minlength="6" required>
                       <span id="eye" onclick="hidePassword(1)">
@@ -67,12 +66,7 @@
                       }
                       unset($_SESSION['success_msg']);
                     ?>
-                    <?php
-                      if ($_SESSION['account_msg']) {
-                        echo '<p class="msg warning_msg"> ' . $_SESSION['account_msg'] . ' </p>';
-                      }
-                      unset($_SESSION['account_msg']);
-                    ?>
+                    <p class="msg warning_msg none"></p>
                     
                   </div>
                   <div class="sign_submit">
@@ -121,5 +115,6 @@
           </div>
         </div>
     </div>
+    <script src="/js/sign.js"></script>
   </body>
 </html>

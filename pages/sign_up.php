@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="/js/sign.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/js/phoneinput.js"></script>
     <link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/sign_style.css" />
@@ -39,62 +39,38 @@
                 <div class="signText_secondary">Let’s get you all st up so you can access your personal account.</div>
               </div>
               <div class="sign_mainElements">
-                <form action="/vendor/signup.php" method="post" class="sign_form" enctype="multipart/form-data">
+                <form class="sign_form">
                   <div class="sign_inputs">
                     <div class="sign_inputs">
-                      <fieldset class="firstNameFieldset">
+                      <fieldset class="firstNameFieldset" name="firstName">
                         <legend>First Name</legend>
                         <input type="text" name="firstName" placeholder="Enter your first name" required>
                       </fieldset>
 
-                      <fieldset class="lastNameFieldset">
+                      <fieldset class="lastNameFieldset" name="lastName">
                         <legend>Last Name</legend>
                         <input type="text" name="lastName" placeholder="Enter your last name" required>
                       </fieldset>
                     </div>
 
                     <div class="sign_inputs">
-                      <div class="massage">
-                        <fieldset class="emailFieldset">
-                          <legend>Email</legend>
-                          <input type="email" name="email"  placeholder="Enter your email" required>
-                        </fieldset>
-                        <?php
-                        if ($_SESSION['email_msg']) {
-                          echo '<p class="msg warning_msg"> ' . $_SESSION['email_msg'] . ' </p>';
-                        }
-                        unset($_SESSION['email_msg']);
-                        ?>
-                      </div>
+                      <fieldset class="emailFieldset" name="email">
+                        <legend>Email</legend>
+                        <input type="email" name="email"  placeholder="Enter your email" required>
+                      </fieldset>
 
-                      <div class="massage">
-                        <fieldset class="phoneFieldset">
-                          <legend>Phone Number</legend>
-                          <input type="tel" name="phone" data-tel-input placeholder="Enter your phone number" maxlength="18" required>
-                        </fieldset>
-                        <?php
-                            if ($_SESSION['phone_msg']) {
-                              echo '<p class="msg warning_msg"> ' . $_SESSION['phone_msg'] . ' </p>';
-                            }
-                            unset($_SESSION['phone_msg']);
-                          ?>
-                      </div>
+                      <fieldset class="phoneFieldset" name="phone">
+                        <legend>Phone Number</legend>
+                        <input type="tel" name="phone" data-tel-input placeholder="Enter your phone number" maxlength="18" required>
+                      </fieldset>
                     </div>
                     
-                    <div class="massage">
-                      <fieldset>
-                        <legend>Avatar</legend>
-                        <input type="file" name="avatar" required>
-                      </fieldset>
-                      <?php
-                        if ($_SESSION['file_msg']) {
-                          echo '<p class="msg warning_msg"> ' . $_SESSION['file_msg'] . ' </p>';
-                        }
-                        unset($_SESSION['file_msg']);
-                      ?>
-                    </div>
+                    <fieldset name="avatar">
+                      <legend>Avatar</legend>
+                      <input type="file" name="avatar" required>
+                    </fieldset>
 
-                    <fieldset class="passwordFieldset">
+                    <fieldset class="passwordFieldset" name="password">
                       <legend>Password</legend>
                       <input type="password" name="password" id="password1" placeholder="Enter your password" minlength="6" required>
                       <span id="eye" onclick="hidePassword(1)">
@@ -103,26 +79,18 @@
                       </span>
                     </fieldset>
                     
-                    <div class="massage">
-                      <fieldset id="password_confirmFieldset">
-                          <legend id="password_confirmLegend">Confirm Password</legend>
-                          <input type="password" name="password_confirm" id="password2" placeholder="Confirm your password" required>
-                          <span id="eye" onclick="hidePassword(2)">
-                            <i class="fa fa-eye-slash" id="hide2"></i>
-                            <i class="fa fa-eye" id="view2" style="display: none;"></i>
-                          </span>
-                      </fieldset>
-                        <?php
-                          if ($_SESSION['passwordConfirm_msg']) {
-                            echo '<p class="msg warning_msg"> ' . $_SESSION['passwordConfirm_msg'] . ' </p>';
-                          }
-                          unset($_SESSION['passwordConfirm_msg']);
-                        ?>
-                    </div>
+                    <fieldset id="password_confirmFieldset" name="password_confirm">
+                        <legend id="password_confirmLegend">Confirm Password</legend>
+                        <input type="password" name="password_confirm" id="password2" placeholder="Confirm your password" required>
+                        <span id="eye" onclick="hidePassword(2)">
+                          <i class="fa fa-eye-slash" id="hide2"></i>
+                          <i class="fa fa-eye" id="view2" style="display: none;"></i>
+                        </span>
+                    </fieldset>
 
                     <div class="sign_secondaryInputs">
                       <div class="remeber_me">
-                        <input type="checkbox" required>
+                        <input type="checkbox" name="checkbox" required>
                         <div>I agree to all the</div>
                       </div>
                       <div>&nbsp;</div>
@@ -131,6 +99,7 @@
                       <a href="#" class="link">Privacy Policies</a>
                     </div>
                   </div>
+                  <p class="msg warning_msg none"></p>
                   <div class="sign_submit">
                     <button type="submit" id="signup_btn" class="sign_submit_btn">Sign up</button>
                     <div class="sign_submitSecondary">
@@ -177,5 +146,6 @@
           </div>
         </div>
     </div>
+    <script src="/js/sign.js"></script>
   </body>
 </html>

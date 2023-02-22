@@ -3,7 +3,32 @@
     require_once 'connect.php';
 
     $email = $_POST['email'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
+
+    $error_fields = array();
+
+    if ($email === '') {
+        $error_fields[] = 'email';
+    }
+
+    if ($password === '') {
+        $error_fields[] = 'password';
+    }
+
+    if (!empty($error_fields)) {
+        $response = array(
+            "status" => false,
+            "type" => 1,
+            "massage" => 'One or more fields are empty',
+            "fields" => $error_fields
+        );
+
+        echo json_encode($response);
+        
+        die();
+    }
+
+    $password = md5($password);
 
     $check_user = mysqli_query($connect, "SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'");
     
@@ -11,19 +36,31 @@
         
         $user = mysqli_fetch_assoc($check_user);
 
+        $birth = implode("-", array_reverse(explode("-", mb_substr($user['birth'], 0, 10))));
+
         $_SESSION['user'] = array(
             "id" => $user['id'],
             "first_name" => $user['first_name'],
             "last_name" => $user['last_name'],
             "email" => $user['email'],
+            "password" => $_POST['password'],
             "phone" => $user['phone'],
             "avatar" => $user['avatar'],
-            "role" => $user['role']
+            "bg" => $user['bg'],
+            "role" => $user['role'],
+            "address" => $user['address'],
+            "birth" => $birth
         );
 
-        header('Location: ../index.php');
+        $response = array(
+            "status" => true
+        );
+        echo json_encode($response);
     } else {
-        $_SESSION['account_msg'] = 'Wrong email or password';
-        header("Location: ../pages/login.php");
+        $response = array(
+            "status" => false,
+            "massage" => 'Wrong email or password'
+        );
+        echo json_encode($response);
     }
 ?>

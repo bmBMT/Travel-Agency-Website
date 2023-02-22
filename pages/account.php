@@ -22,6 +22,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet" />
     <script src="/js/header.js"></script>
+    <script src="/js/accountManage.js"></script>
     <link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/footer_style.css" />
     <link rel="stylesheet" href="/styles/header_style.css" />
@@ -132,23 +133,35 @@
 
     <div class="container">
         <div class="profile_head">
-            <img src="/assets/imgs/defaultProlife_bg.svg" class="profile_bg">
-            <button class="btn bg_btn show_btn black_color">
-                <i class="fa fa-cloud-arrow-up"></i>
-                Upload new cover
-            </button>
+          <div class="profile_bg" style="background: url(<?= '/' . $_SESSION['user']['bg']?>);"></div>
+          <form action="/vendor/account.php" method="post" enctype="multipart/form-data" id="bg_form">
+            <div class="btn bg_btn show_btn black_color" onclick="getBg()">
+              <i class="fa fa-cloud-arrow-up"></i>
+              Upload new cover
+            </div>
+            <div style='height: 0px;width: 0px; overflow:hidden;'><input name="bg" id="_upfile" type="file" onchange="_sub(this)" /></div>
+          </form>
         </div>
         <div class="account_elements">
             <div class="container">
                 <div class="profile">
                     <div class="avatar" id="big_avatar" style="background: url(<?= '/' . $_SESSION['user']['avatar']?>)">
-                        <div class="arrowDown">
+                      <form action="/vendor/account.php" method="post" enctype="multipart/form-data" id="avatar_form">
+                        <div class="arrowDown" id="arrowDown" onclick="getAvatar()">
                             <img src="/assets/icons/pen_icon.svg">
                         </div>
+                        <div style='height: 0px;width: 0px; overflow:hidden;'><input name="avatar" id="upfile" type="file" onchange="sub(this)" /></div>
+                      </form>
                     </div>
                     <div class="profileText">
                         <div class="name"><?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?></div>
                         <div class="profileDescription"><?= $_SESSION['user']['email'] ?></div>
+                        <?php
+                          if ($_SESSION['file_msg']) {
+                            echo '<p class="msg warning_msg"> ' . $_SESSION['file_msg'] . ' </p>';
+                          }
+                          unset($_SESSION['file_msg']);
+                        ?>
                     </div>
                 </div>
             </div>
@@ -156,7 +169,7 @@
     </div>
 
     <div class="container account_content">
-      <div class="table">
+      <div class="window">
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#account">Account</a>
@@ -176,13 +189,78 @@
       <div class="container-fluid">
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active" id="account">
-
+            <div class="stage_title">Account</div>
+            <div class="window">
+              <div class="_row">
+                <div class="rowText" id="nameText">
+                  <div class="rowName">Name</div>
+                  <div class="rowData" id="nameData"><?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?></div>
+                </div>
+                <button class="edit_btn" id="name_btn">
+                  <img src="/assets/icons/edit_icon.svg">Change
+                </button>                
+              </div>
+              <div class="_row">
+                <div class="rowText" id="emailText">
+                  <div class="rowName">Email</div>
+                  <div class="rowData" id="emailData"><?= $_SESSION['user']['email'] ?></div>
+                  <?php
+                    if ($_SESSION['email_msg']) {
+                      echo '<p class="msg warning_msg"> ' . $_SESSION['email_msg'] . ' </p>';
+                    }
+                    unset($_SESSION['email_msg']);
+                  ?>
+                </div>
+                <button class="edit_btn" id="email_btn">
+                  <img src="/assets/icons/edit_icon.svg">Change
+                </button>                
+              </div>
+              <div class="_row">
+                <div class="rowText" id="passwordText">
+                  <div class="rowName">Password</div>
+                  <div class="rowData" id="passwordData"><?= str_repeat("*", strlen($_SESSION['user']['password'])) ?></div>
+                  <?php
+                    if ($_SESSION['pass_msg']) {
+                      echo '<p class="msg warning_msg"> ' . $_SESSION['pass_msg'] . ' </p>';
+                    }
+                    unset($_SESSION['pass_msg']);
+                  ?>
+                </div>
+                <button class="edit_btn" id="password_btn">
+                  <img src="/assets/icons/edit_icon.svg">Change
+                </button>     
+              </div>
+              <div class="_row">
+                <div class="rowText" id="phoneText">
+                  <div class="rowName">Phone number</div>
+                  <div class="rowData" id="phoneData"><?= $_SESSION['user']['phone'] ?></div>
+                </div>
+                <button class="edit_btn" id="phone_btn">
+                  <img src="/assets/icons/edit_icon.svg">Change
+                </button>                
+              </div>
+              <div class="_row">
+                <div class="rowText" id="addressText">
+                  <div class="rowName">Address</div>
+                  <div class="rowData" id="addressData"><?= $_SESSION['user']['address'] ?></div>
+                </div>
+                <button class="edit_btn" id="address_btn">
+                  <img src="/assets/icons/edit_icon.svg">Change
+                </button>                
+              </div>
+              <div class="_row">
+                <div class="rowText">
+                  <div class="rowName">Data of birth</div>
+                  <div class="rowData" type="password"><?= $_SESSION['user']['birth'] ?></div>
+                </div>
+              </div>
+            </div>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="history">
-
+            <!--  -->
           </div>
           <div role="tabpanel" class="tab-pane fade" id="payment">
-
+            <!--  -->
           </div>
         </div>
       </div>

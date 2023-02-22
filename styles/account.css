@@ -26,12 +26,19 @@
   .table {
     padding: 12px 16px !important;
   }
+  .container {
+    padding: 0 32px;
+  }
 }
 
 @media (max-width: 860px) {
   .horizontal_line-md {
     width: 25% !important;
   }
+}
+
+html {
+  background: #fafbfc;
 }
 
 .btn {
@@ -44,11 +51,14 @@
   margin-top: 48px;
 }
 
-.profile_head > img {
+.profile_bg {
   position: relative;
-  width: 100%;
-  z-index: -1;
   border-radius: 12px;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  width: 100%;
+  height: 350px;
 }
 
 .bg_btn {
@@ -72,6 +82,8 @@
 .account_elements .avatar {
   width: 160px;
   height: 160px;
+  border: 4px solid #FF8682;
+  filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.08));
 }
 
 .account_elements .arrowDown {
@@ -108,10 +120,10 @@
   gap: 40px;
 }
 
-.table {
+.window {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   padding: 16px 24px;
   align-items: center;
@@ -119,6 +131,18 @@
   background: #FFFFFF;
   box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
   border-radius: 12px;
+}
+
+#account .window {
+  gap: 32px;
+}
+
+.tab-content>.active {
+  display: flex;
+  gap: 16px;
+  text-align: start;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .horizontal_line-md {
@@ -131,4 +155,96 @@
   border: 3px solid #8DD3BB;
 
   transition: 0.5s;
+}
+
+.stage_title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  color: #000000;
+}
+
+.rowText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0px;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+
+.rowName {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #112211;
+  opacity: 0.75;
+}
+
+.rowData {
+  display: flex;
+  gap: 24px;
+  font-weight: 500;
+  width: 100%;
+  font-size: 20px;
+  line-height: 24px;
+  color: #112211;
+}
+
+._row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 32px;
+}
+
+.edit_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15.5px 32px;
+  gap: 4px;
+  font-size: 1rem;
+  white-space: nowrap;
+  border: 1px solid #8DD3BB;
+  border-radius: 4px;
+  line-height: unset;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.change_input {
+  height: 32px;
+  border: 1px solid #79747e;
+  border-radius: 4px;
+  padding-left: 8px;
+}
+
+.change_form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.inputs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 }

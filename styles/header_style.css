@@ -158,6 +158,7 @@ header  .content {
   background-position: center !important;
   background-size: cover !important;
   order: 0;
+  background-color: #fff !important;
 }
 
 .dropdown-menu .avatar {
