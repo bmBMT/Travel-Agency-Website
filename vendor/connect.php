@@ -10,5 +10,9 @@
         die('Error connect to DataBase');
     }
 
-    // Change character set to utf8
+    /* Site url */
+
+    $site_url = "http://localhost.test/";
+
+    /* Change character set to utf8 */
     mysqli_set_charset($connect, "utf8");

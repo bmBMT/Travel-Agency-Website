@@ -82,6 +82,7 @@ $("#signup_btn").click(function(e) {
         password_confirm = $('input[name="password_confirm"]').val(),
         checkbox = $('input[name="checkbox"]').is(':checked');
 
+
     let formData = new FormData();
     formData.append('firstName', firstName);
     formData.append('lastName', lastName);
@@ -90,6 +91,7 @@ $("#signup_btn").click(function(e) {
     formData.append('password', password);
     formData.append('password_confirm', password_confirm);
     formData.append('avatar', avatar);
+    formData.append('checkbox', checkbox);
 
     $.ajax({
         url: '/vendor/signup.php',
@@ -108,9 +110,98 @@ $("#signup_btn").click(function(e) {
                     data.fields.forEach(function(field) {
                         $(`fieldset[name="${field}"]`).addClass('error_field');
                     });
-                    if ('checkbox' in data.fields) {
-                        console.log('true');
+                    if (data.fields.includes("checkbox")) {
+                        $('.sign_secondaryInputs').addClass('error_checkbox');
+                    } else {
+                        $('.sign_secondaryInputs').removeClass('error_checkbox');
                     }
+                }
+
+                $(".warning_msg").removeClass('none').text(data.massage);
+            }
+        }
+    });
+});
+
+/* ForgotPass */
+
+$("#forgot_btn").click(function(e) {
+    e.preventDefault();
+
+    $(`fieldset[name="email"]`).removeClass('error_field');
+
+    let email = $('input[name="email"]').val();
+
+    $.ajax({
+        url: '/vendor/forgotpass.php',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            email: email
+        },
+        success (data) {
+            if (data.status) {
+                $(".msg").removeClass('none').removeClass(".warning_msg").addClass("success_msg").text(data.massage);
+                setTimeout(() => {
+                    location.href = '/pages/login.php';
+                }, "1000")
+
+                $.ajax({
+                    url: '/vendor/mail.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        email: email,
+                        massage: data.letter_msg,
+                        subject: data.subject
+                    }
+                });
+            } else {
+                if (data.type === 1) {
+                    data.fields.forEach(function(field) {
+                        $(`fieldset[name="${field}"]`).removeClass(".success_msg").addClass(".warning_msg").addClass('error_field');
+                    });
+                }
+                
+                $(".warning_msg").removeClass('none').text(data.massage);
+            }
+        }
+    });
+});
+
+/* Set Pass */
+
+$("#setpass_btn").click(function(e) {
+    e.preventDefault();
+
+    $(`fieldset[name="password"]`).removeClass('error_field');
+    $(`fieldset[name="password_confirm"]`).removeClass('error_field');
+    $(".msg").removeClass(".success_msg");
+
+    let password = $('input[name="password"]').val(),
+        password_confirm = $('input[name="password_confirm"]').val(),
+        change_key = $('input[name="change_key"]').val();
+
+    $.ajax({
+        url: '/vendor/setpass.php',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            password: password,
+            password_confirm: password_confirm,
+            change_key: change_key
+        },
+        success (data) {
+            if (data.status) {
+                $(".msg").removeClass('none').removeClass(".warning_msg").addClass("success_msg").text(data.massage);
+                setTimeout(() => {
+                    location.href = '/pages/login.php';
+                }, "1000")
+            } else {
+                if (data.type === 1) {
+                    data.fields.forEach(function(field) {
+                        $(`fieldset[name="${field}"]`).addClass('error_field');
+                    });
                 }
 
                 $(".warning_msg").removeClass('none').text(data.massage);

@@ -46,7 +46,7 @@
 
         if ($_SESSION['user']['bg'] != 'uploads/defaults/defaultProlife_bg.svg') {
             if (!unlink('../' . $_SESSION['user']['bg'])) {
-                continue;
+                //
             }
         }
         mysqli_query($connect, "UPDATE `users` SET `bg` = '$link' WHERE `email` = '$email'");

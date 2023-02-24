@@ -123,11 +123,12 @@ form > .sign_inputs {
   width: 100%;
   text-align: center;
   flex-wrap: wrap;
+  padding-bottom: 15px;
 }
 
 .sign_up .sign_secondaryInputs {
     justify-content: flex-start;
-    
+    width: max-content;
 }
 
 .forgot .sign_submitSecondary {
@@ -295,4 +296,8 @@ input[type="checkbox"] {
 
 .msg {
   margin-top: -15px;
+}
+
+.error_checkbox {
+  border-bottom: 1px solid red;
 }

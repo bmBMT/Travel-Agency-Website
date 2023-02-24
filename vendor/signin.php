@@ -7,7 +7,7 @@
 
     $error_fields = array();
 
-    if ($email === '') {
+    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error_fields[] = 'email';
     }
 

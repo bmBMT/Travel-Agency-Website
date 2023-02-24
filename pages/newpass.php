@@ -1,7 +1,13 @@
 <?php
   session_start();
+  require '../vendor/connect.php';
   if ($_SESSION['user']) {
     header('Location: /');
+  }
+  $change_key = $_GET['key'];
+  $check_key = mysqli_query($connect, "SELECT * FROM `users` WHERE `change_key` = '$change_key'");
+  if (mysqli_num_rows($check_key) === 0) {
+    header('Location: ../index.php');
   }
 ?>
 
@@ -17,7 +23,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/js/sign.js"></script>
     <link rel="stylesheet" href="/styles/style.css" />
     <link rel="stylesheet" href="/styles/sign_style.css" />
     <link rel="icon" href="/assets/icons/title_icon.svg" />
@@ -39,9 +44,10 @@
                 <div class="signText_secondary">Your previous password has been reseted. Please set a new password for your account.</div>
               </div>
               <div class="sign_mainElements">
-                <form action="/vendor/" method="post" class="sign_form">
+                <form class="sign_form">
                   <div class="sign_inputs">
-                    <fieldset class="passwordFieldset">
+                    <fieldset class="passwordFieldset" name="password">
+                        <input type="hidden" name="change_key" value="<?php echo $change_key ?>">
                         <legend>Create Password</legend>
                         <input type="password" name="password" id="password1" placeholder="Enter your new password" minlength="6" required>
                         <span id="eye" onclick="hidePassword(1)">
@@ -50,25 +56,18 @@
                         </span>
                       </fieldset>
                       
-                      <div class="massage">
-                        <fieldset id="password_confirmFieldset">
-                            <legend id="password_confirmLegend">Re-enter Password</legend>
-                            <input type="password" name="password_confirm" id="password2" placeholder="Re-enter your new password" required>
-                            <span id="eye" onclick="hidePassword(2)">
-                              <i class="fa fa-eye-slash" id="hide2"></i>
-                              <i class="fa fa-eye" id="view2" style="display: none;"></i>
-                            </span>
-                        </fieldset>
-                          <?php
-                            if ($_SESSION['passwordConfirm_msg']) {
-                              echo '<p class="msg warning_msg"> ' . $_SESSION['passwordConfirm_msg'] . ' </p>';
-                            }
-                            unset($_SESSION['passwordConfirm_msg']);
-                          ?>
-                      </div>
+                      <fieldset id="password_confirmFieldset" name="password_confirm">
+                          <legend id="password_confirmLegend">Re-enter Password</legend>
+                          <input type="password" name="password_confirm" id="password2" placeholder="Re-enter your new password" required>
+                          <span id="eye" onclick="hidePassword(2)">
+                            <i class="fa fa-eye-slash" id="hide2"></i>
+                            <i class="fa fa-eye" id="view2" style="display: none;"></i>
+                          </span>
+                      </fieldset>
+                      <p class="msg warning_msg none"></p>
                   </div>
                   <div class="sign_submit">
-                    <button type="submit" id="forgot_btn" class="sign_submit_btn">Set password</button>
+                    <button type="submit" id="setpass_btn" class="sign_submit_btn">Set password</button>
                   </div>
                 </form>
               </div>
@@ -94,5 +93,6 @@
           </div>
         </div>
     </div>
+    <script src="/js/sign.js"></script>
   </body>
 </html>
