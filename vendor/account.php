@@ -7,18 +7,20 @@
 
     if ($_FILES['avatar']) {
         changeAvatar($connect, $email);
-    } else if ($_FILES['bg']) {
+    } else if (isset($_FILES['bg'])) {
         changeBg($connect, $email);
-    } else if ($_POST['firstName'] && $_POST['lastName']) {
+    } else if (isset($_POST['firstName']) && isset($_POST['lastName'])) {
         changeName($connect, $email);
-    } else if ($_POST['email']) {
+    } else if (isset($_POST['email'])) {
         changeEmail($connect, $email);
-    } else if ($_POST['currentPass'] && $_POST['newPass']) {
+    } else if (isset($_POST['currentPass']) && isset($_POST['newPass'])) {
         changePass($connect, $email);
-    } else if ($_POST['address']) {
+    } else if (isset($_POST['address'])) {
         changeAddress($connect, $email);
-    } else if ($_POST['phone']) {
+    } else if (isset($_POST['phone'])) {
         changePhone($connect, $email);
+    } else if (isset($_POST['cardNum'])) {
+        addCreditCard($connect, $email);
     } else {
         header("Location: /pages/account.php");
     }
@@ -70,6 +72,7 @@
             echo "This email alredy exists";
         } else {
             mysqli_query($connect, "UPDATE `users` SET `email` = '$new_email' WHERE `email` = '$email'");
+            mysqli_query($connect, "UPDATE `payments` SET `email` = '$new_email' WHERE `email` = '$email'");
             $_SESSION['user']['email'] = $new_email;
             echo "success";
         }
@@ -101,5 +104,75 @@
         mysqli_query($connect, "UPDATE `users` SET `address` = '$address' WHERE `email` = '$email'");
         $_SESSION['user']['address'] = $address;
         echo "success";
+    }
+
+    function addCreditCard($connect, $email) {
+        $cardNum = $_POST['cardNum'];
+        $expDate = $_POST['expDate'];
+        $cvc = $_POST['cvc'];
+        $name = $_POST['name'];
+        $country = $_POST['country'];
+        $system = $_POST['system'];
+
+        $error_fields = array();
+
+        if (strlen($cardNum) < 19) {
+            $error_fields[] = 'cardNum';
+        }
+
+        if (strlen($expDate) < 5 || intval(mb_substr($expDate, -2, 2)) < intval(mb_substr(date("Y"), -2,2)) || intval(mb_substr($expDate, 0, 2) > 31)) {
+            $error_fields[] = 'expDate';
+        }
+
+        if (strlen($cvc) < 3) {
+            $error_fields[] = 'cvc';
+        }
+
+        if (strlen($name) < 2) {
+            $error_fields[] = 'name';
+        }
+
+        if ($country == '') {
+            $error_fields[] = 'country';
+        }
+
+        if (!empty($error_fields)) {
+            $response = array(
+                "status" => false,
+                "type" => 1,
+                "massage" => 'Not all fields were filled out completely',
+                "fields" => $error_fields
+            );
+            echo json_encode($response);
+            die();
+        }
+
+        if ($_SESSION['user']) {
+            $email = $_SESSION['user']['email'];
+
+            $cardNum = substr_replace($cardNum,'**** **** ****', 0, 14);
+            $cvc = md5($cvc);
+
+            $check_card = mysqli_query($connect, "SELECT * FROM `payments` WHERE `email` = '$email' AND `card_num` = '$cardNum' AND `exp_date` = '$expDate'");
+
+            if (mysqli_num_rows($check_card) > 0) {
+                $response = array(
+                    "status" => false,
+                    "type" => 2,
+                    "massage" => 'This credit card has already been added'
+                );
+                echo json_encode($response);
+                die();
+            } else {
+                mysqli_query($connect, "INSERT INTO `payments`(`id`, `email`, `card_num`, `exp_date`, `cvc`, `name`, `country`, `system`) VALUES (NULL, '$email', '$cardNum', '$expDate', '$cvc', '$name', '$country', '$system')");
+                $_SESSION['success_msg'] = 'Register successfully';
+                $response = array(
+                    "status" => true
+                );
+                echo json_encode($response);
+            }
+        } else {
+            header("Location: /");
+        }
     }
 ?>

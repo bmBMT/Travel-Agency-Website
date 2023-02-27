@@ -372,13 +372,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        let phoneInputs = document.querySelectorAll('input[data-tel-input]');
+        let datepicker = document.querySelectorAll('input[data-tel-input]');
 
         let getInputNumbersValue = function (input) {
             return input.value.replace(/\D/g, "");
         }
 
-        let onPhoneInput = function (e) {
+        let onDatepickerInput = function (e) {
             let input = e.target,
                 inputNumbersValue = getInputNumbersValue(input),
                 formattedInputValue = "",
@@ -424,14 +424,14 @@ document.addEventListener("DOMContentLoaded", function () {
             input.value = formattedInputValue;
         }
 
-        let onPhoneKeyDown = function (e) {
+        let onDatepickerKeyDown = function (e) {
             let input = e.target;
             if (e.keyCode == 8 && getInputNumbersValue(input).length == 1) {
                 input.value = "";
             }
         }
 
-        let onPhonePaste = function (e) {
+        let onDatepickerPaste = function (e) {
             let pasted = e.clipboardData || window.clipboardData,
                 input = e.target,
                 inputNumbersValue = getInputNumbersValue(input);
@@ -444,11 +444,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        for (i = 0; i < phoneInputs.length; i++) {
-            let input = phoneInputs[i];
-            input.addEventListener("input", onPhoneInput);
-            input.addEventListener("keydown", onPhoneKeyDown);
-            input.addEventListener("paste", onPhonePaste);
+        for (i = 0; i < datepicker.length; i++) {
+            let input = datepicker[i];
+            input.addEventListener("input", onDatepickerInput);
+            input.addEventListener("keydown", onDatepickerKeyDown);
+            input.addEventListener("paste", onDatepickerPaste);
         }
     });
 
@@ -531,5 +531,146 @@ document.addEventListener("DOMContentLoaded", function () {
                 xml.send(`${address.name}=${address.value}`);
             }
         });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    let datepickerInputs = document.querySelectorAll('input[data-date]');
+
+    let getInputNumbersValue = function(input) {
+        return input.value.replace(/\D/g, "");
+    }
+
+    let onDatepickerInput = function(e) {
+        let input = e.target, 
+            inputNumbersValue = getInputNumbersValue(input), 
+            formattedInputValue = "",
+            selectionStart = input.selectionStart;
+
+        if (!inputNumbersValue) {
+            return input.value = "";
+        }
+
+        if (input.value.length != selectionStart) {
+            if (e.data && /\D/g.test(e.data)) {
+                input.value = inputNumbersValue;
+            }
+            return;
+        }
+
+        input.value = inputNumbersValue.substring(0, 2);
+        if (inputNumbersValue.length > 2) input.value += "/" + inputNumbersValue.substring(2, 4);
+    }
+
+    let onDatepickerKeyDown = function(e) {
+        let input = e.target;
+        if (e.keyCode == 8 && getInputNumbersValue(input).length == 1) {
+            input.value = "";
+        }
+    }
+
+    let onDatepickerPaste = function(e) {
+        let pasted = e.clipboardData || window.clipboardData,
+            input = e.target,
+            inputNumbersValue = getInputNumbersValue(input);
+        
+        if (pasted) {
+            let pastedText = pasted.getData("Text");
+            if (/\D/g.test(pastedText)) {
+                input.value = inputNumbersValue;
+            }
+        }
+    }
+
+    for (i=0; i<datepickerInputs.length; i++) {
+        let input = datepickerInputs[i];
+        input.addEventListener("input", onDatepickerInput);
+        input.addEventListener("keydown", onDatepickerKeyDown);
+        input.addEventListener("paste", onDatepickerPaste);
+    }
+});
+
+$('.nav-link').click(function() {
+    var underline = $('.horizontal_line-md');
+    var _this = $(this);
+    var leftScale = _this.position().left;
+    underline.css({left: '' + leftScale + 'px'});
+});
+
+$('input[type=number][max]:not([max=""])').on('input', function() {
+    var $this = $(this);
+    var maxlength = $this.attr('max').length;
+    var value = $this.val();
+    if (value && value.length >= maxlength) {
+      $this.val(value.substr(0, maxlength));
+    }
+});
+
+$('#newPayCard_submit').click(function(e) {
+    e.preventDefault();
+
+    $('fieldset[name="cardNum"]').removeClass('error_field');
+    $('fieldset[name="expDate"]').removeClass('error_field');
+    $('fieldset[name="cvc"]').removeClass('error_field');
+    $('fieldset[name="name"]').removeClass('error_field');
+    $('fieldset[name="country"]').removeClass('error_field');
+
+    let cardNum = $('input[name="cardNum"]').val(),
+        expDate = $('input[name="expDate"]').val(),
+        cvc = $('input[name="cvc"]').val(),
+        name = $('input[name="name"]').val(),
+        country = $('select[name="country"]').val(),
+        system = $('#logo').attr("class");
+
+    $.ajax({
+        url: '/vendor/account.php',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            cardNum: cardNum,
+            expDate: expDate,
+            cvc: cvc,
+            name: name,
+            country: country,
+            system: system
+        },
+        success (data) {
+            if (data.status) {
+                $('.msg').addClass("none");
+                location.reload();
+            } else {
+                if (data.type === 1) {
+                    data.fields.forEach(function(field) {
+                        $(`fieldset[name="${field}"]`).addClass('error_field');
+                    });
+                }
+                
+                $(".warning_msg").removeClass('none').text(data.massage);
+            }
+        }
+    });
+});
+
+$('.deleteCard').click(function(e) {
+    const ID = $(this).attr('name');
+
+    let card_num = "**** **** **** " + $(`.added_payCard[name="${ID}"] .payCard_num`).text(),
+        name = $(`.added_payCard[name="${ID}"] .payCard_name`).text(),
+        exp_date = $(`.added_payCard[name="${ID}"] .payCard_exp`).text();
+
+    $.ajax({
+        url: '/vendor/deletePayMethod.php',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            card_num: card_num,
+            name: name,
+            exp_date: exp_date
+        },
+        success (data) {
+            if (data.status) {
+                location.reload();
+            }
+        }
     });
 });

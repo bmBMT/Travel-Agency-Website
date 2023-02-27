@@ -31,6 +31,12 @@
   }
 }
 
+@media (min-width: 544px) {
+  .modal-dialog {
+      max-width: 640px;
+  }
+}
+
 @media (max-width: 860px) {
   .horizontal_line-md {
     width: 25% !important;
@@ -137,6 +143,14 @@ html {
   gap: 32px;
 }
 
+#payment .window {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
 .tab-content>.active {
   display: flex;
   gap: 16px;
@@ -154,7 +168,7 @@ html {
 
   border: 3px solid #8DD3BB;
 
-  transition: 0.5s;
+  transition: 0.8s;
 }
 
 .stage_title {
@@ -247,4 +261,246 @@ html {
   flex-direction: row;
   align-items: center;
   gap: 8px;
+}
+
+.payCard {
+  max-width: 357px;
+  min-width: 270px;
+  width: 100%;
+  height: 212px;
+  border-radius: 16px;
+}
+
+.payCard:hover {
+  box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.2);
+}
+
+.added_payCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 57px;
+  background: #8DD3BB;
+}
+
+#newPayCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  gap: 10px;
+  border: 2px dashed #8DD3BB;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.newPayCard_text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #112211;
+  cursor: pointer;
+}
+
+.newPayCard_title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 51px;
+  color: #000000;
+}
+
+.newPayCard_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 40px;
+}
+
+.newPayCard_submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+}
+
+.newPayCard_inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  width: 100%;
+}
+
+.modal .close:hover {
+  background: none;
+}
+.close {
+  color: #000000;
+  opacity: unset;
+}
+.close span {
+  cursor: pointer;
+}
+.modal-header {
+  border: none;
+  padding: 0;
+}
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  border: none;
+  padding: 0;
+}
+.modal-content {
+  border: none;
+  border-radius: 12px;
+  background: #FFFFFF;
+  padding: 64px;
+}
+.modal-content fieldset,
+.modal-content .btn {
+  width: 100%;
+}
+
+.secondDataCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.remenderCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+}
+
+.remenderCard-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #112211;
+}
+
+.modal-content input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #000000;
+}
+
+.newPayCard_submitAbout {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #112211;
+  opacity: 0.75;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+fieldset .form-control {
+  width: 98%;
+  text-align: start;
+  height: 30px !important;
+  padding: 0 8px;
+  scrollbar-width: thin;
+}
+.dropdown-toggle {
+  padding: 0;
+}
+div.dropdown.bootstrap-select {
+  width: 100% !important;
+  padding: 0 14px;
+}
+input[type="search"] {
+  cursor: text;
+}
+
+.modal-content .msg {
+  width: 100%;
+  text-align: center;
+}
+
+.payCard_asterisks {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #112211;
+}
+
+.payCard_num {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  color: #112211;
+}
+
+.payCard_head {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px;
+  gap: 16px;
+}
+
+.payCard_text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.payCard_foot {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+}
+
+.payCard_name {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  color: #112211;
+}
+
+.payCard_exp {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #112211;
+}
+
+.added_payCard .logo {
+  width: 51px;
+  height: 40px;
+  margin-right: -6px;
+}
+
+.deleteCard {
+  cursor: pointer;
 }

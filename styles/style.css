@@ -57,6 +57,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #112211;
   background: #fafbfc;
+  padding: 0 !important;
 }
 
 body::before {
@@ -148,12 +149,12 @@ div {
 
 input {
   color: inherit;
-  opacity: 0.75;
   cursor: auto;
 }
 
 input::placeholder {
   color: inherit;
+  opacity: 0.75;
   font-weight: 400;
   transition: color 0.3s ease-in;
 }
@@ -305,14 +306,17 @@ fieldset {
   border: 1px solid #79747e;
   border-radius: 4px;
   height: 64px;
+  display: flex;
+  justify-content: space-between;
 }
 
 fieldset input {
-  width: 99%;
-  height: 28px;
+  width: 98%;
+  height: 30px;
   font-weight: 400;
   font-size: 16px;
   padding-left: 8px;
+  padding-right: 8px;
   border: none;
   margin-left: 6px;
   background: none;

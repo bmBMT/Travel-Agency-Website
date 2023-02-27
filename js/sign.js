@@ -35,6 +35,7 @@ $("#login_btn").click(function(e) {
         },
         success (data) {
             if (data.status) {
+                $('.msg').addClass("none");
                 document.location.href = ("/");
             } else {
 
@@ -159,7 +160,7 @@ $("#forgot_btn").click(function(e) {
             } else {
                 if (data.type === 1) {
                     data.fields.forEach(function(field) {
-                        $(`fieldset[name="${field}"]`).removeClass(".success_msg").addClass(".warning_msg").addClass('error_field');
+                        $(`fieldset[name="${field}"]`).addClass('error_field');
                     });
                 }
                 

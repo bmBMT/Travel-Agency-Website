@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Фев 23 2023 г., 23:26
+-- Время создания: Фев 27 2023 г., 22:10
 -- Версия сервера: 5.5.25
 -- Версия PHP: 5.3.13
 
@@ -19,6 +19,31 @@ SET time_zone = "+00:00";
 --
 -- База данных: `project_bd`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `payments`
+--
+
+CREATE TABLE IF NOT EXISTS `payments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(355) DEFAULT NULL,
+  `card_num` varchar(19) DEFAULT NULL,
+  `exp_date` varchar(5) DEFAULT NULL,
+  `cvc` varchar(3) DEFAULT NULL,
+  `name` varchar(355) DEFAULT NULL,
+  `country` varchar(355) DEFAULT NULL,
+  `system` varchar(355) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+--
+-- Дамп данных таблицы `payments`
+--
+
+INSERT INTO `payments` (`id`, `email`, `card_num`, `exp_date`, `cvc`, `name`, `country`, `system`) VALUES
+(8, 'alexandr.samarin.04@mail.ru', '**** **** **** 8515', '12/35', '3de', 'jo', 'Afghanistan', 'visa');
 
 -- --------------------------------------------------------
 

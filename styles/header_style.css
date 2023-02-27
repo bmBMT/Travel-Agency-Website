@@ -73,6 +73,10 @@ header {
   background: #ffffff;
 }
 
+#indexHero header {
+  top: -1px
+}
+
 header .content {
   top: 0;
   width: 100%;
