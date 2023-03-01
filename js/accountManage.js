@@ -372,13 +372,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        let datepicker = document.querySelectorAll('input[data-tel-input]');
+        let phoneInputs = document.querySelectorAll('input[data-tel-input]');
 
         let getInputNumbersValue = function (input) {
             return input.value.replace(/\D/g, "");
         }
 
-        let onDatepickerInput = function (e) {
+        let onPhoneInput = function (e) {
             let input = e.target,
                 inputNumbersValue = getInputNumbersValue(input),
                 formattedInputValue = "",
@@ -424,14 +424,14 @@ document.addEventListener("DOMContentLoaded", function () {
             input.value = formattedInputValue;
         }
 
-        let onDatepickerKeyDown = function (e) {
+        let onPhoneKeyDown = function (e) {
             let input = e.target;
             if (e.keyCode == 8 && getInputNumbersValue(input).length == 1) {
                 input.value = "";
             }
         }
 
-        let onDatepickerPaste = function (e) {
+        let onPhonePaste = function (e) {
             let pasted = e.clipboardData || window.clipboardData,
                 input = e.target,
                 inputNumbersValue = getInputNumbersValue(input);
@@ -444,11 +444,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
 
-        for (i = 0; i < datepicker.length; i++) {
-            let input = datepicker[i];
-            input.addEventListener("input", onDatepickerInput);
-            input.addEventListener("keydown", onDatepickerKeyDown);
-            input.addEventListener("paste", onDatepickerPaste);
+        for (i = 0; i < phoneInputs.length; i++) {
+            let input = phoneInputs[i];
+            input.addEventListener("input", onPhoneInput);
+            input.addEventListener("keydown", onPhoneKeyDown);
+            input.addEventListener("paste", onPhonePaste);
         }
     });
 
@@ -591,7 +591,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 $('.nav-link').click(function() {
-    var underline = $('.horizontal_line-md');
+    const ID = $(this).attr('name');
+    var underline = $(`.horizontal_line-md[id="${ID}"]`);
     var _this = $(this);
     var leftScale = _this.position().left;
     underline.css({left: '' + leftScale + 'px'});
@@ -652,20 +653,14 @@ $('#newPayCard_submit').click(function(e) {
 });
 
 $('.deleteCard').click(function(e) {
-    const ID = $(this).attr('name');
-
-    let card_num = "**** **** **** " + $(`.added_payCard[name="${ID}"] .payCard_num`).text(),
-        name = $(`.added_payCard[name="${ID}"] .payCard_name`).text(),
-        exp_date = $(`.added_payCard[name="${ID}"] .payCard_exp`).text();
+    const ID = $(this).attr('id');
 
     $.ajax({
         url: '/vendor/deletePayMethod.php',
         type: 'POST',
         dataType: 'json',
         data: {
-            card_num: card_num,
-            name: name,
-            exp_date: exp_date
+            id: ID
         },
         success (data) {
             if (data.status) {

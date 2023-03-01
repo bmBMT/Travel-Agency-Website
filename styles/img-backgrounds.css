@@ -92,3 +92,13 @@
     background: url("https://jscardvalidator-mpccmwdwqf.now.sh/cards_sprite_compressed_30.jpg")
       0 -640px no-repeat;
   }
+
+  .emirates {
+    background: url("/assets/imgs/companies/emirates.svg") no-repeat;
+    background-position: center;
+  }
+
+  .cvk_istanbul {
+    background: url("/assets/imgs/companies/cvk_istanbul.svg") no-repeat;
+    background-position: center;
+  }

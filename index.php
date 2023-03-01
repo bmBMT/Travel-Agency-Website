@@ -21,7 +21,6 @@
     <script src="js/search_filter_card.js"></script>
     <script src="js/indexHeaderChange.js"></script>
     <script src="js/readMore.js"></script>
-    <script src="js/header.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/cards.css">
     <link rel="stylesheet" href="styles/search_filter_card.css" />
@@ -41,98 +40,108 @@
           <div class="blackout"></div>
         </div>
         <header class="header" id="header" style="color: white;">
-          <div class="content" id="head_content">
-            <div class="sections">
-              <a href="#" class="link">
-                <img src="assets/icons/white_airplane_icon.svg" id="head_airPlane_icon"/>Find Flight
-              </a>
-              <a href="#" class="link">
-                <img src="assets/icons/white_bed_icon.svg" id="head_bed_icon"/>Find Stays
-              </a>
-            </div>
-
-            <a href="/index.php" class="logo">
-              <img src="assets/icons/whiteGreen_logo_icon.svg" id="logo_icon"/>
-            </a>
-            <div class="buttons" id="unlogined_btns">
-              <a href="pages/login.php">
-                <button class="btn login" id="login_btn" style="color: white;">Login</button>
-              </a>
-              <a href="pages/sign_up.php">
-                <button class="btn sign_up btn_white" id="sign_up_btn">Sign up</button>
-              </a>
-            </div>
-            <div class="logined_elements" id="logined_elements">
-              <div class="favourites_link">
+          <div class="container">
+            <div class="content" id="head_content">
+              <div class="sections">
                 <a href="#" class="link">
-                  <img src="assets/icons/white_heart_icon.svg" id="heart_icon">
-                  <div class="favourites_text">
-                    Favourites
-                  </div>
+                  <img src="/assets/icons/white_airplane_icon.svg" id="head_airPlane_icon"/>Find Flight
                 </a>
-                <span class="vertical_line"></span>
+                <a href="#" class="link">
+                  <img src="/assets/icons/white_bed_icon.svg" id="head_bed_icon"/>Find Stays
+                </a>
               </div>
-              <div class="dropdown">
-                <div class="profile">
-                  <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="background: url(<?= $_SESSION['user']['avatar'] ?>);">
-                    <div class="arrowDown">
-                      <box-icon name='chevron-down'></box-icon>
-                    </div>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" >
-                    <div class="column">
-                      <div class="profile">
-                        <div class="avatar"  style="background: url(<?= $_SESSION['user']['avatar'] ?>);"></div>
-                        <div class="status_text">
-                          <div class="name"><?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?></div>
-                          <div class="profile_status">Online</div>
+        
+              <a href="/index.php" class="logo">
+                <img src="/assets/icons/whiteGreen_logo_icon.svg" id="logo_icon"/>
+              </a>
+              <?php 
+                if (!$_SESSION['user'])
+                { ?>
+                  <div class="buttons" id="unlogined_btns">
+                    <a href="/pages/login.php">
+                      <button class="btn login" id="login_btn" style="color: white;">Login</button>
+                    </a>
+                    <a href="/pages/sign_up.php">
+                      <button class="btn sign_up btn_white" id="sign_up_btn">Sign up</button>
+                    </a>
+                  </div> <?php
+                } ?> <?php
+                if ($_SESSION['user'])
+                { ?>
+                  <div class="logined_elements" id="logined_elements">
+                    <div class="favourites_link">
+                      <a href="#" class="link">
+                        <img src="/assets/icons/white_heart_icon.svg" id="heart_icon">
+                        <div class="favourites_text">
+                            Favourites
                         </div>
-                      </div>
-                      <hr />
-                      <section class="dropDown_links">
-                        <a href="pages/account.php" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                          <img src="assets/icons/user_icon.svg">
-                          <div class="dropDown_text">My account</div>
-                          </div>
-                          <img src="assets/icons/black_arrowRight.svg" />
-                        </a>
-                        <a href="#" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                            <img src="assets/icons/card_icon.svg" />
-                            <div class="dropDown_text">Payments</div>
-                          </div>
-                          <img src="assets/icons/black_arrowRight.svg" />
-                        </a>
-                        <a href="#" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                            <img src="assets/icons/settings_icon.svg" />
-                            <div class="dropDown_text">Settings</div>
-                          </div>
-                          <img src="assets/icons/black_arrowRight.svg" />
-                        </a>
-                      </section>
-                      <hr />
-                      <section class="dropDown_links">
-                        <a href="#" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                            <img src="assets/icons/support_icon.svg" />
-                            <div class="dropDown_text">Support</div>
-                          </div>
-                          <img src="assets/icons/black_arrowRight.svg" />
-                        </a>
-                        <a href="vendor/logout.php" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                            <img src="assets/icons/logout_icon.svg" />
-                            <div class="dropDown_text">Logout</div>
-                          </div>
-                        </a>
-                      </section>
+                      </a>
+                      <span class="vertical_line"></span>
                     </div>
-                  </div>
-                  <div class="name"><?= $_SESSION['user']['first_name'] . " " . mb_substr($_SESSION['user']['last_name'], 0, 2) . "." ?></div>
-                </div>
-              </div>
+                    <div class="dropdown">
+                      <div class="profile">
+                        <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);">
+                          <div class="arrowDown <?= $_SESSION['user']['role'] ?>">
+                            <box-icon name='chevron-down'></box-icon>
+                          </div>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" >
+                          <div class="column">
+                            <div class="profile">
+                              <div class="avatar"  style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);"></div>
+                              <div class="status_text">
+                                <div class="name"><?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?></div>
+                                <div class="profile_status">Online</div>
+                              </div>
+                            </div>
+                            <hr />
+                            <section class="dropDown_links">
+                              <a href="/pages/account.php" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                <img src="/assets/icons/user_icon.svg">
+                                <div class="dropDown_text">My account</div>
+                                </div>
+                                <img src="/assets/icons/black_arrowRight.svg" />
+                              </a>
+                              <a href="/pages/payments.php" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                  <img src="/assets/icons/card_icon.svg" />
+                                  <div class="dropDown_text">Payments</div>
+                                </div>
+                                <img src="/assets/icons/black_arrowRight.svg" />
+                              </a>
+                              <a href="/pages/settings.php" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                  <img src="/assets/icons/settings_icon.svg" />
+                                  <div class="dropDown_text">Settings</div>
+                                </div>
+                                <img src="/assets/icons/black_arrowRight.svg" />
+                              </a>
+                            </section>
+                            <hr />
+                            <section class="dropDown_links">
+                              <a href="#" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                  <img src="/assets/icons/support_icon.svg" />
+                                  <div class="dropDown_text">Support</div>
+                                </div>
+                                <img src="/assets/icons/black_arrowRight.svg" />
+                              </a>
+                              <a href="/vendor/logout.php" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                  <img src="/assets/icons/logout_icon.svg" />
+                                  <div class="dropDown_text">Logout</div>
+                                </div>
+                              </a>
+                            </section>
+                          </div>
+                        </div>
+                        <div class="name"><?= $_SESSION['user']['first_name'] . " " . mb_substr($_SESSION['user']['last_name'], 0, 2) . "." ?></div>
+                      </div>
+                    </div>
+                  </div> <?php
+                }
+              ?>
             </div>
           </div>
         </header>
@@ -524,8 +533,6 @@
       </div>
     </div>
 
-
-
     <footer class="footer">
       <div class="container">
         <div class="footer_content">
@@ -638,5 +645,4 @@
       </div>
     </footer>
   </body>
-  <script>logined(<?= json_encode($_SESSION['user']) ?>)</script>
 </html>

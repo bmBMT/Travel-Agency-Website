@@ -89,7 +89,14 @@ a {
   transition: color 0.2s ease-in;
 }
 
-a:hover {
+a:focus {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a:active {
   color: #72ad96;
   text-decoration: none;
 }

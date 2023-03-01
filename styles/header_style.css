@@ -262,3 +262,22 @@ header  .content {
   justify-content: center;
   align-items: center;
 }
+
+.arrowDown.user {
+  background-color: #FFFFFF;
+}
+.arrowDown.moderator {
+  background-color: #8DD3BB;
+}
+.arrowDown.admin {
+  background-color: #ff8682;
+}
+.avatar.user {
+  border: 4px solid #FFFFFF;
+}
+.avatar.moderator {
+  border: 4px solid #8DD3BB;
+}
+.avatar.admin {
+  border: 4px solid #ff8682;
+}

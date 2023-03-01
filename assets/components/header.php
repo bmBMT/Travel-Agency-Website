@@ -8,7 +8,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="js/header.js"></script>
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/header_style.css" />
   </head>
@@ -29,89 +28,95 @@
               <a href="/index.php" class="logo">
                 <img src="/assets/icons/blackGreen_logo_icon.svg" id="logo_icon"/>
               </a>
-              <div class="buttons" id="unlogined_btns">
-                <a href="/pages/login.php">
-                  <button class="btn login" id="login_btn" style="color: black;">Login</button>
-                </a>
-                <a href="/pages/sign_up.php">
-                  <button class="btn sign_up btn_black" id="sign_up_btn">Sign up</button>
-                </a>
-              </div>
-              <div class="logined_elements" id="logined_elements">
-                <div class="favourites_link">
-                  <a href="#" class="link">
-                    <img src="/assets/icons/black_heart_icon.svg" id="heart_icon">
-                    <div class="favourites_text">
-                        Favourites
+              <?php 
+                if (!$_SESSION['user'])
+                { ?>
+                  <div class="buttons" id="unlogined_btns">
+                    <a href="/pages/login.php">
+                      <button class="btn login" id="login_btn" style="color: black;">Login</button>
+                    </a>
+                    <a href="/pages/sign_up.php">
+                      <button class="btn sign_up btn_black" id="sign_up_btn">Sign up</button>
+                    </a>
+                  </div> <?php
+                } ?> <?php
+                if ($_SESSION['user'])
+                { ?>
+                  <div class="logined_elements" id="logined_elements">
+                    <div class="favourites_link">
+                      <a href="#" class="link">
+                        <img src="/assets/icons/black_heart_icon.svg" id="heart_icon">
+                        <div class="favourites_text">
+                            Favourites
+                        </div>
+                      </a>
+                      <span class="vertical_line"></span>
                     </div>
-                  </a>
-                  <span class="vertical_line"></span>
-                </div>
-                <div class="dropdown">
-                  <div class="profile">
-                    <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);">
-                      <div class="arrowDown">
-                        <box-icon name='chevron-down'></box-icon>
-                      </div>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" >
-                      <div class="column">
-                        <div class="profile">
-                          <div class="avatar"  style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);"></div>
-                          <div class="status_text">
-                            <div class="name"><?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?></div>
-                            <div class="profile_status">Online</div>
+                    <div class="dropdown">
+                      <div class="profile">
+                        <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false" aria-expanded="true" style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);">
+                          <div class="arrowDown <?= $_SESSION['user']['role'] ?>">
+                            <box-icon name='chevron-down'></box-icon>
+                          </div>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2" >
+                          <div class="column">
+                            <div class="profile">
+                              <div class="avatar"  style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);"></div>
+                              <div class="status_text">
+                                <div class="name"><?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?></div>
+                                <div class="profile_status">Online</div>
+                              </div>
+                            </div>
+                            <hr />
+                            <section class="dropDown_links">
+                              <a href="/pages/account.php" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                <img src="/assets/icons/user_icon.svg">
+                                <div class="dropDown_text">My account</div>
+                                </div>
+                                <img src="/assets/icons/black_arrowRight.svg" />
+                              </a>
+                              <a href="#" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                  <img src="/assets/icons/card_icon.svg" />
+                                  <div class="dropDown_text">Payments</div>
+                                </div>
+                                <img src="/assets/icons/black_arrowRight.svg" />
+                              </a>
+                              <a href="#" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                  <img src="/assets/icons/settings_icon.svg" />
+                                  <div class="dropDown_text">Settings</div>
+                                </div>
+                                <img src="/assets/icons/black_arrowRight.svg" />
+                              </a>
+                            </section>
+                            <hr />
+                            <section class="dropDown_links">
+                              <a href="#" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                  <img src="/assets/icons/support_icon.svg" />
+                                  <div class="dropDown_text">Support</div>
+                                </div>
+                                <img src="/assets/icons/black_arrowRight.svg" />
+                              </a>
+                              <a href="/vendor/logout.php" class="dropDown_link">
+                                <div class="dropDown_link_content">
+                                  <img src="/assets/icons/logout_icon.svg" />
+                                  <div class="dropDown_text">Logout</div>
+                                </div>
+                              </a>
+                            </section>
                           </div>
                         </div>
-                        <hr />
-                        <section class="dropDown_links">
-                          <a href="#" class="dropDown_link">
-                            <div class="dropDown_link_content">
-                            <img src="/assets/icons/user_icon.svg">
-                            <div class="dropDown_text">My account</div>
-                            </div>
-                            <img src="/assets/icons/black_arrowRight.svg" />
-                          </a>
-                          <a href="#" class="dropDown_link">
-                            <div class="dropDown_link_content">
-                              <img src="/assets/icons/card_icon.svg" />
-                              <div class="dropDown_text">Payments</div>
-                            </div>
-                            <img src="/assets/icons/black_arrowRight.svg" />
-                          </a>
-                          <a href="#" class="dropDown_link">
-                            <div class="dropDown_link_content">
-                              <img src="/assets/icons/settings_icon.svg" />
-                              <div class="dropDown_text">Settings</div>
-                            </div>
-                            <img src="/assets/icons/black_arrowRight.svg" />
-                          </a>
-                        </section>
-                        <hr />
-                        <section class="dropDown_links">
-                          <a href="#" class="dropDown_link">
-                            <div class="dropDown_link_content">
-                              <img src="/assets/icons/support_icon.svg" />
-                              <div class="dropDown_text">Support</div>
-                            </div>
-                            <img src="/assets/icons/black_arrowRight.svg" />
-                          </a>
-                          <a href="/vendor/logout.php" class="dropDown_link">
-                            <div class="dropDown_link_content">
-                              <img src="/assets/icons/logout_icon.svg" />
-                              <div class="dropDown_text">Logout</div>
-                            </div>
-                          </a>
-                        </section>
+                        <div class="name"><?= $_SESSION['user']['first_name'] . " " . mb_substr($_SESSION['user']['last_name'], 0, 2) . "." ?></div>
                       </div>
                     </div>
-                    <div class="name"><?= $_SESSION['user']['first_name'] . " " . mb_substr($_SESSION['user']['last_name'], 0, 2) . "." ?></div>
-                  </div>
-                </div>
-              </div>
+                  </div> <?php
+                }
+              ?>
             </div>
         </div>
     </header>
-  </body>
-  <script>logined(<?= json_encode($_SESSION['user']) ?>)</script>
 </html>
