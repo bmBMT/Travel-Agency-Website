@@ -19,11 +19,11 @@ jQuery(document).ready(function() {
         if(sm_mq.matches){
             body.insertBefore(header, indexHero);
             indexHero_content.style.margin = "0px";
-            indexHero_content.style.marginTop = "95px"
             changeHead();
         } else {
             indexHero_content.insertBefore(header, hero);
             indexHero_content.style.marginTop = "30px";
+            returnHead();
         }
     }
 

@@ -2,12 +2,22 @@
   .cards_btn {
     font-size: 10px !important;
   }
+  .cards_about_title {
+    width: 90% !important;
+  }
+  .cards_about_description {
+    width: 90% !important;
+  }
 }
 
 .cards_content {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.cards_content > .row {
+  justify-content: center;
 }
 
 .sm-card {
@@ -58,12 +68,14 @@
   flex-direction: column;
   gap: 16px;
   text-align: left;
+  width: 100%;
 }
 
 .cards_about_title {
   font-size: 2.6354319180087846vw;
   font-weight: 600;
   color: #000000;
+  width: 80%;
 }
 
 .cards_about_description {
@@ -71,6 +83,7 @@
   font-weight: 400;
   color: inherit;
   opacity: 0.75;
+  width: 80%;
 }
 
 .cards_btn {
@@ -117,7 +130,7 @@
 .show_btn {
     width: max-content;
     padding: 15.5px 36px;
-    border-radius: 4px;
+    border-radius: 4px !important;
 }
 
 .stageCard_content {
@@ -139,4 +152,67 @@
 .stageCard_subscribtion {
     font-size: 16px;
     font-weight: 400;
+}
+
+.md-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 24px;
+  isolation: isolate;
+}
+
+.md-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 100%;
+}
+
+.md-card-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0px;
+  gap: 2px;
+  width: 100%;
+}
+
+.md-card-col-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 100%;
+}
+
+.md-card .card_title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+
+.md-card .card_description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+.md-card-price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+.md-card-content > a,
+.md-card-content button {
+  width: 100%;
 }

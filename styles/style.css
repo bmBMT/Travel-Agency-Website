@@ -73,7 +73,7 @@ body::before {
 
 .container {
   width: 100%;
-  max-width: 1380px;
+  max-width: 1450px;
   margin: auto;
   padding: 0 5.78125vw;
 }
@@ -138,10 +138,16 @@ div {
   cursor: default;
 }
 
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
 .row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 0;
 }
 
 .column {
@@ -223,9 +229,9 @@ button:active {
 
 fieldset div.dropdown-menu.show {
   top: 2px !important;
-  width: inherit;
+  width: calc(100% + 20px);
   overflow-y: scroll !important;
-  transform: translate3d(0px, 30px, 0px) !important;
+  transform: translate3d(-25px, 30px, 0px) !important;
   z-index: 10;
 }
 
@@ -234,7 +240,7 @@ div.inner.show {
 }
 
 .bootstrap-select {
-  width: 100px !important;
+  width: 120px !important;
 }
 
 .btn-light {
@@ -251,7 +257,7 @@ div.inner.show {
 .form-control {
   padding: 0;
   text-align: center;
-  width: 110px;
+  width: 90px;
   background-color: #fff !important;
   border: none !important;
   cursor: pointer;
@@ -428,4 +434,14 @@ li.nav-item {
 
 .success_msg {
   color: green;
+}
+
+@media (max-width: 400px) {
+  .bootstrap-select {
+    width: 100px !important;
+  }
+}
+
+input[type="checkbox"] {
+  accent-color: #000000;
 }

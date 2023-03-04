@@ -8,10 +8,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -43,10 +43,10 @@
           <div class="container">
             <div class="content" id="head_content">
               <div class="sections">
-                <a href="#" class="link">
+                <a href="/pages/flight-search.php" class="link">
                   <img src="/assets/icons/white_airplane_icon.svg" id="head_airPlane_icon"/>Find Flight
                 </a>
-                <a href="#" class="link">
+                <a href="/pages/hotel-search.php" class="link">
                   <img src="/assets/icons/white_bed_icon.svg" id="head_bed_icon"/>Find Stays
                 </a>
               </div>
@@ -242,7 +242,7 @@
                         <div class="form_content">
                           <div class="input_group">
                             <img src="assets/icons/leading_icon.svg" class="form_icon_left">
-                            <select name="enterDestination_selector" class="selectpicker" id="mySelect" data-live-search="true" data-size="7" data-display="static" data-dropup-auto="false" required>
+                            <select name="enterDestination_selector" class="selectpicker" id="bed_input-city" data-live-search="true" data-size="7" data-display="static" data-dropup-auto="false" required>
                               <option value="" selected disabled>Select option</option>
                               <optgroup label="Turkey">
                                 <option value="Istanbul, Turkey">Istanbul</option>
@@ -422,8 +422,8 @@
                     <div class="stageCard_title">Flights</div>
                     <div class="stageCard_description">Search Flights & Places Hire to our most popular destinations</div>
                   </div>
-                  <a href="#" id="flights_stage">
-                    <button type="submit" class="btn show_btn black_color">
+                  <a href="/pages/flight-search.php" id="flights_stage">
+                    <button class="btn show_btn black_color">
                       <img src="assets/icons/black_paperPlane_icon.svg">
                       Show Flights
                     </button>
@@ -438,8 +438,8 @@
                     <div class="stageCard_title">Hotels</div>
                     <div class="stageCard_description">Search hotels & Places Hire to our most popular destinations</div>
                   </div>
-                  <a href="#" id="hotels_stage">
-                    <button type="submit" class="btn show_btn black_color">
+                  <a href="/pages/hotel-search.php" id="hotels_stage">
+                    <button class="btn show_btn black_color">
                       <img src="assets/icons/black_paperPlane_icon.svg">
                       Show Hotels
                     </button>

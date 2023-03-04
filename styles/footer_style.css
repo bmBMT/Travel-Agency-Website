@@ -33,10 +33,10 @@
   }
   .footer_getEmail {
     padding: 1.40625vw 1.25vw;
-    font-size: 16px;
+    font-size: 18px;
   }
   .footer_getEmail::placeholder {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 

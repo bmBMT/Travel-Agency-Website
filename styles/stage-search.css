@@ -1,0 +1,217 @@
+@media (max-width: 500px) {
+    .stageHero-content {
+        width: 180px !important;
+    }
+
+    .stageHero-title {
+        font-size: 3.865vw !important;
+        line-height: 20px !important;
+    }
+
+    .stageHero-text {
+        font-size: 2.657vw !important;
+    }
+
+    .row {
+        flex-wrap: wrap !important;
+    }
+    
+    .journey_window-title-text {
+        font-size: 30px !important;
+        line-height: 41px !important;
+    }
+}
+
+@media (max-width: 1250px) {
+    #journey-row {
+        flex-wrap: wrap !important;
+    }
+}
+
+.wrapper > .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-img {
+    width: 100%;
+}
+
+.stageHero {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.stageHero-content {
+    position: absolute;
+    top: 5.856515373352855vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    width: 32.210834553440705vw;
+    white-space: pre-wrap;
+}
+
+.stageHero-title {
+    font-weight: 500;
+    font-size: 3.294289897510981vw;
+    line-height: 4.172767203513909vw;
+    color: #FFFFFF;
+}
+
+.stageHero-text {
+    font-weight: 400;
+    font-size: 1.4641288433382138vw;
+    line-height: 1.7569546120058566vw;
+    color: #FFFFFF;
+}
+
+.search_filter_card {
+    position: relative;
+    margin-top: -5.270863836017569vw;
+}
+
+.search_filter_content {
+    padding: 32px;
+}
+
+.search_filter_title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #112211;
+}
+
+.wrapper {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 80px;
+}
+
+.md-card {
+    width: 296px;
+    height: 420px;
+}
+
+.cards .row {
+    gap: 16px;
+}
+
+#journey-row {
+    flex-wrap: nowrap;
+    gap: 24px;
+}
+
+.journey_window {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 120px;
+    background: #8DD3BB;
+    border-radius: 20px;
+    max-width: 792px;
+}
+
+.journey_window a {
+    width: 100%;
+}
+
+.journey_window-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+
+.journey_window-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 100%;
+}
+
+.journey_window-title-text {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 51px;
+    color: #112211;
+}
+
+.journey_window-worth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 4px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.journey_window-worth-title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #112211;
+}
+
+.journey_window-worth-price {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #112211;
+}
+
+.journey_window-description {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #112211;
+}
+
+.journey_window button {
+    background: #FFFFFF;
+    width: 100%;
+}
+
+#journey-row .row {
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.journey-imgs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    justify-content: space-between;
+}
+
+.journey-imgs .row {
+    gap: 20px;
+}
+
+.journey-imgs-img {
+    box-sizing: border-box;
+    border: 2px solid #8DD3BB;
+    border-radius: 12px;
+    width: 318px;
+    height: 200px;
+}
+
+.stageHero .bed_input {
+    display: unset;
+}

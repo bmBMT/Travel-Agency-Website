@@ -27,9 +27,16 @@
   }
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1062px) {
   .fieldsets {
-    gap: 24px;
+    gap: 18px !important;
+    justify-content: space-evenly !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .fieldsets {
+    justify-content: unset !important;
   }
 }
 
@@ -38,7 +45,7 @@
   background: #ffffff;
   box-shadow: 0px 4px 16px rgba(141, 211, 187, 0.15);
   border-radius: 16px;
-  margin: 0 21px;
+  margin: 0 auto;
   z-index: 1;
   max-width: 1049.71px;
   width: 100%;
@@ -118,12 +125,7 @@ fieldset .dropdown-menu {
   margin-top: 8px;
   margin-right: -14px;
   width: 314px;
-  border-top-left-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-  border-top: none !important;
-  border-left: 1px solid #79747e;
-  border-right: 1px solid #79747e;
-  border-bottom: 1px solid #79747e;
+  border: 1px solid #79747e;
 }
 
 .fieldsets {
@@ -131,6 +133,8 @@ fieldset .dropdown-menu {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-end;
+  gap: 6px;
 }
 
 .passenger_input,
@@ -228,12 +232,16 @@ a.ui-button:active,
   display: none;
 }
 
+.bed_input .form-control {
+  width: 120px !important;
+}
+
 .search_filter_card .sections {
   margin-top: -35px;
 }
 
 .enterDestination .bootstrap-select {
-  width: 220px !important;
+  width: 240px !important;
 }
 
 .form_icon_left {
@@ -248,4 +256,14 @@ a.ui-button:active,
   text-align: start;
   margin-left: 12px;
   height: 33px;
+}
+
+.passengerClass div.dropdown-menu.show {
+  transform: translate3d(-120px, 30px, 0px) !important;
+  max-width: 250px;
+  width: unset;
+}
+
+.trip div.dropdown-menu.show {
+  transform: translate3d(-10px, 30px, 0px) !important;
 }

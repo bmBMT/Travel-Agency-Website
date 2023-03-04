@@ -1,8 +1,4 @@
 @media (max-width: 670px) {
-  .header .sections {
-    display: none !important;
-  }
-
   .logined_elements {
     gap: 16px !important;
   }
@@ -64,6 +60,12 @@
   }   
 }
 
+@media (max-width: 750px) {
+  .header .sections {
+    display: none !important;
+  }
+}
+
 header {
   position: sticky;
   z-index: 100;
@@ -96,12 +98,8 @@ header .content {
   align-items: center;
 }
 
-header  .content {
-  padding: 1.7569546120058566vw 2.342606149341142vw;
-}
-
 .header  .container > .content {
-  padding: 1.7569546120058566vw 0;
+  padding: 1.3569546120058566vw 0;
 }
 
 .btn {
@@ -280,4 +278,12 @@ header  .content {
 }
 .avatar.admin {
   border: 4px solid #ff8682;
+}
+
+#stage_line {
+  position: absolute;
+  top: unset;
+  left: unset;
+  bottom: 0;
+  border: 3px solid #8DD3BB;
 }

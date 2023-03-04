@@ -1,17 +1,12 @@
 <?php
   session_start();
   require '../vendor/connect.php';
-  if (!$_SESSION['user']) {
-    header('Location: /');
-  }
-  
-  $email = $_SESSION['user']['email'];
-  $payment = mysqli_query($connect, "SELECT * FROM `payments` WHERE `email` = '$email'");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,21 +14,21 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.4/js/tether.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js"></script>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script src="/js/search_filter_card.js"></script>
   <link rel="stylesheet" href="/styles/style.css" />
+  <link rel="stylesheet" href="/styles/cards.css">
+  <link rel="stylesheet" href="/styles/search_filter_card.css" />
   <link rel="stylesheet" href="/styles/footer_style.css" />
   <link rel="stylesheet" href="/styles/header_style.css" />
-  <link rel="stylesheet" href="/styles/account.css">
-  <link rel="stylesheet" href="/styles/img-backgrounds.css">
+  <link rel="stylesheet" href="/styles/stage-search.css">
   <link rel="icon" href="/assets/icons/title_icon.svg" />
-  <title>Travel Agency Website — Account</title>
+  <title>Travel Agency Website — Flight</title>
   </head>
 
   <body>
@@ -43,6 +38,7 @@
           <div class="sections">
                 <a href="/pages/flight-search.php" class="link">
                   <img src="/assets/icons/black_airplane_icon.svg" id="head_airPlane_icon"/>Find Flight
+                  <div class="horizontal_line" id="stage_line"></div>
                 </a>
                 <a href="/pages/hotel-search.php" class="link">
                   <img src="/assets/icons/black_bed_icon.svg" id="head_bed_icon"/>Find Stays
@@ -144,220 +140,207 @@
       </div>
     </header>
 
-    <div class="container">
-        <div class="profile_head">
-          <div class="profile_bg" style="background: url(<?= '/' . $_SESSION['user']['bg']?>);"></div>
-        </div>
-        <div class="account_elements">
-            <div class="container">
-                <div class="profile">
-                    <div class="avatar <?= $_SESSION['user']['role'] ?>" id="big_avatar" style="background: url(<?= '/' . $_SESSION['user']['avatar']?>)">
+    <div class="stageHero">
+        <img class="hero-img" src="/assets/imgs/flightMain.svg" alt="">
+        <div class="container">
+            <div class="stageHero-content">
+                <div class="stageHero-title">Make your travel whishlist, we’ll do the rest</div>
+                <div class="stageHero-text">Special offers to suit your plan</div>
+            </div>
+            <div class="search_filter_card black_color">
+                <div class="search_filter_content">
+                  <div class="search_filter_title">Where are you flying? </div>
+                  <div class="search_filter_forms">
+                    <div class="flight_input input_filter">
+                      <form class="input_filter_stroke">
+                        <div class="fieldsets">
+                          <fieldset class="from-to">
+                            <legend>From - To</legend>
+                            <div class="form_content">
+                              <div class="input_group">
+                                <img src="/assets/icons/swap-horizontal_icon.svg" class="form_icon_left">
+                                <select name="from_selector" class="selectpicker" data-dropup-auto="false" data-live-search="true">
+                                  <option value="Lahore" selected>Lahore</option>
+                                  <option value="Karachi">Karachi</option>
+                                </select>
+                                <span class="group-separator">&mdash;</span>
+                                <select name="to_selector" class="selectpicker" data-dropup-auto="false" data-live-search="true">
+                                  <option value="Lahore">Lahore</option>
+                                  <option value="Karachi" selected>Karachi</option>
+                                </select>
+                              </div>
+                            </div>
+                          </fieldset>
+        
+                          <fieldset class="trip">
+                            <legend>Trip</legend>
+                            <div class="form_content">
+                              <div class="input_group">
+                                <select name="trip_selector" data-dropup-auto="false" class="selectpicker trip_select">
+                                  <option value="Return" selected>Return</option>
+                                  <option value="Single">Single</option>
+                                </select>
+                              </div>
+                            </div>
+                          </fieldset>
+        
+                          <fieldset class="departReturn">
+                            <legend id="departReturn_legend">Depart - Return</legend>
+                            <div class="form_content">
+                              <input name="depart_input" autocomplete="off" type="text" class="form-control flight_datepicker" id="depart_datepicker" placeholder="07 Nov 22" onkeypress="return false;" style="caret-color: transparent !important;"  required>
+                              <span class="group-separator" id="departReturn_separator">&mdash;</span>
+                              <input name="return_input" autocomplete="off" type="text" class="form-control flight_datepicker" id="return_datepicker" placeholder="07 Nov 22" onkeypress="return false;" style="caret-color: transparent !important;"  required>
+                            </div>
+                          </fieldset>
+        
+                          <fieldset class="passengerClass w-auto">
+                            <legend>Passenger - Class</legend>
+                            <div class="form_content">
+                              <input name="passengers_input" type="number" class="passenger_input" placeholder="1" min="1" max="10" pattern="" required>
+                              <span>Pasanger, </span>
+                              <select name="ticketClass_selector" class="selectpicker" data-dropup-auto="false">
+                                <option value="Economy" selected>Economy</option>
+                                <option value="Premium economy">Premium economy</option>
+                                <option value="Business">Business</option>
+                                <option value="First class">First class</option>
+                              </select>
+                            </div>
+                          
+                          </fieldset>
+                        </div>
+      
+                        <div class="filter_buttons">
+                          <button type="button" class="btn addPromoCode_btn black_color">
+                            <img src="/assets/icons/black_plus_icon.svg" />
+                            Add Promo Code
+                          </button>
+                          <button type="submit" class="btn showFlight_btn black_color">
+                            <img src="/assets/icons/black_paperPlane_icon.svg">
+                            Show Flights
+                          </button>
+                        </div>
+                      </form>
                     </div>
-                    <div class="profileText">
-                        <div class="name"><?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?></div>
-                        <div class="profileDescription"><?= $_SESSION['user']['email'] ?></div>
-                    </div>
+                  </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="container account_content">
-      <div class="window">
-        <ul class="nav nav-tabs" id="account_navigation">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#account" name="navbar_account">Account</a>
-          </li>
-          <span class="vertical_line"></span>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#history" name="navbar_account">Tickets/Bookings</a>
-          </li>
-        </ul>
-        <div class="horizontal_line-md" id="navbar_account"></div>
-      </div>
-  
-      <div class="container-fluid">
-        <div class="tab-content">
-          <div role="tabpanel" class="tab-pane fade in active" id="account">
-            <div class="stage_title">Account</div>
-            <div class="window">
-              <div class="_row">
-                <div class="rowText" id="nameText">
-                  <div class="rowName">Name</div>
-                  <div class="rowData" id="nameData"><?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?></div>
-                </div>
-              </div>
-              <div class="_row">
-                <div class="rowText" id="emailText">
-                  <div class="rowName">Email</div>
-                  <div class="rowData" id="emailData"><?= $_SESSION['user']['email'] ?></div>
-                </div>
-              </div>
-              <div class="_row">
-                <div class="rowText" id="passwordText">
-                  <div class="rowName">Password</div>
-                  <div class="rowData" id="passwordData"><?= str_repeat("*", strlen($_SESSION['user']['password'])) ?></div>
-                </div>
-              </div>
-              <div class="_row">
-                <div class="rowText" id="phoneText">
-                  <div class="rowName">Phone number</div>
-                  <div class="rowData" id="phoneData"><?= $_SESSION['user']['phone'] ?></div>
-                </div>
-              </div>
-              <div class="_row">
-                <div class="rowText" id="addressText">
-                  <div class="rowName">Address</div>
-                  <div class="rowData" id="addressData"><?= $_SESSION['user']['address'] ?></div>
-                </div>
-              </div>
-              <div class="_row">
-                <div class="rowText">
-                  <div class="rowName">Data of birth</div>
-                  <div class="rowData" type="password"><?= $_SESSION['user']['birth'] ?></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div role="tabpanel" class="tab-pane fade" id="history">
-            <div class="stage_title">Tickets/Bookings</div>
-            <div class="window">
-              <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#flights" name="navbar_history">
-                    <img src="/assets/icons/black_airplane_icon.svg">
-                    Flights
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#stays" name="navbar_history">
-                    <img src="/assets/icons/black_bed_icon.svg">
-                    Stays
-                  </a>
-                </li>
-              </ul>
-              <div class="horizontal_line-md" id="navbar_history" style="width: 45%;"></div>
-            </div>
-
-            <div class="container-fluid">
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane fade in active" id="flights">
-                  <div class="window">
-                    <div class="historyCard_img emirates"></div>
-                    <div class="historyCard_content">
-                      <div class="historyCard_content">
-                        <div class="historyCard_mainInfo">
-                          <div class="historyCard_info-content">
-                            <div class="historyCard-city">Newark(EWR)</div>
-                            <div class="historyCard-time">12:00 pm</div>
-                          </div>
-                          <div class="historyCard_mainInfo-dash">—</div>
-                          <div class="historyCard_info-content">
-                            <div class="historyCard-city">Newark(EWR)</div>
-                            <div class="historyCard-time">6:00 pm</div>
-                          </div>
-                        </div>
-                        <span class="vertical_line"></span>
-                        <div class="historyCard_secondInfo">
-                          <div class="historyCard_info-content">
-                            <div class="historyCard_info-data">
-                              <img class="historyCard_secondInfo-img" src="/assets/icons/calendar.svg">
-                              <div class="historyCard_secondInfo-textContent">
-                                <div class="historyCard_secondInfo-data">Date</div>
-                                <div class="historyCard_secondInfo-value">12-11-22</div>
-                              </div>
-                            </div>
-                            <div class="historyCard_info-data">
-                              <img class="historyCard_secondInfo-img" src="/assets/icons/timmer.svg">
-                              <div class="historyCard_secondInfo-textContent">
-                                <div class="historyCard_secondInfo-data">Flight time</div>
-                                <div class="historyCard_secondInfo-value">Newark(EWR)</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="historyCard_info-content">
-                            <div class="historyCard_info-data">
-                              <img class="historyCard_secondInfo-img" src="/assets/icons/door.svg">
-                              <div class="historyCard_secondInfo-textContent">
-                                <div class="historyCard_secondInfo-data">Gate</div>
-                                <div class="historyCard_secondInfo-value">A12</div>
-                              </div>
-                            </div>
-                            <div class="historyCard_info-data">
-                              <img class="historyCard_secondInfo-img" src="/assets/icons/airline-seat.svg">
-                              <div class="historyCard_secondInfo-textContent">
-                                <div class="historyCard_secondInfo-data">Seat no.</div>
-                                <div class="historyCard_secondInfo-value">128</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+    
+    <div class="wrapper">
+        <div class="container">
+            <div class="cards_content cards">
+                <div class="cards_head">
+                      <div class="cards_about">
+                        <div class="cards_about_title">Fall into travel</div>
+                        <div class="cards_about_description">Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</div>
                       </div>
-                      <div class="historyCard_btns">
-                        <button class="btn show_btn black_color">Download Ticket</button>
-                        <button class="btn seeMore_btn black_color"><i class="fa fa-chevron-right"></i></button>
-                      </div>
+                      <a href="#">
+                        <button type="button" class="btn cards_btn black_color">
+                          See all
+                        </button>
+                      </a>
+                </div>
+                <div class="row">
+                    <div class="md-card" style="background: url(/assets/imgs/trip_cards/Melbourne.svg)">
+                        <div class="md-card-content">
+                            <div class="md-card-text">
+                                <div class="md-card-col-text">
+                                    <div class="card_title">Melbourne</div>
+                                    <div class="card_description">An amazing journey</div>
+                                </div>
+                                <div class="md-card-price">$ 700</div>
+                            </div>
+                            <a href="#">
+                                <button class="btn show_btn black_color">Book Flight</button>
+                            </a>
+                        </div>
                     </div>
-                  </div>
-                </div>
-                <div role="tabpanel" class="tab-pane fade" id="stays">
-                <div class="window">
-                    <div class="historyCard_img cvk_istanbul"></div>
-                    <div class="historyCard_content">
-                      <div class="historyCard_content">
-                        <div class="historyCard_mainInfo">
-                          <div class="historyCard_info-content">
-                            <div class="historyCard-city">Check-In</div>
-                            <div class="historyCard-time">Thur, Dec 8</div>
-                          </div>
-                          <div class="historyCard_mainInfo-dash">—</div>
-                          <div class="historyCard_info-content">
-                            <div class="historyCard-city">Check Out</div>
-                            <div class="historyCard-time">Fri, Dec 9</div>
-                          </div>
+                    <div class="md-card" style="background: url(/assets/imgs/trip_cards/Paris.svg)">
+                        <div class="md-card-content">
+                            <div class="md-card-text">
+                                <div class="md-card-col-text">
+                                    <div class="card_title">Paris</div>
+                                    <div class="card_description">A Paris Adventure</div>
+                                </div>
+                                <div class="md-card-price">$ 600</div>
+                            </div>
+                            <a href="#">
+                                <button class="btn show_btn black_color">Book Flight</button>
+                            </a>
                         </div>
-                        <span class="vertical_line"></span>
-                        <div class="historyCard_secondInfo">
-                          <div class="historyCard_info-content">
-                            <div class="historyCard_info-data">
-                              <img class="historyCard_secondInfo-img" src="/assets/icons/timmer.svg">
-                              <div class="historyCard_secondInfo-textContent">
-                                <div class="historyCard_secondInfo-data">Ckech-In time</div>
-                                <div class="historyCard_secondInfo-value">12:00pm</div>
-                              </div>
-                            </div>
-                            <div class="historyCard_info-data">
-                              <img class="historyCard_secondInfo-img" src="/assets/icons/timmer.svg">
-                              <div class="historyCard_secondInfo-textContent">
-                                <div class="historyCard_secondInfo-data">Check-In out</div>
-                                <div class="historyCard_secondInfo-value">11:30am</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="historyCard_info-content">
-                            <div class="historyCard_info-data">
-                              <img class="historyCard_secondInfo-img" src="/assets/icons/door.svg">
-                              <div class="historyCard_secondInfo-textContent">
-                                <div class="historyCard_secondInfo-data">Room no.</div>
-                                <div class="historyCard_secondInfo-value">On arrival</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="historyCard_btns">
-                        <button class="btn show_btn black_color">Download Ticket</button>
-                        <button class="btn seeMore_btn black_color"><i class="fa fa-chevron-right"></i></button>
-                      </div>
                     </div>
-                  </div>
+                    <div class="md-card" style="background: url(/assets/imgs/trip_cards/London.svg)">
+                        <div class="md-card-content">
+                            <div class="md-card-text">
+                                <div class="md-card-col-text">
+                                    <div class="card_title">London</div>
+                                    <div class="card_description">London eye adventure</div>
+                                </div>
+                                <div class="md-card-price">$ 350</div>
+                            </div>
+                            <a href="#">
+                                <button class="btn show_btn black_color">Book Flight</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md-card" style="background: url(/assets/imgs/trip_cards/Columbia.svg)">
+                        <div class="md-card-content">
+                            <div class="md-card-text">
+                                <div class="md-card-col-text">
+                                    <div class="card_title">Columbia</div>
+                                    <div class="card_description">Amazing streets</div>
+                                </div>
+                                <div class="md-card-price">$ 700</div>
+                            </div>
+                            <a href="#">
+                                <button class="btn show_btn black_color">Book Flight</button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-
-          </div>
+            <div class="cards_content">
+                <div class="cards_head journey">
+                    <div class="cards_about">
+                      <div class="cards_about_title">Fall into travel</div>
+                      <div class="cards_about_description">Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</div>
+                    </div>
+                    <a href="#">
+                      <button type="button" class="btn cards_btn black_color">
+                        See all
+                      </button>
+                    </a>
+                </div>
+                <div class="row" id="journey-row">
+                    <div class="journey_window">
+                        <div class="journey_window-content">
+                            <div class="journey_window-title">
+                                <div class="journey_window-title-text">Backpacking Sri Lanka</div>
+                                <div class="journey_window-worth">
+                                    <div class="journey_window-worth-title">From</div>
+                                    <div class="journey_window-worth-price">$700</div>
+                                </div>
+                            </div>
+                            <div class="journey_window-description">Traveling is a unique experience as it's the best way to unplug from the pushes and pulls of daily life. It helps us to forget about our problems, frustrations, and fears at home. During our journey, we experience life in different ways. We explore new places, cultures, cuisines, traditions, and ways of living.</div>
+                        </div>
+                        <a href="#">
+                            <button class="btn show_btn black_color">Book Flight</button>
+                        </a>
+                    </div>
+                    <div class="journey-imgs">
+                        <div class="row">
+                            <div class="journey-imgs-img" style="background: url(/assets/imgs/journey-imgs/1st.svg);"></div>
+                            <div class="journey-imgs-img" style="background: url(/assets/imgs/journey-imgs/2nd.svg);"></div>
+                        </div>
+                        <div class="row">
+                            <div class="journey-imgs-img" style="background: url(/assets/imgs/journey-imgs/3d.svg);"></div>
+                            <div class="journey-imgs-img" style="background: url(/assets/imgs/journey-imgs/4s.svg);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <footer class="footer">
@@ -471,7 +454,5 @@
           </div>
         </div>
     </footer>
-    <script src="/js/accountManage.js"></script>
-    <script src="/js/card-validator.js"></script>
   </body>
 </html>
