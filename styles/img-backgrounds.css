@@ -93,11 +93,38 @@
       0 -640px no-repeat;
   }
 
-  .emirates {
-    background: url("/assets/imgs/companies/emirates.svg") no-repeat;
+  .emirates-sm {
+    background: url("/assets/imgs/companies/emirates-sm.svg") no-repeat;
     background-position: center;
   }
-
+  .emirates-md {
+    background: url("/assets/imgs/companies/emirates-md.svg") no-repeat;
+    background-position: center;
+  }
+  .flydubai-sm {
+    background: url("/assets/imgs/companies/flydubai-sm.svg") no-repeat;
+    background-position: center;
+  }
+  .flydubai-md {
+    background: url("/assets/imgs/companies/flydubai-md.svg") no-repeat;
+    background-position: center;
+  }
+  .qatarAirways-sm {
+    background: url("/assets/imgs/companies/qatarAirways-sm.svg") no-repeat;
+    background-position: center;
+  }
+  .qatarAirways-md {
+    background: url("/assets/imgs/companies/qatarAirways-md.svg") no-repeat;
+    background-position: center;
+  }
+  .etihadAirways-sm {
+    background: url("/assets/imgs/companies/etihadAirways-sm.svg") no-repeat;
+    background-position: center;
+  }
+  .etihadAirways-md {
+    background: url("/assets/imgs/companies/etihadAirways-md.svg") no-repeat;
+    background-position: center;
+  }
   .cvk_istanbul {
     background: url("/assets/imgs/companies/cvk_istanbul.svg") no-repeat;
     background-position: center;

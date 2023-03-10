@@ -14,7 +14,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -27,12 +27,13 @@
   <link rel="stylesheet" href="/styles/search_filter_card.css" />
   <link rel="stylesheet" href="/styles/footer_style.css" />
   <link rel="stylesheet" href="/styles/header_style.css" />
+  <link rel="stylesheet" href="/styles/img-backgrounds.css">
   <link rel="stylesheet" href="/styles/stage-listing.css">
   <link rel="icon" href="/assets/icons/title_icon.svg" />
   <title>Travel Agency Website — Flight</title>
 </head>
 
-<body>
+<body id="flight">
   <header class="header" id="header" style="color: black;">
     <div class="container">
       <div class="content" id="head_content">
@@ -225,158 +226,428 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="filter">
+    <div class="container listing-row">
+      <div class="listing-left-content">
         <div class="filter-title">Filters</div>
-        <div class="filter-input" id="price">
-          <nav class="fold">
-              <div class="collapse-title">Price</div>
-              <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#priceScroll" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-chevron-up"></i>
-              </button>
-          </nav>
-          <div class="collapse show" id="priceScroll">
-              <div class="collapse-content bg-white">
+        <div class="filter">
+          <div class="filter-connector">
+            <div class="filter-input" id="price">
+              <nav class="fold">
+                  <div class="collapse-title">Price</div>
+                  <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#priceScroll" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-chevron-up"></i>
+                  </button>
+              </nav>
+              <div class="collapse show" id="priceScroll">
+                  <div class="collapse-content">
+                    <div class="selector">
+                      <div class="data-slider">
+                          <div id="slider-range" class="slider-price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                              <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                              <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                              <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                          </div>
+                          <span id="min-price" data-currency="$" class="slider-data">50</span>
+                          <span id="max-price" data-currency="$" data-max="1200"  class="slider-data">1200</span>
+                      </div> 
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <hr>
+            <div class="filter-input" id="time">
+              <nav class="fold">
+                <div class="collapse-title">Departure Time</div>
+                <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#timeScroll" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-chevron-up"></i>
+                </button>
+              </nav>
+              <div class="collapse show" id="timeScroll">
+                <div class="collapse-content">
                 <div class="selector">
                   <div class="data-slider">
-                      <div id="slider-range" class="slider-price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                          <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                          <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                          <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                    <div id="slider-range" class="slider-time-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                      <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                      <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                      <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                    </div>
+                    <span id="min-time" class="slider-data">12:00 AM</span>
+                    <span id="max-time" class="slider-data">11:59 PM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="filter-input" id="rating">
+            <nav class="fold">
+              <div class="collapse-title">Rating</div>
+              <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#ratingSelect" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-chevron-up"></i>
+              </button>
+            </nav>
+            <div class="collapse show" id="ratingSelect">
+              <div class="collapse-content">
+                <div class="filter-input-row">
+                  <label class="btn">
+                    <input type="radio" name="myRadioGroup">
+                    <div class="label-bg"></div>
+                    <p>0+</p>
+                  </label>
+                  <label class="btn">
+                    <input type="radio" name="myRadioGroup">
+                    <div class="label-bg"></div>
+                    <p>1+</p>
+                  </label>
+                  <label class="btn">
+                    <input type="radio" name="myRadioGroup">
+                    <div class="label-bg"></div>
+                    <p>2+</p>
+                  </label>
+                  <label class="btn">
+                    <input type="radio" name="myRadioGroup">
+                    <div class="label-bg"></div>
+                    <p>3+</p>
+                  </label>
+                  <label class="btn">
+                    <input type="radio" name="myRadioGroup">
+                    <div class="label-bg"></div>
+                    <p>4+</p>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="filter-connector">
+            <div class="filter-input" id="airlines">
+              <nav class="fold">
+                <div class="collapse-title">Airlines</div>
+                <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#airlinesCheckbox" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-chevron-up"></i>
+                </button>
+              </nav>
+              <div class="collapse show" id="airlinesCheckbox">
+                <div class="collapse-content">
+                  <div class="filter-input-col">
+                    <div class="filter-input-checkbox">
+                      <input type="checkbox" name="Emirated">
+                      <div class="checkbox-text">Emirated</div>
+                    </div>
+                    <div class="filter-input-checkbox">
+                      <input type="checkbox" name="Fly Dubai">
+                      <div class="checkbox-text">Fly Dubai</div>
+                    </div>
+                    <div class="filter-input-checkbox">
+                      <input type="checkbox" name="Qatar">
+                      <div class="checkbox-text">Qatar</div>
+                    </div>
+                    <div class="filter-input-checkbox">
+                      <input type="checkbox" name="Etihad">
+                      <div class="checkbox-text">Etihad</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="filter-input" id="trips">
+              <nav class="fold">
+                <div class="collapse-title">Trips</div>
+                <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#tripsCheckbox" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-chevron-up"></i>
+                </button>
+              </nav>
+              <div class="collapse show" id="tripsCheckbox">
+                <div class="collapse-content">
+                  <div class="filter-input-col">
+                    <div class="filter-input-checkbox">
+                      <input type="checkbox" name="Round trip">
+                      <div class="checkbox-text">Round trip</div>
+                    </div>
+                    <div class="filter-input-checkbox">
+                      <input type="checkbox" name="On Way">
+                      <div class="checkbox-text">On Way</div>
+                    </div>
+                    <div class="filter-input-checkbox">
+                      <input type="checkbox" name="Multi-City">
+                      <div class="checkbox-text">Multi-City</div>
+                    </div>
+                    <div class="filter-input-checkbox">
+                      <input type="checkbox" name="My Dates Are Flexible">
+                      <div class="checkbox-text">My Dates Are Flexible</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="listing-right-content">
+        <div class="listing-right-content">
+          <div class="listing-separator"></div>
+          <div class="window">
+            <ul class="anotherFilter nav nav-tabs">
+              <li class="nav-item">
+                <a class="anotherFilter-link nav-link active" data-toggle="tab" href="#cheapest" name="navbar_filter">
+                  <div class="anotherFilter-link-title">Cheapest</div>
+                  <div class="anotherFilter-link-content">
+                    <div class="anotherFilter-link-text">$99</div>
+                    <div class="anotherFilter-link-text">.</div>
+                    <div class="anotherFilter-link-text">2h 18m</div>
+                  </div>
+                </a>
+              </li>
+              <span class="vertical_line"></span>
+              <li class="nav-item">
+                <a class="anotherFilter-link nav-link" data-toggle="tab" href="#best" name="navbar_filter">
+                  <div class="anotherFilter-link-title">Best</div>
+                  <div class="anotherFilter-link-content">
+                    <div class="anotherFilter-link-text">$99</div>
+                    <div class="anotherFilter-link-text">.</div>
+                    <div class="anotherFilter-link-text">2h 18m</div>
+                  </div>
+                </a>
+              </li>
+              <span class="vertical_line"></span>
+              <li class="nav-item">
+                <a class="anotherFilter-link nav-link active" data-toggle="tab" href="#quickest" name="navbar_filter">
+                  <div class="anotherFilter-link-title">Quickest</div>
+                  <div class="anotherFilter-link-content">
+                    <div class="anotherFilter-link-text">$99</div>
+                    <div class="anotherFilter-link-text">.</div>
+                    <div class="anotherFilter-link-text">2h 18m</div>
+                  </div>
+                </a>
+              </li>
+              <span class="vertical_line"></span>
+              <li class="nav-item">
+                <a class="anotherFilter-link nav-link active" id="other" data-toggle="tab" href="#other" name="navbar_filter">
+                  <i class="fa fa-bars"></i>
+                  <div class="anotherFilter-link-otherText">Other sort</div>
+                </a>
+              </li>
+            </ul>
+            <div class="horizontal_line-md" id="navbar_filter"></div>
+          </div>
+          <div class="row">
+            <div class="showing-text">Showing 4 of <span style="color: #FF8682;">257 places</span></div>
+            <div class="sort_by">Sorted by <span style="font-weight: 600;">Recommendations</span></div>
+          </div>
+          <div class="listing-cards">
+            <div class="window listing-card">
+              <div class="airlines-img emirates-md"></div>
+              <div class="listing-card-right">
+                <div class="row">
+                  <div class="row g-8" style="height: 32px">
+                    <div class="card-grade">4.2</div>
+                    <div class="listing-card-review"><span style="font-weight: 700;">Very Good</span>&#160;54 reviews</div>
+                  </div>
+                  <div class="card-price">
+                    <div class="listing-card-priceStarting">starting from</div>
+                    <div class="listing-card-price">$104</div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-content-row">
+                    <div class="card-checkbox">
+                      <input type="checkbox">
+                      <div class="card-content-text">
+                        <div class="card-time">12:00pm - 01:28pm</div>
+                        <div class="card-textDescription">Emirates</div>
                       </div>
-                      <span id="min-price" data-currency="$" class="slider-data">50</span>
-                      <span id="max-price" data-currency="$" data-max="1200"  class="slider-data">1200</span>
-                  </div> 
+                    </div>
+                    <div class="showing-text" style="opacity: 0.75; line-height: 20px">non stop</div>
+                    <div class="card-content-text">
+                      <div class="card-time">2h 28m</div>
+                      <div class="card-textDescription">EWR-BNA</div>
+                    </div>
+                  </div>
+                  <div class="card-content-row">
+                    <div class="card-checkbox">
+                      <input type="checkbox">
+                      <div class="card-content-text">
+                        <div class="card-time">12:00pm - 01:28pm</div>
+                        <div class="card-textDescription">Emirates</div>
+                      </div>
+                    </div>
+                    <div class="showing-text" style="opacity: 0.75; line-height: 20px">non stop</div>
+                    <div class="card-content-text">
+                      <div class="card-time">2h 28m</div>
+                      <div class="card-textDescription">EWR-BNA</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="horizontal-line"></div>
+                <div class="filter-input-row" style="flex-wrap: nowrap;">
+                  <button class="btn card-favourite-btn">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <button class="btn card-view-btn">View Deals</button>
                 </div>
               </div>
-          </div>
-        </div>
-        <hr>
-        <div class="filter-input" id="time">
-          <nav class="fold">
-            <div class="collapse-title">Departure Time</div>
-            <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#timeScroll" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fa fa-chevron-up"></i>
-            </button>
-          </nav>
-          <div class="collapse show" id="timeScroll">
-            <div class="collapse-content bg-white">
-            <div class="selector">
-              <div class="data-slider">
-                <div id="slider-range" class="slider-time-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                  <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                  <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                  <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+            </div>
+            <div class="window listing-card">
+              <div class="airlines-img flydubai-md"></div>
+              <div class="listing-card-right">
+                <div class="row">
+                  <div class="row g-8" style="height: 32px">
+                    <div class="card-grade">4.2</div>
+                    <div class="listing-card-review"><span style="font-weight: 700;">Very Good</span>&#160;54 reviews</div>
+                  </div>
+                  <div class="card-price">
+                    <div class="listing-card-priceStarting">starting from</div>
+                    <div class="listing-card-price">$104</div>
+                  </div>
                 </div>
-                <span id="min-time" class="slider-data">12:00 AM</span>
-                <span id="max-time" class="slider-data">11:59 PM</span>
+                <div class="card-content">
+                  <div class="card-content-row">
+                    <div class="card-checkbox">
+                      <input type="checkbox">
+                      <div class="card-content-text">
+                        <div class="card-time">12:00pm - 01:28pm</div>
+                        <div class="card-textDescription">Flydubai</div>
+                      </div>
+                    </div>
+                    <div class="showing-text" style="opacity: 0.75; line-height: 20px">non stop</div>
+                    <div class="card-content-text">
+                      <div class="card-time">2h 28m</div>
+                      <div class="card-textDescription">EWR-BNA</div>
+                    </div>
+                  </div>
+                  <div class="card-content-row">
+                    <div class="card-checkbox">
+                      <input type="checkbox">
+                      <div class="card-content-text">
+                        <div class="card-time">12:00pm - 01:28pm</div>
+                        <div class="card-textDescription">Flydubai</div>
+                      </div>
+                    </div>
+                    <div class="showing-text" style="opacity: 0.75; line-height: 20px">non stop</div>
+                    <div class="card-content-text">
+                      <div class="card-time">2h 28m</div>
+                      <div class="card-textDescription">EWR-BNA</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="horizontal-line"></div>
+                <div class="filter-input-row" style="flex-wrap: nowrap;">
+                  <button class="btn card-favourite-btn">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <button class="btn card-view-btn">View Deals</button>
+                </div>
+              </div>
+            </div>
+            <div class="window listing-card">
+              <div class="airlines-img qatarAirways-md"></div>
+              <div class="listing-card-right">
+                <div class="row">
+                  <div class="row g-8" style="height: 32px">
+                    <div class="card-grade">4.2</div>
+                    <div class="listing-card-review"><span style="font-weight: 700;">Very Good</span>&#160;54 reviews</div>
+                  </div>
+                  <div class="card-price">
+                    <div class="listing-card-priceStarting">starting from</div>
+                    <div class="listing-card-price">$104<span style="font-size: 14px;">/night</span></div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-content-row">
+                    <div class="card-checkbox">
+                      <input type="checkbox">
+                      <div class="card-content-text">
+                        <div class="card-time">12:00pm - 01:28pm</div>
+                        <div class="card-textDescription">Qatar Airways</div>
+                      </div>
+                    </div>
+                    <div class="showing-text" style="opacity: 0.75; line-height: 20px">non stop</div>
+                    <div class="card-content-text">
+                      <div class="card-time">2h 28m</div>
+                      <div class="card-textDescription">EWR-BNA</div>
+                    </div>
+                  </div>
+                  <div class="card-content-row">
+                    <div class="card-checkbox">
+                      <input type="checkbox">
+                      <div class="card-content-text">
+                        <div class="card-time">12:00pm - 01:28pm</div>
+                        <div class="card-textDescription">Qatar Airways</div>
+                      </div>
+                    </div>
+                    <div class="showing-text" style="opacity: 0.75; line-height: 20px">non stop</div>
+                    <div class="card-content-text">
+                      <div class="card-time">2h 28m</div>
+                      <div class="card-textDescription">EWR-BNA</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="horizontal-line"></div>
+                <div class="filter-input-row" style="flex-wrap: nowrap;">
+                  <button class="btn card-favourite-btn">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <button class="btn card-view-btn">View Deals</button>
+                </div>
+              </div>
+            </div>
+            <div class="window listing-card">
+              <div class="airlines-img etihadAirways-md"></div>
+              <div class="listing-card-right">
+                <div class="row">
+                  <div class="row g-8" style="height: 32px">
+                    <div class="card-grade">4.2</div>
+                    <div class="listing-card-review"><span style="font-weight: 700;">Very Good</span>&#160;54 reviews</div>
+                  </div>
+                  <div class="card-price">
+                    <div class="listing-card-priceStarting">starting from</div>
+                    <div class="listing-card-price">$104<span style="font-size: 14px;">/night</span></div>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div class="card-content-row">
+                    <div class="card-checkbox">
+                      <input type="checkbox">
+                      <div class="card-content-text">
+                        <div class="card-time">12:00pm - 01:28pm</div>
+                        <div class="card-textDescription">Etihad Airways</div>
+                      </div>
+                    </div>
+                    <div class="showing-text" style="opacity: 0.75; line-height: 20px">non stop</div>
+                    <div class="card-content-text">
+                      <div class="card-time">2h 28m</div>
+                      <div class="card-textDescription">EWR-BNA</div>
+                    </div>
+                  </div>
+                  <div class="card-content-row">
+                    <div class="card-checkbox">
+                      <input type="checkbox">
+                      <div class="card-content-text">
+                        <div class="card-time">12:00pm - 01:28pm</div>
+                        <div class="card-textDescription">Etihad Airways</div>
+                      </div>
+                    </div>
+                    <div class="showing-text" style="opacity: 0.75; line-height: 20px">non stop</div>
+                    <div class="card-content-text">
+                      <div class="card-time">2h 28m</div>
+                      <div class="card-textDescription">EWR-BNA</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="horizontal-line"></div>
+                <div class="filter-input-row" style="flex-wrap: nowrap;">
+                  <button class="btn card-favourite-btn">
+                    <i class="fa-regular fa-heart"></i>
+                  </button>
+                  <button class="btn card-view-btn">View Deals</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <hr>
-        <div class="filter-input" id="rating">
-          <nav class="fold">
-            <div class="collapse-title">Rating</div>
-            <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#ratingSelect" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fa fa-chevron-up"></i>
-            </button>
-          </nav>
-          <div class="collapse show" id="ratingSelect">
-            <div class="collapse-content bg-white">
-              <div class="filter-input-row">
-                <label class="btn">
-                  <input type="radio" name="myRadioGroup">
-                  <div class="label-bg"></div>
-                  <p>0+</p>
-                </label>
-                <label class="btn">
-                  <input type="radio" name="myRadioGroup">
-                  <div class="label-bg"></div>
-                  <p>1+</p>
-                </label>
-                <label class="btn">
-                  <input type="radio" name="myRadioGroup">
-                  <div class="label-bg"></div>
-                  <p>2+</p>
-                </label>
-                <label class="btn">
-                  <input type="radio" name="myRadioGroup">
-                  <div class="label-bg"></div>
-                  <p>3+</p>
-                </label>
-                <label class="btn">
-                  <input type="radio" name="myRadioGroup">
-                  <div class="label-bg"></div>
-                  <p>4+</p>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="filter-input" id="airlines">
-          <nav class="fold">
-            <div class="collapse-title">Airlines</div>
-            <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#airlinesCheckbox" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fa fa-chevron-up"></i>
-            </button>
-          </nav>
-          <div class="collapse show" id="airlinesCheckbox">
-            <div class="collapse-content bg-white">
-              <div class="filter-input-col">
-                <div class="filter-input-checkbox">
-                  <input type="checkbox" name="Emirated">
-                  <div class="checkbox-text">Emirated</div>
-                </div>
-                <div class="filter-input-checkbox">
-                  <input type="checkbox" name="Fly Dubai">
-                  <div class="checkbox-text">Fly Dubai</div>
-                </div>
-                <div class="filter-input-checkbox">
-                  <input type="checkbox" name="Qatar">
-                  <div class="checkbox-text">Qatar</div>
-                </div>
-                <div class="filter-input-checkbox">
-                  <input type="checkbox" name="Etihad">
-                  <div class="checkbox-text">Etihad</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-        <div class="filter-input" id="trips">
-          <nav class="fold">
-            <div class="collapse-title">Trips</div>
-            <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#tripsCheckbox" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fa fa-chevron-up"></i>
-            </button>
-          </nav>
-          <div class="collapse show" id="tripsCheckbox">
-            <div class="collapse-content bg-white">
-              <div class="filter-input-col">
-                <div class="filter-input-checkbox">
-                  <input type="checkbox" name="Round trip">
-                  <div class="checkbox-text">Round trip</div>
-                </div>
-                <div class="filter-input-checkbox">
-                  <input type="checkbox" name="On Way">
-                  <div class="checkbox-text">On Way</div>
-                </div>
-                <div class="filter-input-checkbox">
-                  <input type="checkbox" name="Multi-City">
-                  <div class="checkbox-text">Multi-City</div>
-                </div>
-                <div class="filter-input-checkbox">
-                  <input type="checkbox" name="My Dates Are Flexible">
-                  <div class="checkbox-text">My Dates Are Flexible</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <button class="btn" id="show-more-results">Show more results</button>
       </div>
     </div>
   </div>
@@ -472,4 +743,5 @@
   </footer>
 </body>
 <script src="/js/stage-listing.js"></script>
+<script src="/js/main.js"></script>
 </html>

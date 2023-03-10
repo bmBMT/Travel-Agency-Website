@@ -596,14 +596,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-$('.nav-link').click(function() {
-    const ID = $(this).attr('name');
-    var underline = $(`.horizontal_line-md[id="${ID}"]`);
-    var _this = $(this);
-    var leftScale = _this.position().left;
-    underline.css({left: '' + leftScale + 'px'});
-});
-
 $('input[type=number][max]:not([max=""])').on('input', function() {
     var $this = $(this);
     var maxlength = $this.attr('max').length;

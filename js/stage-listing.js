@@ -34,11 +34,11 @@ $(".slider-time-range").slider({
 });
   
 function get12HourTime(minutes){
-     var meridian = "AM";
-     if (minutes >= 720) {
-        meridian = "PM";
-     }
-     var hh = Math.floor(((minutes + 719) / 60) % 12) + 1;
-     var mm = Math.floor((minutes % 60 / 10)) * 10;
-     return (hh < 10 ? '0' : '') + hh + ':' + (mm === 0 ? '00' : mm) + ' ' + meridian;
+    var meridian = "AM";
+    if (minutes >= 720) {
+    meridian = "PM";
+    }
+    var hh = Math.floor(((minutes + 719) / 60) % 12) + 1;
+    var mm = Math.floor((minutes % 60 / 10)) * 10;
+    return (hh < 10 ? '0' : '') + hh + ':' + (mm === 0 ? '00' : mm) + ' ' + meridian;
 }

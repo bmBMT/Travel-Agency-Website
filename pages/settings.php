@@ -855,6 +855,7 @@
           </div>
         </div>
     </footer>
+    <script src="/js/main.js"></script>
     <script src="/js/accountManage.js"></script>
     <script src="/js/card-validator.js"></script>
   </body>
