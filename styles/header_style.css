@@ -286,4 +286,5 @@ header .content {
   left: unset;
   bottom: 0;
   border: 3px solid #8DD3BB;
+  width: 120px;
 }

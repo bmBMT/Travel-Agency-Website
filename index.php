@@ -213,9 +213,8 @@
                           <span>Pasanger, </span>
                           <select name="ticketClass_selector" class="selectpicker" data-dropup-auto="false">
                             <option value="Economy" selected>Economy</option>
-                            <option value="Premium economy">Premium economy</option>
-                            <option value="Business">Business</option>
-                            <option value="First class">First class</option>
+                            <option value="Business">Business Class</option>
+                            <option value="First class">First Class</option>
                           </select>
                         </div>
                       
