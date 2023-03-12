@@ -394,6 +394,6 @@ require '../vendor/connect.php';
     </footer>
 </body>
 <script src="/js/main.js"></script>
-<script src="/js/flight-detil.js"></script>
+<script src="/js/flight-deteil.js"></script>
 
 </html>

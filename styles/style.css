@@ -148,11 +148,13 @@ img {
   flex-direction: row;
   justify-content: space-between;
   margin: 0;
+  padding: 0;
 }
 
 .col {
   display: flex;
   flex-direction: column;
+  padding: 0;
 }
 
 .column {
@@ -527,6 +529,7 @@ input[type="checkbox"] {
 .g-24,
 .g-32,
 .g-40,
+.g-64,
 .g-80 {
   flex-basis: unset;
   padding: 0;
@@ -546,4 +549,5 @@ input[type="checkbox"] {
 .g-24 { gap: 24px !important; }
 .g-32 { gap: 32px !important; }
 .g-40 { gap: 40px !important; }
+.g-64 { gap: 64px !important; }
 .g-80 { gap: 80px !important; }
