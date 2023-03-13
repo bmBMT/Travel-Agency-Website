@@ -177,23 +177,53 @@ require '../vendor/connect.php';
         <div class="row g-15 jc-end">
           <button class="border-btn"><i class="fa-regular fa-heart"></i></button>
           <button class="border-btn"><i class="fa-solid fa-share-nodes"></i></button>
-          <button class="show_btn" id="bookNow-btn">Book now</button>
+          <a href="#available-rooms-link">
+            <button class="show_btn" id="bookNow-btn">Book now</button>
+          </a>
         </div>
       </div>
     </div>
     <div id="hotel-imgs">
-      <img src="/assets/imgs/hotel-detail/1.svg" class="hotel-main-img">
+      <div data-toggle data-target="#photosModal">
+        <img src="/assets/imgs/hotel-detail/1.svg" class="hotel-main-img">
+      </div>
       <div class="col g-8 jc-sb">
         <div class="row g-8">
-          <img src="/assets/imgs/hotel-detail/2.svg" class="hotel-img">
-          <img src="/assets/imgs/hotel-detail/3.svg" class="hotel-img">
+          <div data-toggle data-target="#photosModal">
+            <img src="/assets/imgs/hotel-detail/2.svg" class="hotel-img">
+          </div>
+          <div data-toggle data-target="#photosModal">
+            <img src="/assets/imgs/hotel-detail/3.svg" class="hotel-img">
+          </div>
         </div>
         <div class="row g-8">
-          <img src="/assets/imgs/hotel-detail/4.svg" class="hotel-img">
-          <img src="/assets/imgs/hotel-detail/5.svg" class="hotel-img">
+          <div data-toggle data-target="#photosModal">
+            <img src="/assets/imgs/hotel-detail/4.svg" class="hotel-img">
+          </div>
+          <div data-toggle data-target="#photosModal">
+            <img src="/assets/imgs/hotel-detail/5.svg" class="hotel-img">
+          </div>
         </div>
       </div>
-      <button class="show_btn" id="viewAllPhotos">View all photos</button>
+      <button class="show_btn" id="viewAllPhotos" data-toggle="modal" data-target="#photosModal">View all photos</button>
+      <div class="modal fade" id="photosModal" tabindex="-1" role="dialog" aria-labelledby="photosModalLabel" aria-hidden="true">
+        <div class="modal-dialog container" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <i class="fa fa-xmark"></i>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img src="/assets/imgs/hotel/hotel-1.svg">
+              <img src="/assets/imgs/hotel-detail/2.svg">
+              <img src="/assets/imgs/hotel-detail/3.svg">
+              <img src="/assets/imgs/hotel-detail/4.svg">
+              <img src="/assets/imgs/hotel-detail/5.svg">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="hotel-detail-content">
       <hr>
@@ -235,6 +265,7 @@ require '../vendor/connect.php';
             </div>
           </div>
         </div>
+        <div id="available-rooms-link"></div>
       </div>
       <hr>
       <div class="col g-32" style="width: 100% !important;" id="available-rooms">
@@ -335,7 +366,35 @@ require '../vendor/connect.php';
         <div class="col g-24">
           <div class="row g-24 jc-sb">
             <div class="window-head-text">Reviews</div>
-            <button class="show_btn">Give your review</button>
+            <button class="show_btn" data-toggle="modal" data-target="#reviewModal">Give your review</button>
+            <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
+              <div class="modal-dialog container" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <i class="fa fa-xmark"></i>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div id="starRating">
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <i class="far fa-star"></i>
+                      <input type="text" hidden>
+                      <div class="review-rating" style="font-size: 16px; margin-left: 8px;"></div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Write your review</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      <p class="msg warning_msg none"></p>
+                    </div>
+                    <button class="show_btn" id="postReview">Post a review</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="row g-16">
             <div class="reviews-title">4.2</div>

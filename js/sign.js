@@ -36,9 +36,8 @@ $("#login_btn").click(function(e) {
         success (data) {
             if (data.status) {
                 $('.msg').addClass("none");
-                document.location.href = ("/");
+                window.history.back();
             } else {
-
                 if (data.type === 1) {
                     data.fields.forEach(function(field) {
                         $(`fieldset[name="${field}"]`).addClass('error_field');
