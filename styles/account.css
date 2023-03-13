@@ -79,7 +79,7 @@ html {
   background: #fafbfc;
 }
 
-.btn {
+.btn:not(header .btn) {
   padding: 15.5px 16px;
   border-radius: 4px;
 }

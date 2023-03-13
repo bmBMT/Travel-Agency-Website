@@ -21,58 +21,58 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#name_btn").addEventListener("click", function () {
             let form = document.createElement("form");
             form.classList.add("change_form");
-    
+
             let inputs = document.createElement("div");
             inputs.classList.add("inputs");
-    
+
             let btns = document.createElement("div");
             btns.classList.add("btns");
-    
+
             let cancelBtn = document.createElement("div");
             cancelBtn.classList.add("btn");
             cancelBtn.classList.add("edit_btn");
             cancelBtn.innerHTML = "Cancel";
-    
+
             let acceptBtn = document.createElement("button");
             acceptBtn.classList.add("edit_btn");
             acceptBtn.type = "submit";
             acceptBtn.innerHTML = "Accept";
             // forms
-    
+
             backBtn = this;
             const node = document.querySelector("#nameData");
             name_nodeText = node.innerHTML;
             node.innerHTML = '';
-    
+
             form.id = "name_form";
             node.append(form);
             form.append(inputs);
-    
+
             let firstName = document.createElement("input");
             firstName.type = "text";
             firstName.classList.add("change_input");
             firstName.name = "firstName";
             firstName.value = name_nodeText.split(" ")[0];
             firstName.required = true;
-    
+
             let lastName = document.createElement("input");
             lastName.type = "text"
             lastName.classList.add("change_input");
             lastName.name = "lastName";
             lastName.value = name_nodeText.split(" ")[1];
             lastName.required = true;
-    
+
             inputs.append(firstName);
             inputs.append(lastName);
-    
+
             cancelBtn.id = "cancel_name"
             acceptBtn.id = "accept_name"
-    
+
             form.append(btns);
             btns.append(cancelBtn);
             btns.append(acceptBtn);
             backBtn.remove();
-    
+
             document.querySelector("#cancel_name").addEventListener("click", function () {
                 firstName.remove();
                 lastName.remove();
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 warning.remove();
                 document.querySelector("#nameText").parentNode.append(backBtn);
             });
-    
+
             let warning = document.createElement("p");
             warning.classList.add("msg");
             warning.classList.add("warning_msg");
@@ -116,33 +116,33 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#email_btn").addEventListener("click", function () {
             let form = document.createElement("form");
             form.classList.add("change_form");
-    
+
             let inputs = document.createElement("div");
             inputs.classList.add("inputs");
-    
+
             let btns = document.createElement("div");
             btns.classList.add("btns");
-    
+
             let cancelBtn = document.createElement("div");
             cancelBtn.classList.add("btn");
             cancelBtn.classList.add("edit_btn");
             cancelBtn.innerHTML = "Cancel";
-    
+
             let acceptBtn = document.createElement("button");
             acceptBtn.classList.add("edit_btn");
             acceptBtn.type = "submit";
             acceptBtn.innerHTML = "Accept";
             // forms
-    
+
             email_backBtn = this;
             const node = document.querySelector("#emailData");
             email_nodeText = node.innerHTML;
             node.innerHTML = '';
-    
+
             form.id = "email_form";
             node.append(form);
             form.append(inputs);
-    
+
             let email_input = document.createElement("input");
             email_input.type = "email";
             email_input.classList.add("change_input");
@@ -150,10 +150,10 @@ document.addEventListener("DOMContentLoaded", function () {
             email_input.name = "email";
             email_input.value = email_nodeText;
             inputs.append(email_input);
-    
+
             cancelBtn.id = "cancel_email"
             acceptBtn.id = "accept_email"
-    
+
             form.append(btns);
             btns.append(cancelBtn);
             btns.append(acceptBtn);
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 warning.remove();
                 document.querySelector("#emailText").parentNode.append(email_backBtn);
             });
-    
+
             let warning = document.createElement("p");
             warning.classList.add("msg");
             warning.classList.add("warning_msg");
@@ -203,33 +203,33 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#password_btn").addEventListener("click", function () {
             let form = document.createElement("form");
             form.classList.add("change_form");
-    
+
             let inputs = document.createElement("div");
             inputs.classList.add("inputs");
-    
+
             let btns = document.createElement("div");
             btns.classList.add("btns");
-    
+
             let cancelBtn = document.createElement("div");
             cancelBtn.classList.add("btn");
             cancelBtn.classList.add("edit_btn");
             cancelBtn.innerHTML = "Cancel";
-    
+
             let acceptBtn = document.createElement("button");
             acceptBtn.classList.add("edit_btn");
             acceptBtn.type = "submit";
             acceptBtn.innerHTML = "Accept";
             // forms
-    
+
             password_backBtn = this;
             const node = document.querySelector("#passwordData");
             password_nodeText = node.innerHTML;
             node.innerHTML = '';
-    
+
             form.id = "password_form"
             node.append(form);
             form.append(inputs);
-    
+
             let currentPass = document.createElement("input");
             currentPass.type = "text";
             currentPass.name = "currentPass";
@@ -244,10 +244,10 @@ document.addEventListener("DOMContentLoaded", function () {
             newPass.classList.add("change_input");
             newPass.placeholder = "Enter your new password";
             inputs.append(newPass);
-    
+
             cancelBtn.id = "cancel_password";
             acceptBtn.id = "accept_password";
-    
+
             form.append(btns);
             btns.append(cancelBtn);
             btns.append(acceptBtn);
@@ -258,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 warning.remove();
                 document.querySelector("#passwordText").parentNode.append(password_backBtn);
             });
-    
+
             let warning = document.createElement("p");
             warning.classList.add("msg");
             warning.classList.add("warning_msg");
@@ -299,33 +299,33 @@ document.addEventListener("DOMContentLoaded", function () {
             form.action = "/vendor/account.php";
             form.method = "POST";
             form.classList.add("change_form");
-    
+
             let inputs = document.createElement("div");
             inputs.classList.add("inputs");
-    
+
             let btns = document.createElement("div");
             btns.classList.add("btns");
-    
+
             let cancelBtn = document.createElement("div");
             cancelBtn.classList.add("btn");
             cancelBtn.classList.add("edit_btn");
             cancelBtn.innerHTML = "Cancel";
-    
+
             let acceptBtn = document.createElement("button");
             acceptBtn.classList.add("edit_btn");
             acceptBtn.type = "submit";
             acceptBtn.innerHTML = "Accept";
             // forms
-    
+
             phone_backBtn = this;
             const node = document.querySelector("#phoneData");
             phone_nodeText = node.innerHTML;
             node.innerHTML = '';
-    
+
             form.id = "phone_form"
             node.append(form);
             form.append(inputs);
-    
+
             let phone = document.createElement("input");
             phone.type = "tel";
             phone.name = "phone";
@@ -335,10 +335,10 @@ document.addEventListener("DOMContentLoaded", function () {
             phone.required = true;
             phone.value = phone_nodeText;
             inputs.append(phone);
-    
+
             cancelBtn.id = "cancel_phone";
             acceptBtn.id = "accept_phone";
-    
+
             form.append(btns);
             btns.append(cancelBtn);
             btns.append(acceptBtn);
@@ -349,9 +349,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 warning.remove()
                 document.querySelector("#phoneText").parentNode.append(phone_backBtn);
             });
-    
+
             let minLength = 4;
-    
+
             let warning = document.createElement("p");
             warning.classList.add("msg");
             warning.classList.add("warning_msg");
@@ -375,48 +375,48 @@ document.addEventListener("DOMContentLoaded", function () {
                     form.submit();
                 }
             });
-    
+
             let phoneInputs = document.querySelectorAll('input[data-tel-input]');
-    
+
             let getInputNumbersValue = function (input) {
                 return input.value.replace(/\D/g, "");
             }
-    
+
             let onPhoneInput = function (e) {
                 let input = e.target,
                     inputNumbersValue = getInputNumbersValue(input),
                     formattedInputValue = "",
                     selectionStart = input.selectionStart;
-    
+
                 if (!inputNumbersValue) {
                     return input.value = "";
                 }
-    
+
                 if (input.value.length != selectionStart) {
                     if (e.data && /\D/g.test(e.data)) {
                         input.value = inputNumbersValue;
                     }
                     return;
                 }
-    
+
                 if (["7", "8", "9"].indexOf(inputNumbersValue[0]) > -1) {
                     // Russian phone number
                     if (inputNumbersValue[0] == "9") inputNumbersValue = "7" + inputNumbersValue;
                     let firtsSymbols = (inputNumbersValue[0] == "8") ? "8" : "+7";
                     formattedInputValue = firtsSymbols + " ";
-    
+
                     if (inputNumbersValue.length > 1) {
                         formattedInputValue += "(" + inputNumbersValue.substring(1, 4);
                     }
-    
+
                     if (inputNumbersValue.length >= 5) {
                         formattedInputValue += ") " + inputNumbersValue.substring(4, 7);
                     }
-    
+
                     if (inputNumbersValue.length >= 8) {
                         formattedInputValue += "-" + inputNumbersValue.substring(7, 9);
                     }
-    
+
                     if (inputNumbersValue.length >= 10) {
                         formattedInputValue += "-" + inputNumbersValue.substring(9, 11);
                     }
@@ -427,19 +427,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 input.value = formattedInputValue;
             }
-    
+
             let onPhoneKeyDown = function (e) {
                 let input = e.target;
                 if (e.keyCode == 8 && getInputNumbersValue(input).length == 1) {
                     input.value = "";
                 }
             }
-    
+
             let onPhonePaste = function (e) {
                 let pasted = e.clipboardData || window.clipboardData,
                     input = e.target,
                     inputNumbersValue = getInputNumbersValue(input);
-    
+
                 if (pasted) {
                     let pastedText = pasted.getData("Text");
                     if (/\D/g.test(pastedText)) {
@@ -447,7 +447,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             }
-    
+
             for (i = 0; i < phoneInputs.length; i++) {
                 let input = phoneInputs[i];
                 input.addEventListener("input", onPhoneInput);
@@ -460,43 +460,43 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector("#address_btn").addEventListener("click", function () {
             let form = document.createElement("form");
             form.classList.add("change_form");
-    
+
             let inputs = document.createElement("div");
             inputs.classList.add("inputs");
-    
+
             let btns = document.createElement("div");
             btns.classList.add("btns");
-    
+
             let cancelBtn = document.createElement("div");
             cancelBtn.classList.add("btn");
             cancelBtn.classList.add("edit_btn");
             cancelBtn.innerHTML = "Cancel";
-    
+
             let acceptBtn = document.createElement("button");
             acceptBtn.classList.add("edit_btn");
             acceptBtn.type = "submit";
             acceptBtn.innerHTML = "Accept";
             // forms
-    
+
             address_backBtn = this;
             const node = document.querySelector("#addressData");
             address_nodeText = node.innerHTML;
             node.innerHTML = '';
-    
+
             form.id = "phone_form"
             node.append(form);
             form.append(inputs);
-    
+
             let address = document.createElement("input");
             address.type = "text";
             address.name = "address";
             address.classList.add("change_input");
             address.value = address_nodeText;
             inputs.append(address);
-    
+
             cancelBtn.id = "cancel_address";
             acceptBtn.id = "accept_address";
-    
+
             form.append(btns);
             btns.append(cancelBtn);
             btns.append(acceptBtn);
@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 form.remove();
                 document.querySelector("#addressText").parentNode.append(address_backBtn);
             });
-    
+
             let warning = document.createElement("p");
             warning.classList.add("msg");
             warning.classList.add("warning_msg");
@@ -540,16 +540,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let datepickerInputs = document.querySelectorAll('input[data-date]');
 
-    let getInputNumbersValue = function(input) {
+    let getInputNumbersValue = function (input) {
         return input.value.replace(/\D/g, "");
     }
 
-    let onDatepickerInput = function(e) {
-        let input = e.target, 
-            inputNumbersValue = getInputNumbersValue(input), 
+    let onDatepickerInput = function (e) {
+        let input = e.target,
+            inputNumbersValue = getInputNumbersValue(input),
             formattedInputValue = "",
             selectionStart = input.selectionStart;
 
@@ -568,18 +568,18 @@ document.addEventListener("DOMContentLoaded", function() {
         if (inputNumbersValue.length > 2) input.value += "/" + inputNumbersValue.substring(2, 4);
     }
 
-    let onDatepickerKeyDown = function(e) {
+    let onDatepickerKeyDown = function (e) {
         let input = e.target;
         if (e.keyCode == 8 && getInputNumbersValue(input).length == 1) {
             input.value = "";
         }
     }
 
-    let onDatepickerPaste = function(e) {
+    let onDatepickerPaste = function (e) {
         let pasted = e.clipboardData || window.clipboardData,
             input = e.target,
             inputNumbersValue = getInputNumbersValue(input);
-        
+
         if (pasted) {
             let pastedText = pasted.getData("Text");
             if (/\D/g.test(pastedText)) {
@@ -588,7 +588,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    for (i=0; i<datepickerInputs.length; i++) {
+    for (i = 0; i < datepickerInputs.length; i++) {
         let input = datepickerInputs[i];
         input.addEventListener("input", onDatepickerInput);
         input.addEventListener("keydown", onDatepickerKeyDown);
@@ -596,16 +596,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-$('input[type=number][max]:not([max=""])').on('input', function() {
+$('input[type=number][max]:not([max=""])').on('input', function () {
     var $this = $(this);
     var maxlength = $this.attr('max').length;
     var value = $this.val();
     if (value && value.length >= maxlength) {
-      $this.val(value.substr(0, maxlength));
+        $this.val(value.substr(0, maxlength));
     }
 });
 
-$('#newPayCard_submit').click(function(e) {
+$('#newPayCard_submit').click(function (e) {
     e.preventDefault();
 
     $('fieldset[name="cardNum"]').removeClass('error_field');
@@ -633,24 +633,24 @@ $('#newPayCard_submit').click(function(e) {
             country: country,
             system: system
         },
-        success (data) {
+        success(data) {
             if (data.status) {
                 $('.msg').addClass("none");
                 location.reload();
             } else {
                 if (data.type === 1) {
-                    data.fields.forEach(function(field) {
+                    data.fields.forEach(function (field) {
                         $(`fieldset[name="${field}"]`).addClass('error_field');
                     });
                 }
-                
+
                 $(".warning_msg").removeClass('none').text(data.massage);
             }
         }
     });
 });
 
-$('.deleteCard').click(function(e) {
+$('.deleteCard').click(function (e) {
     const ID = $(this).attr('id');
 
     $.ajax({
@@ -660,7 +660,7 @@ $('.deleteCard').click(function(e) {
         data: {
             id: ID
         },
-        success (data) {
+        success(data) {
             if (data.status) {
                 location.reload();
             }

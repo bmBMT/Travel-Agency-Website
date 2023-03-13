@@ -167,15 +167,6 @@ form > .sign_inputs {
   width: 100%;
 }
 
-.anotherSign_btns {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 16px;
-}
-
 .signText_title {
   color: #000000;
   font-size: 40px;

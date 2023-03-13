@@ -169,7 +169,7 @@ require '../vendor/connect.php';
                 </div>
             </div>
         </div>
-        <div id="airplane-img"></div>
+        <div id="airplane-img" style="background: url(/assets/imgs/flight/airplanes/A380.svg) no-repeat;"></div>
         <div class="col g-40" style="width: 100% !important;">
             <div class="col g-24">
                 <div class="row w-100" id="selectClass">
@@ -394,6 +394,6 @@ require '../vendor/connect.php';
     </footer>
 </body>
 <script src="/js/main.js"></script>
-<script src="/js/flight-deteil.js"></script>
+<script src="/js/flight-detail.js"></script>
 
 </html>
