@@ -445,6 +445,7 @@ hr {
 #reviewModal .modal-dialog.container {
   width: 65%;
 }
+
 #reviewModal .modal-body {
   display: flex;
   flex-direction: column;
@@ -476,4 +477,13 @@ hr {
 #postReview {
   display: flex;
   justify-content: center;
+}
+
+.text-about {
+  display: flex;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #112211;
 }

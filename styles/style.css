@@ -562,6 +562,7 @@ input[type="checkbox"] {
 .g-20,
 .g-24,
 .g-32,
+.g-34,
 .g-40,
 .g-64,
 .g-80 {
@@ -613,6 +614,10 @@ input[type="checkbox"] {
 
 .g-32 {
   gap: 32px !important;
+}
+
+.g-34 {
+  gap: 34px !important;
 }
 
 .g-40 {

@@ -158,7 +158,7 @@ require '../vendor/connect.php';
               <i class="fa-solid fa-star hotel-star"></i>
               <i class="fa-solid fa-star hotel-star"></i>
             </div>
-            <div class="icon-text" style="opacity: 1;">5 Star Hotel</div>
+            <div class="icon-text" style="opacity: 1; position: relative; bottom: -2px;">5 Star Hotel</div>
           </div>
         </div>
         <div class="col g-8">

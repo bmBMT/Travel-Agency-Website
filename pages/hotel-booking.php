@@ -38,17 +38,17 @@ if ($_SESSION['user']) {
   <title>Travel Agency Website — Booking</title>
 </head>
 
-<body id="flight">
+<body id="hotel">
   <header class="header" id="header" style="color: black;">
     <div class="container">
       <div class="content" id="head_content">
         <div class="sections">
           <a href="/pages/flight-search.php" class="link">
             <img src="/assets/icons/black_airplane_icon.svg" id="head_airPlane_icon" />Find Flight
-            <div class="horizontal_line" id="stage_line"></div>
           </a>
           <a href="/pages/hotel-search.php" class="link">
             <img src="/assets/icons/black_bed_icon.svg" id="head_bed_icon" />Find Stays
+            <div class="horizontal_line" id="stage_line"></div>
           </a>
         </div>
 
@@ -156,47 +156,33 @@ if ($_SESSION['user']) {
     <div class="col g-40" id="booking-left-content">
       <div class="window">
         <div class="row jc-sb w-100">
-          <div class="text-title">Emirates A380 Airbus</div>
-          <div id="airplane-price">$240</div>
-        </div>
-        <div class="window-head w-100">
-          <div class="window-head-text">Return Wed, Dec 8</div>
-          <div class="window-head-text" style="font-weight: 500; opacity: 0.75;">2h 28m</div>
+          <div class="text-title" style="width: 80%;">Superior room - 1 double bed or 2 twin beds</div>
+          <div id="airplane-price">$240<span style="font-size: 14px;">/night</span></div>
         </div>
         <div class="window-body w-100">
-          <div class="row jc-sb w-100">
-            <div class="airline-about">
-              <div class="airline-logo emirates-sm"></div>
-              <div class="col g-8">
-                <div class="text-title">Emirates</div>
-                <div class="airline-airplane">Airbus A320</div>
+          <div class="airline-about w-100">
+            <div class="airline-logo cvk_istanbul"></div>
+            <div class="col g-8">
+              <div class="text-title">CVK Park Bosphorus Hotel Istanbul</div>
+              <div class="row g-4" style="flex-wrap: nowrap;">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="icon-text">Gümüssuyu Mah. Inönü Cad. No:8, Istanbul 34437</div>
               </div>
             </div>
-            <div class="row g-20 flight-services">
-              <img src="/assets/icons/black_airplane_icon.svg">
-              <div class="vertical-separator"></div>
-              <img src="/assets/icons/wifi_icon.svg">
-              <div class="vertical-separator"></div>
-              <img src="/assets/icons/stopwatch_icon.svg">
-              <div class="vertical-separator"></div>
-              <img src="/assets/icons/fast-food_icon.svg">
-              <div class="vertical-separator"></div>
-              <img src="/assets/icons/seat-recline_icon.svg">
-            </div>
           </div>
-          <div class="row w-100 jc-sb flight-time">
-            <div class="row g-16 al-center">
-              <div class="text-title">12:00 pm</div>
-              <div class="default-text" style="opacity: 0.6;">Newark(EWR)</div>
+          <div class="row w-100 flight-time">
+            <div class="col g-8 al-center">
+              <div class="window-head-text">Thursday, Dec 8</div>
+              <div class="airline-airplane">Chech-In</div>
             </div>
             <div class="row g-24 al-center">
               <img src="/assets/icons/circle-arrow.svg">
-              <img src="/assets/icons/black_airplane_icon.svg" style="width: 48px;">
+              <img src="/assets/icons/black_building_icon.svg" style="width: 48px;">
               <img src="/assets/icons/circle-arrow.svg" style="transform: rotateY(180deg);">
             </div>
-            <div class="row g-16 al-center">
-              <div class="text-title">12:00 pm</div>
-              <div class="default-text" style="opacity: 0.6;">Newark(EWR)</div>
+            <div class="col g-8 al-center">
+              <div class="window-head-text">Friday, Dec 9</div>
+              <div class="airline-airplane">Chech-Out</div>
             </div>
           </div>
         </div>
@@ -570,11 +556,11 @@ if ($_SESSION['user']) {
     <div class="col g-16" id="booking-right-content">
       <div class="window col g-16" style="padding: 24px;">
         <div class="row g-24 w-100" style="flex-wrap: nowrap;">
-          <div id="airplane-img" style="background: url(/assets/imgs/flight/airplanes/A380-sm.svg) no-repeat;"></div>
+          <div id="airplane-img" style="background: url(/assets/imgs/hotel-detail/1.svg) no-repeat;"></div>
           <div class="col g-20">
             <div class="col g-4">
-              <div class="default-text">Economy</div>
-              <div class="window-head-text">Emirates A380 Airbus</div>
+              <div class="default-text">CVK Park Bosphorus...</div>
+              <div class="window-head-text">Superior room - 1 double bed or 2 twin beds</div>
             </div>
             <div class="row g-8">
               <div class="card-grade">4.2</div>
@@ -589,25 +575,25 @@ if ($_SESSION['user']) {
           <div class="default-text" style="opacity: 1;">Price Details</div>
           <div class="row jc-sb">
             <div class="default-text" style="opacity: 1;">Base Fare</div>
-            <div class="default-text" style="opacity: 1;">$400</div>
+            <div class="default-text" style="opacity: 1;">$240</div>
           </div>
           <div class="row jc-sb">
             <div class="default-text" style="opacity: 1;">Discount</div>
-            <div class="default-text" style="opacity: 1;">$400</div>
+            <div class="default-text" style="opacity: 1;">$0</div>
           </div>
           <div class="row jc-sb">
             <div class="default-text" style="opacity: 1;">Taxes</div>
-            <div class="default-text" style="opacity: 1;">$400</div>
+            <div class="default-text" style="opacity: 1;">$20</div>
           </div>
           <div class="row jc-sb">
             <div class="default-text" style="opacity: 1;">Service Fee</div>
-            <div class="default-text" style="opacity: 1;">$400</div>
+            <div class="default-text" style="opacity: 1;">$5</div>
           </div>
         </div>
         <hr>
         <div class="row jc-sb w-100">
           <div class="default-text" style="opacity: 1;">Total</div>
-          <div class="default-text" style="opacity: 1;">$400</div>
+          <div class="default-text" style="opacity: 1;">$265</div>
         </div>
       </div>
       <?php

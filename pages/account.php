@@ -292,7 +292,7 @@ $payment = mysqli_query($connect, "SELECT * FROM `payments` WHERE `email` = '$em
 											</div>
 										</div>
 										<div class="historyCard_btns">
-											<button class="btn show_btn black_color">Download Ticket</button>
+											<button class="btn show_btn black_color" id="download-btn">Download Ticket</button>
 											<button class="btn seeMore_btn black_color"><i class="fa fa-chevron-right"></i></button>
 										</div>
 									</div>
@@ -320,7 +320,7 @@ $payment = mysqli_query($connect, "SELECT * FROM `payments` WHERE `email` = '$em
 													<div class="historyCard_info-data">
 														<img class="historyCard_secondInfo-img" src="/assets/icons/timmer.svg">
 														<div class="historyCard_secondInfo-textContent">
-															<div class="historyCard_secondInfo-data">Ckech-In time</div>
+															<div class="historyCard_secondInfo-data">Chech-In time</div>
 															<div class="historyCard_secondInfo-value">12:00pm</div>
 														</div>
 													</div>
@@ -344,7 +344,7 @@ $payment = mysqli_query($connect, "SELECT * FROM `payments` WHERE `email` = '$em
 											</div>
 										</div>
 										<div class="historyCard_btns">
-											<button class="btn show_btn black_color">Download Ticket</button>
+											<button class="btn show_btn black_color" id="download-btn">Download Ticket</button>
 											<button class="btn seeMore_btn black_color"><i class="fa fa-chevron-right"></i></button>
 										</div>
 									</div>
