@@ -224,7 +224,7 @@
                   </div>
                 </fieldset>
 
-                <button class="btn show_btn" id="search-btn"><img src="/assets/icons/search_icon.svg"></button>
+                <button class="btn show_btn search-btn" id="search-hotel-btn"><img src="/assets/icons/search_icon.svg"></button>
               </div>
             </div>
           </div>
@@ -711,5 +711,5 @@
 </body>
 <script src="/js/stage-listing.js"></script>
 <script src="/js/main.js"></script>
-
+<script src="/js/search-filter-btn.js"></script>
 </html>

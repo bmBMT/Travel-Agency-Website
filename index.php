@@ -226,7 +226,7 @@
                         <img src="assets/icons/black_plus_icon.svg" />
                         Add Promo Code
                       </button>
-                      <button type="submit" class="btn showFlight_btn black_color">
+                      <button type="submit" class="btn showFlight_btn black_color" id="search-flight-btn">
                         <img src="assets/icons/black_paperPlane_icon.svg">
                         Show Flights
                       </button>
@@ -438,7 +438,7 @@
                     <div class="stageCard_description">Search hotels & Places Hire to our most popular destinations</div>
                   </div>
                   <a href="/pages/hotel-search.php" id="hotels_stage">
-                    <button class="btn show_btn black_color">
+                    <button class="btn show_btn black_color" id="search-hotel-btn">
                       <img src="assets/icons/black_paperPlane_icon.svg">
                       Show Hotels
                     </button>
@@ -644,4 +644,5 @@
       </div>
     </footer>
   </body>
+<script src="/js/search-filter-btn.js"></script>
 </html>

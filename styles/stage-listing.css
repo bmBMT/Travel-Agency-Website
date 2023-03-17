@@ -1,5 +1,5 @@
 @media (max-width: 1340px) {
-  #search-btn {
+  .search-btn {
     width: 100% !important;
     margin-top: 8px;
   }
@@ -37,7 +37,7 @@
   max-width: unset;
 }
 
-#search-btn {
+.search-btn {
   width: 56px;
   height: 56px;
   transition: unset;
