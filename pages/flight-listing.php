@@ -1,6 +1,6 @@
 <?php
-  session_start();
-  require '../vendor/connect.php';
+session_start();
+require '../vendor/connect.php';
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -50,101 +50,99 @@
         <a href="/index.php" class="logo">
           <img src="/assets/icons/blackGreen_logo_icon.svg" id="logo_icon" />
         </a>
-        <?php 
-          if (!$_SESSION['user'])
-          { ?>
-            <div class="buttons" id="unlogined_btns">
-              <a href="/pages/login.php">
-                <button class="btn login" id="login_btn" style="color: black;">Login</button>
+        <?php
+        if (!$_SESSION['user']) { ?>
+          <div class="buttons" id="unlogined_btns">
+            <a href="/pages/login.php">
+              <button class="btn login" id="login_btn" style="color: black;">Login</button>
+            </a>
+            <a href="/pages/sign_up.php">
+              <button class="btn sign_up btn_black" id="sign_up_btn">Sign up</button>
+            </a>
+          </div>
+        <?php
+        } ?>
+        <?php
+        if ($_SESSION['user']) { ?>
+          <div class="logined_elements" id="logined_elements">
+            <div class="favourites_link">
+              <a href="#" class="link">
+                <img src="/assets/icons/black_heart_icon.svg" id="heart_icon">
+                <div class="favourites_text">
+                  Favourites
+                </div>
               </a>
-              <a href="/pages/sign_up.php">
-                <button class="btn sign_up btn_black" id="sign_up_btn">Sign up</button>
-              </a>
+              <span class="vertical_line"></span>
             </div>
-        <?php
-          } ?>
-        <?php
-          if ($_SESSION['user'])
-          { ?>
-            <div class="logined_elements" id="logined_elements">
-              <div class="favourites_link">
-                <a href="#" class="link">
-                  <img src="/assets/icons/black_heart_icon.svg" id="heart_icon">
-                  <div class="favourites_text">
-                    Favourites
+            <div class="dropdown">
+              <div class="profile">
+                <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false"
+                  aria-expanded="true" style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);">
+                  <div class="arrowDown <?= $_SESSION['user']['role'] ?>">
+                    <box-icon name='chevron-down'></box-icon>
                   </div>
-                </a>
-                <span class="vertical_line"></span>
-              </div>
-              <div class="dropdown">
-                <div class="profile">
-                  <button class="avatar" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="false"
-                    aria-expanded="true" style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);">
-                    <div class="arrowDown <?= $_SESSION['user']['role'] ?>">
-                      <box-icon name='chevron-down'></box-icon>
-                    </div>
-                  </button>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-                    <div class="column">
-                      <div class="profile">
-                        <div class="avatar" style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);"></div>
-                        <div class="status_text">
-                          <div class="name">
-                            <?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?>
-                          </div>
-                          <div class="profile_status">Online</div>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                  <div class="column">
+                    <div class="profile">
+                      <div class="avatar" style="background: url(<?= '/' . $_SESSION['user']['avatar'] ?>);"></div>
+                      <div class="status_text">
+                        <div class="name">
+                          <?= $_SESSION['user']['first_name'] . " " . $_SESSION['user']['last_name'] ?>
                         </div>
+                        <div class="profile_status">Online</div>
                       </div>
-                      <hr />
-                      <section class="dropDown_links">
-                        <a href="/pages/account.php" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                            <img src="/assets/icons/user_icon.svg">
-                            <div class="dropDown_text">My account</div>
-                          </div>
-                          <img src="/assets/icons/black_arrowRight.svg" />
-                        </a>
-                        <a href="/pages/payments.php" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                            <img src="/assets/icons/card_icon.svg" />
-                            <div class="dropDown_text">Payments</div>
-                          </div>
-                          <img src="/assets/icons/black_arrowRight.svg" />
-                        </a>
-                        <a href="/pages/settings.php" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                            <img src="/assets/icons/settings_icon.svg" />
-                            <div class="dropDown_text">Settings</div>
-                          </div>
-                          <img src="/assets/icons/black_arrowRight.svg" />
-                        </a>
-                      </section>
-                      <hr />
-                      <section class="dropDown_links">
-                        <a href="#" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                            <img src="/assets/icons/support_icon.svg" />
-                            <div class="dropDown_text">Support</div>
-                          </div>
-                          <img src="/assets/icons/black_arrowRight.svg" />
-                        </a>
-                        <a href="/vendor/logout.php" class="dropDown_link">
-                          <div class="dropDown_link_content">
-                            <img src="/assets/icons/logout_icon.svg" />
-                            <div class="dropDown_text">Logout</div>
-                          </div>
-                        </a>
-                      </section>
                     </div>
+                    <hr />
+                    <section class="dropDown_links">
+                      <a href="/pages/account.php" class="dropDown_link">
+                        <div class="dropDown_link_content">
+                          <img src="/assets/icons/user_icon.svg">
+                          <div class="dropDown_text">My account</div>
+                        </div>
+                        <img src="/assets/icons/black_arrowRight.svg" />
+                      </a>
+                      <a href="/pages/payments.php" class="dropDown_link">
+                        <div class="dropDown_link_content">
+                          <img src="/assets/icons/card_icon.svg" />
+                          <div class="dropDown_text">Payments</div>
+                        </div>
+                        <img src="/assets/icons/black_arrowRight.svg" />
+                      </a>
+                      <a href="/pages/settings.php" class="dropDown_link">
+                        <div class="dropDown_link_content">
+                          <img src="/assets/icons/settings_icon.svg" />
+                          <div class="dropDown_text">Settings</div>
+                        </div>
+                        <img src="/assets/icons/black_arrowRight.svg" />
+                      </a>
+                    </section>
+                    <hr />
+                    <section class="dropDown_links">
+                      <a href="#" class="dropDown_link">
+                        <div class="dropDown_link_content">
+                          <img src="/assets/icons/support_icon.svg" />
+                          <div class="dropDown_text">Support</div>
+                        </div>
+                        <img src="/assets/icons/black_arrowRight.svg" />
+                      </a>
+                      <a href="/vendor/logout.php" class="dropDown_link">
+                        <div class="dropDown_link_content">
+                          <img src="/assets/icons/logout_icon.svg" />
+                          <div class="dropDown_text">Logout</div>
+                        </div>
+                      </a>
+                    </section>
                   </div>
-                  <div class="name">
-                    <?= $_SESSION['user']['first_name'] . " " . mb_substr($_SESSION['user']['last_name'], 0, 2) . "." ?>
-                  </div>
+                </div>
+                <div class="name">
+                  <?= $_SESSION['user']['first_name'] . " " . mb_substr($_SESSION['user']['last_name'], 0, 2) . "." ?>
                 </div>
               </div>
             </div>
+          </div>
         <?php
-          }
+        }
         ?>
       </div>
     </div>
@@ -233,25 +231,25 @@
           <div class="filter-connector">
             <div class="filter-input" id="price">
               <nav class="fold">
-                  <div class="collapse-title">Price</div>
-                  <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#priceScroll" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-chevron-up"></i>
-                  </button>
+                <div class="collapse-title">Price</div>
+                <button class="toggler collapsed" type="button" data-toggle="collapse" data-target="#priceScroll" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa fa-chevron-up"></i>
+                </button>
               </nav>
               <div class="collapse show" id="priceScroll">
-                  <div class="collapse-content">
-                    <div class="selector">
-                      <div class="data-slider">
-                          <div id="slider-range" class="slider-price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                              <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                              <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                              <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                          </div>
-                          <span id="min-price" data-currency="$" class="slider-data">50</span>
-                          <span id="max-price" data-currency="$" data-max="1200"  class="slider-data">1200</span>
-                      </div> 
+                <div class="collapse-content">
+                  <div class="selector">
+                    <div class="data-slider">
+                      <div id="slider-range" class="slider-price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                        <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                      </div>
+                      <span id="min-price" data-currency="$" class="slider-data">50</span>
+                      <span id="max-price" data-currency="$" data-max="1200" class="slider-data">1200</span>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
             <hr>
@@ -264,15 +262,15 @@
               </nav>
               <div class="collapse show" id="timeScroll">
                 <div class="collapse-content">
-                <div class="selector">
-                  <div class="data-slider">
-                    <div id="slider-range" class="slider-time-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                      <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
-                      <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                      <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                    </div>
-                    <span id="min-time" class="slider-data">12:00 AM</span>
-                    <span id="max-time" class="slider-data">11:59 PM</span>
+                  <div class="selector">
+                    <div class="data-slider">
+                      <div id="slider-range" class="slider-time-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                        <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                      </div>
+                      <span id="min-time" class="slider-data">12:00 AM</span>
+                      <span id="max-time" class="slider-data">11:59 PM</span>
                     </div>
                   </div>
                 </div>
@@ -485,7 +483,9 @@
                   <button class="btn card-favourite-btn">
                     <i class="fa-regular fa-heart"></i>
                   </button>
-                  <button class="btn card-view-btn">View Deals</button>
+                  <a href="/pages/flight-detail.php">
+                    <button class="btn card-view-btn">View Deals</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -537,7 +537,9 @@
                   <button class="btn card-favourite-btn">
                     <i class="fa-regular fa-heart"></i>
                   </button>
-                  <button class="btn card-view-btn">View Deals</button>
+                  <a href="/pages/flight-detail.php">
+                    <button class="btn card-view-btn">View Deals</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -589,7 +591,9 @@
                   <button class="btn card-favourite-btn">
                     <i class="fa-regular fa-heart"></i>
                   </button>
-                  <button class="btn card-view-btn">View Deals</button>
+                  <a href="/pages/flight-detail.php">
+                    <button class="btn card-view-btn">View Deals</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -641,7 +645,9 @@
                   <button class="btn card-favourite-btn">
                     <i class="fa-regular fa-heart"></i>
                   </button>
-                  <button class="btn card-view-btn">View Deals</button>
+                  <a href="/pages/flight-detail.php">
+                    <button class="btn card-view-btn">View Deals</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -745,4 +751,5 @@
 <script src="/js/stage-listing.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/search-filter-btn.js"></script>
+
 </html>

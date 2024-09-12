@@ -293,7 +293,7 @@ $payment = mysqli_query($connect, "SELECT * FROM `payments` WHERE `email` = '$em
 										</div>
 										<div class="historyCard_btns">
 											<button class="btn show_btn black_color" id="download-btn">Download Ticket</button>
-											<button class="btn seeMore_btn black_color"><i class="fa fa-chevron-right"></i></button>
+											<a href="/pages/flight-booking-detail.php" class="btn seeMore_btn black_color"><i class="fa fa-chevron-right"></i></a>
 										</div>
 									</div>
 								</div>
@@ -345,7 +345,7 @@ $payment = mysqli_query($connect, "SELECT * FROM `payments` WHERE `email` = '$em
 										</div>
 										<div class="historyCard_btns">
 											<button class="btn show_btn black_color" id="download-btn">Download Ticket</button>
-											<button class="btn seeMore_btn black_color"><i class="fa fa-chevron-right"></i></button>
+											<a href="/pages/hotel-booking-detail.php" class="btn seeMore_btn black_color"><i class="fa fa-chevron-right"></i></a>
 										</div>
 									</div>
 								</div>

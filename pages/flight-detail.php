@@ -165,7 +165,9 @@ require '../vendor/connect.php';
                 <div class="row g-15 jc-end">
                     <button class="border-btn"><i class="fa-regular fa-heart"></i></button>
                     <button class="border-btn"><i class="fa-solid fa-share-nodes"></i></button>
-                    <button class="show_btn" id="bookNow-btn">Book now</button>
+                    <a href="/pages/flight-booking.php">
+                        <button class="show_btn" id="bookNow-btn">Book now</button>
+                    </a>
                 </div>
             </div>
         </div>

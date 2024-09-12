@@ -250,7 +250,7 @@
                                 </div>
                                 <div class="md-card-price">$ 700</div>
                             </div>
-                            <a href="#">
+                            <a href="/pages/flight-detail.php">
                                 <button class="btn show_btn black_color">Book Flight</button>
                             </a>
                         </div>
@@ -264,7 +264,7 @@
                                 </div>
                                 <div class="md-card-price">$ 600</div>
                             </div>
-                            <a href="#">
+                            <a href="/pages/flight-detail.php">
                                 <button class="btn show_btn black_color">Book Flight</button>
                             </a>
                         </div>
@@ -278,7 +278,7 @@
                                 </div>
                                 <div class="md-card-price">$ 350</div>
                             </div>
-                            <a href="#">
+                            <a href="/pages/flight-detail.php">
                                 <button class="btn show_btn black_color">Book Flight</button>
                             </a>
                         </div>
@@ -292,7 +292,7 @@
                                 </div>
                                 <div class="md-card-price">$ 700</div>
                             </div>
-                            <a href="#">
+                            <a href="/pages/flight-detail.php">
                                 <button class="btn show_btn black_color">Book Flight</button>
                             </a>
                         </div>

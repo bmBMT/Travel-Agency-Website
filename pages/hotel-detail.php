@@ -177,7 +177,7 @@ require '../vendor/connect.php';
         <div class="row g-15 jc-end">
           <button class="border-btn"><i class="fa-regular fa-heart"></i></button>
           <button class="border-btn"><i class="fa-solid fa-share-nodes"></i></button>
-          <a href="#available-rooms-link">
+          <a href="/pages/hotel-booking.php">
             <button class="show_btn" id="bookNow-btn">Book now</button>
           </a>
         </div>
@@ -278,7 +278,9 @@ require '../vendor/connect.php';
             </div>
             <div class="row g-64 al-center room-book">
               <div class="text-title">$240<span style="font-size: 14px;">/night</span></div>
-              <button class="show_btn" id="bookNow-btn">Book now</button>
+              <a href="/pages/hotel-booking.php">
+                <button class="show_btn" id="bookNow-btn">Book now</button>
+              </a>
             </div>
           </div>
           <hr>
@@ -289,7 +291,9 @@ require '../vendor/connect.php';
             </div>
             <div class="row g-64 al-center room-book">
               <div class="text-title">$280<span style="font-size: 14px;">/night</span></div>
-              <button class="show_btn" id="bookNow-btn">Book now</button>
+              <a href="/pages/hotel-booking.php">
+                <button class="show_btn" id="bookNow-btn">Book now</button>
+              </a>
             </div>
           </div>
           <hr>
@@ -300,7 +304,9 @@ require '../vendor/connect.php';
             </div>
             <div class="row g-64 al-center room-book">
               <div class="text-title">$320<span style="font-size: 14px;">/night</span></div>
-              <button class="show_btn" id="bookNow-btn">Book now</button>
+              <a href="/pages/hotel-booking.php">
+                <button class="show_btn" id="bookNow-btn">Book now</button>
+              </a>
             </div>
           </div>
           <hr>
@@ -311,7 +317,9 @@ require '../vendor/connect.php';
             </div>
             <div class="row g-64 al-center room-book">
               <div class="text-title">$350<span style="font-size: 14px;">/night</span></div>
-              <button class="show_btn" id="bookNow-btn">Book now</button>
+              <a href="/pages/hotel-booking.php">
+                <button class="show_btn" id="bookNow-btn">Book now</button>
+              </a>
             </div>
           </div>
         </div>
